@@ -1,0 +1,15 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "https://www.dvb.org/metadata/css/css-te.tesm-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TE Trigger Event Subscription Management message representation schema",
+	"description" : "",
+	
+	"type"       : "object",
+	"properties" : {
+		"triggerEvent" : { "$ref" : "css-core-1.1.1#/definitions/triggerEventLocator" },
+		"subscribed"   : { "type" : "boolean" },
+		"private"      : { "$ref" : "css-core-1.1.1#/definitions/private" }
+	},
+	"required" : [ "triggerEvent", "subscribed" ],
+	"additionalProperties" : true
+}
