@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:dvb:css:dash:2014" xmlns:dvb="urn:dvb:css:dash:2014" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="mrsUrl" type="dvb:mrsUrlType"/>
+	<xs:element name="ciAncillaryData" type="dvb:ciAncillaryDataType"/>
+	<xs:complexType name="mrsUrlType">
+		<xs:simpleContent>
+			<xs:extension base="xs:anyURI">
+				<xs:attribute name="minOccurs" fixed="0"/>
+				<xs:attribute name="maxOccurs" fixed="1"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ciAncillaryDataType">
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="minOccurs" fixed="0"/>
+				<xs:attribute name="maxOccurs" fixed="1"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,150 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "https://www.dvb.org/metadata/css/css-core-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - Core schema types",
+	"description" : "",
+	
+	
+	"definitions" : {
+	
+		"contentId" : { "type" : "string", "format" : "uri" },
+		
+		"contentIdStem" : { "type" : "string", "format" : "uri" },
+		
+		"id" : {
+			"type"       : "object",
+			"properties" : {
+				"type"    : { "type" : "string", "format" : "uri" },
+				"id"      : { "type" : "string" },
+				"private" : { "$ref" : "#/definitions/private" }
+			},
+			"required" : [ "type", "id" ],
+			"additionalProperties" : true
+		},
+		
+		"private" : {
+			"type"     : "array",
+			"minItems" : 0,
+			"items"    : { 
+				"type"       : "object",
+				"properties" : {
+					"type" : { "type" : "string", "format" : "uri" }
+				},
+				"required" : [ "type" ],
+				"additionalProperties" : true
+			}
+		},
+		
+		"timelineProperties" : {
+			"type" : "object",
+			"properties" : {
+				"unitsPerTick"   : { "$ref" : "#/definitions/nonZeroPositiveInteger" },
+				"unitsPerSecond" : { "$ref" : "#/definitions/nonZeroPositiveInteger" },
+				"accuracy"       : { "$ref" : "#/definitions/zeroOrPositiveNumber" }
+			},
+			"required" : [ "unitsPerTick", "unitsPerSecond" ],
+			"additionalProperties" : true
+		},
+		
+		"timelineSelector" : { "type" : "string", "format" : "uri" },
+	
+		"mapping" : {
+			"type"       : "object",
+			"properties" : {
+				"start"                : { "$ref" : "#/definitions/integerAsString" },
+				"end"                  : { "$ref" : "#/definitions/integerAsString" },
+				"materialIndex"        : { "type" : "string" },
+				"correlationsChanging" : { "type" : "boolean" },
+				"correlations" : {
+					"type"     : "array",
+					"minItems" : 1,
+					"items"    : { "$ref" : "#/definitions/correlation" }
+				}
+			},
+			"required" : [ "start", "end", "materialIndex", "correlationsChanging", "correlations" ],
+			"additionalProperties" : true
+		},
+		
+		"correlation" : {
+			"type"       : "object",
+			"properties" : {
+			 "point"         : { "$ref" : "#/definitions/integerAsString" },
+			 "materialPoint" : { "$ref" : "#/definitions/integerAsString" }
+			},
+			"required" : [ "point", "materialPoint" ],
+			"additionalProperties" : true
+		},
+
+		"integerAsString" : {
+			"type"    : "string",
+			"pattern" : "^(0|(-?[1-9])[0-9]*)$"
+		},
+		
+		"integerMinimumZeroAsString" : {
+			"type"    : "string",
+			"pattern" : "^(0|([1-9])[0-9]*)$"
+		},
+		
+		"zeroOrPositiveNumber" : {
+			"type"             : "number",
+			"minimum"          : 0,
+			"exclusiveMinimum" : false
+		},
+		
+		"nonZeroPositiveInteger" : {
+			"type"             : "integer",
+			"minimum"          : 0,
+			"exclusiveMinimum" : true
+		},
+
+		"zeroOrPositiveInteger" : {
+			"type"             : "integer",
+			"minimum"          : 0,
+			"exclusiveMinimum" : false
+		},
+
+		"triggerEvents" : {
+			"type" : "object",
+			"patternProperties" : {
+				"^[a-zA-Z][0-9a-zA-Z_]*$" : { "$ref" : "#/definitions/triggerEventLocator" }
+			}
+		},
+
+		"triggerEventLocator" : { "type" : "string", "format" : "uri" },
+		
+		"jsonPatchSyncTimelineInformation" : {
+			"type"     : "array",
+			"minItems" : 0,
+			"items"    : {
+				"type"  : "object",
+				"oneOf" : [
+					{ "$ref" : "#/definitions/jsonPatch_add_op" },
+					{ "$ref" : "#/definitions/jsonPatch_remove_op" }
+				],
+				"properties" : {
+					"path" : { "$ref" : "#/definitions/jsonPointer" }
+				},
+				"required" : [ "op", "path" ],
+				"additionalProperties" : true
+			}
+		},
+		
+		"jsonPatch_add_op" : {
+			"properties" : {
+				"op" : { "enum" : [ "add" ] }
+			},
+			"required" : [ "value" ]
+		},
+		
+		"jsonPatch_remove_op" : {
+			"properties" : {
+				"op" : { "enum" : [ "remove" ] }
+			}
+		},
+		
+		"jsonPointer" : {
+			"type"    : "string",
+			"pattern" : "^(/([^/~]|~[01])*)*$"
+		}
+	}
+}

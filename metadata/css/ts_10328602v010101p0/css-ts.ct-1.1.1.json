@@ -1,0 +1,32 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "http://www.dvb.org/json-schemas/css-ts.ct-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TS Control Timestamp message representation schema",
+	"description" : "",
+	
+	"oneOf" : [
+		{
+			"type"       : "object",	
+			"properties" : {
+				"contentTime"             : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+				"timelineSpeedMultiplier" : { "type" : "number" }
+			},
+			"required" : [ "contentTime", "timelineSpeedMultiplier" ]
+		},
+		{
+			"type"       : "object",	
+			"properties" : {
+				"contentTime"             : { "type" : "null" },
+				"timelineSpeedMultiplier" : { "type" : "null" }
+			},
+			"required" : [ "contentTime", "timelineSpeedMultiplier" ]
+		}
+	],
+	"properties" : {
+		"wallClockTime"           : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+		"contentTime"             : { },
+		"timelineSpeedMultiplier" : { }
+	},
+	"required" : [ "wallClockTime", "contentTime", "timelineSpeedMultiplier" ],
+	"additionalProperties" : true
+}

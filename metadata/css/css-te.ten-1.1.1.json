@@ -1,0 +1,32 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "https://www.dvb.org/metadata/css/css-te.ten-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TE Trigger Event Notification message representation schema",
+	"description" : "",
+	
+	"type"       : "object",
+	"properties" : {
+		"triggerEvent"     : { "$ref" : "css-core-1.1.1#/definitions/triggerEventLocator" },
+		"triggerEventData" : {
+			"oneOf" : [
+				{
+					"type"    : "string",
+					"pattern" : "^([A-Za-z0-9-_]{4})*([A-Za-z0-9-_]{2}[A-Za-z0-9-_=]=)?$"
+				},
+				{ "type" : "null" }
+			]
+		},
+		"presentationWallClockTime" : {
+			"oneOf" : [
+				{ "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+				{ "type" : "null" }
+			]
+		},
+		"subscribed"           : { "type" : "boolean" },
+		"triggerEventId"       : { "type" : "string" },
+		"triggerEventDuration" : { "$ref" : "css-core-1.1.1#/definitions/integerMinimumZeroAsString" },
+		"private"              : { "$ref" : "css-core-1.1.1#/definitions/private" }
+	},
+	"required" : [ "triggerEvent", "triggerEventData", "presentationWallClockTime", "subscribed" ],
+	"additionalProperties" : true
+}
