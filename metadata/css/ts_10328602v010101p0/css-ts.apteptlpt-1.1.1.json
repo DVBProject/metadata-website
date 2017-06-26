@@ -1,0 +1,49 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "http://www.dvb.org/json-schemas/css-ts.apteptlpt-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TS Actual, Earliest and Latest Presentation Timestamp message representation schema",
+	"description" : "",
+	
+	"type" : "object",
+	"properties" : {
+		"actual" : {
+			"type"       : "object",
+			"properties" : {
+				"contentTime"   : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+				"wallClockTime" : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" }
+			},
+			"required" : [ "contentTime", "wallClockTime" ],
+			"additionalProperties" : true
+		},
+		"earliest" : { 
+			"type"       : "object",
+			"properties" : {
+				"contentTime"   : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+				"wallClockTime" : { 
+					"oneOf" : [
+						{ "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+						{ "enum" : [ "minusinfinity" ] }
+					]
+				}
+			},
+			"required" : [ "contentTime", "wallClockTime" ],
+			"additionalProperties" : true
+		},
+		"latest" : {
+			"type"       : "object",
+			"properties" : {
+				"contentTime"   : { "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+				"wallClockTime" : { 
+					"oneOf" : [
+						{ "$ref" : "css-core-1.1.1#/definitions/integerAsString" },
+						{ "enum" : [ "plusinfinity" ] }
+					]
+				}
+			},
+			"required" : [ "contentTime", "wallClockTime" ],
+			"additionalProperties" : true
+		}
+	},
+	"required" : [ "earliest", "latest" ],
+	"additionalProperties" : true	
+}

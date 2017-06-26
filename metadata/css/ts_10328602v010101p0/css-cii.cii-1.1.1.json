@@ -1,0 +1,76 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "http://www.dvb.org/json-schemas/css-cii.cii-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-CII Content Identification and other Information message representation schema",
+	"description" : "",
+	
+	"type"       : "object",
+	"properties" : {
+		"protocolVersion" : { "enum" : [ "1.1" ] },
+		"mrsUrl"          : {
+			"oneOf" : [
+				{ "type" : "string", "format" : "uri" },
+				{ "type" : "null" }
+			]
+		},
+		"contentId" : {
+			"oneOf" : [
+				{ "$ref" : "css-core-1.1.1#/definitions/contentId" },
+				{ "type" : "null" }
+			]
+		},
+		"contentIdStatus" : {
+			"oneOf" : [
+				{ "enum" : [ "partial", "final" ] },
+				{ "type" : "null" }
+			]
+		},
+		"presentationStatus" : { "$ref" : "#/definitions/presentationStatus" },
+		"wcUrl" : {
+			"oneOf" : [
+				{ "type" : "string", "format" : "uri" },
+				{ "type" : "null" }
+			]
+		},
+		"tsUrl" : {
+			"oneOf" : [
+				{ "type" : "string", "format" : "uri" },
+				{ "type" : "null" }
+			]
+		},
+		"teUrl" : {
+			"oneOf" : [
+				{ "type" : "string", "format" : "uri" },
+				{ "type" : "null" }
+			]
+		},
+		"timelines" : {
+			"oneOf" : [
+				{ "type" : "array",
+				 "items" : { "$ref" : "#/definitions/timelineOption" },
+				 "minItems" : 0
+				},
+				{ "type" : "null" }
+			]
+		},
+		"private" : { "$ref" : "css-core-1.1.1#/definitions/private" }
+	},
+	"additionalProperties" : true,
+
+	"definitions" : {
+		"presentationStatus" : {
+			"type"    : "string",
+			"pattern" : "^(okay|transitioning|fault|[^ ]+)( [^ ]+)*$" 
+		},
+		"timelineOption" : {
+			"type"       : "object",
+			"properties" : {
+				"timelineSelector"   : { "$ref" : "css-core-1.1.1#/definitions/timelineSelector" },
+				"timelineProperties" : { "$ref" : "css-core-1.1.1#/definitions/timelineProperties" },
+				"private"            : { "$ref" : "css-core-1.1.1#/definitions/private" }
+			},
+			"required" : [ "timelineSelector", "timelineProperties" ],
+			"additionalProperties" : true
+		}
+	}
+}
