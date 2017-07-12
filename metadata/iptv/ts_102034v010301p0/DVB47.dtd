@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT errorMessage (#PCDATA)>
+<!ELEMENT deviceId (#PCDATA)>
+<!-- Allows the SP to change the automatically generated deviceId -->
+<!ELEMENT timezone (#PCDATA)>
+<!-- ISO 8601 format timezone (e.g. +0100 in France) -->
+<!ELEMENT country (#PCDATA)>
+<!-- E.164 country code (e.g. 44 in England) -->
+<!ELEMENT hostname (#PCDATA)>
+<!ELEMENT interval (#PCDATA)>
+<!-- Period between event polls (see section 4.5 Event Polling) -->
+
+<!-- For each non-wireless interface, the following parameters can be configured -->
+<!ELEMENT dhcpClientId (#PCDATA)>
+<!-- The client-id of the DHCP client -->
+<!ELEMENT dhcpHwAddress (#PCDATA)>
+<!-- The hardware address of the DHCP client -->
+<!ELEMENT dhcpUserClass (#PCDATA)>
+<!-- The user-class used by the DHCP client -->
+<!ELEMENT interface (dhcpClientId?, dhcpHwAddress?, dhcpUserClass?)>
+<!ATTLIST interface name CDATA #REQUIRED>
+
+<!-- In addition, the following parameters can be configured on wireless interfaces -->
+<!ELEMENT dhcpClientName (#PCDATA)>
+<!-- Wireless client name -->
+<!ELEMENT ssid (#PCDATA)>
+<!ATTLIST ssid index CDATA #REQUIRED>
+<!-- index range is 1-3 (there can be up to 3 of these) -->
+<!ELEMENT mode (#PCDATA)>
+<!-- AdHoc or Infrastructure -->
+<!ELEMENT channel (#PCDATA)>
+<!-- Channel number 1-11 (limited by national regulations) -->
+<!ELEMENT power (#PCDATA)>
+<!-- Transmit power, 0-100mW (limited by national regulations) -->
+<!ELEMENT headers (#PCDATA)>
+<!-- Radio Headers, short or long -->
+<!ELEMENT encrypt (#PCDATA)>
+<!-- WEP or none -->
+<!ELEMENT wepKey (#PCDATA)>
+<!-- Hex string, index range is 1-4, length is 40 or 128 (bits) -->
+<!ATTLIST wepKey index CDATA #REQUIRED length CDATA #REQUIRED >
+<!ELEMENT wpaKey (#PCDATA)>
+<!-- Hex string, length is 40 or 128 bits -->
+<!ATTLIST wpaKey length CDATA #REQUIRED >
+<!ELEMENT mixedCells (#PCDATA)>
+<!-- Access point authentication -->
+<!ELEMENT authType (#PCDATA)>
+<!-- None, WEP-open, WEP-shared, LEAP, EAP-SIM, EAP-TLS. -->
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT domain (#PCDATA)>
+<!ELEMENT certificate (#PCDATA)>
+<!-- The TLS certificate to use for authentication -->
+<!ELEMENT apAuth (authType?, username?, password?, domain?, certificate?)>
+<!ELEMENT wireless (dhcpClientId?, dhcpHwAddress?, dhcpUserClass?, dhcpClientName?, ssid*, mode?, channel?, power?, headers?, encrypt?, wepKey*, wpaKey?, mixedCells, apAuth?)>
+<!ATTLIST wireless name CDATA #REQUIRED>
+
+<!-- Access List Configuration
+The order in which an accessEntry is added to an accessList is important. When an accessList is evaluated, each accessEntry within that list is evaluated in order, from the first to the last, until a match is found. Once that match is found, each remaining accessEntry in the accessList will be ignored. -->
+<!ELEMENT action (#PCDATA)>
+<!-- permit, drop or deny -->
+<!ELEMENT protocol (#PCDATA)>
+<!-- 0-255 or one of the following keywords:
+ip, gre, icmp, igmp, ip, ipinip, nos, pim, tcp, or udp -->
+<!ELEMENT srcAddress (#PCDATA)>
+<!-- source IP address (e.g. 32.1.0.0) -->
+<!ELEMENT srcWild (#PCDATA)>
+<!-- source wildcard mask (e.g. 0.0.255.255) -->
+<!ELEMENT srcPort (#PCDATA)>
+<!-- source port range (e.g. 0-65535 for any port)
+either a single port number or a range of two -->
+<!ELEMENT dstAddress (#PCDATA)>
+<!-- destination IP address (e.g. 32.1.0.0) -->
+<!ELEMENT dstWild (#PCDATA)>
+<!-- destination wildcard mask (e.g. 0.0.255.255) -->
+<!ELEMENT dstPort (#PCDATA)>
+<!-- destination port range (e.g. 0-65535 for any port)
+either a single port number or a range of two -->
+<!ELEMENT accessEntry (action, protocol, srcAddress, srcWild, srcPort?, dstAddress?, dstWild? , dstPort?)>
+<!ELEMENT accessList (accessEntry*)>
+<!ATTLIST accessList name CDATA #REQUIRED >
+
+<!-- VPN Tunnel Configuration -->
+<!ELEMENT peer (#PCDATA)>
+<!-- IP address or DNS name and port number of the IPsec peer -->
+<!ELEMENT natIp (#PCDATA)>
+<!-- IP address or DNS name and port number if using NAT -->
+<!ELEMENT voice (natIp?, port*)>
+
+<!ELEMENT accessListName (#PCDATA)>
+<!-- Name of the list to use to control which packets are to be encrypted into the tunnel -->
+<!ELEMENT authentication (#PCDATA)>
+<!-- esp-sha, esp-md5-hmac, ... -->
+<!ELEMENT keyExchange (#PCDATA)>
+<!-- isakmp, ... -->
+<!ELEMENT sharedKey (#PCDATA)>
+<!-- key to use for authentication, if required -->
+<!ELEMENT encryption (#PCDATA)>
+<!-- esp-des, esp-3des, ... -->
+<!ELEMENT tunnel (peer, accessListName, authentication, keyExchange?, certificate?, sharedKey?, encryption)>
+<!ATTLIST tunnel name CDATA #REQUIRED>
+
+<!-- Remote Control Configuration -->
+<!ELEMENT rcType (#PCDATA)>
+<!-- Type of remote control: (RC5, RC6, NRC17, ...) -->
+<!ELEMENT button (#PCDATA)>
+<!-- Button number on the remote control -->
+<!ELEMENT code (#PCDATA)>
+<!-- Program code to be used by the button -->
+<!ELEMENT speed (#PCDATA)>
+<!-- Programming speed: slow, medium or fast -->
+<!ELEMENT remoteControl (rcType, button, code, speed)>
+<!ATTLIST remoteControl name CDATA #REQUIRED>
+
+<!-- Simple voice messaging over IP configuration using SIP. -->
+<!-- For each individual voice device -->
+<!ELEMENT uid (#PCDATA)>
+<!-- The identifier used to register this device with the SIP registrar -->
+<!ELEMENT registrar (#PCDATA)>
+<!-- The IP address or DNS name of the SIP registrar -->
+<!ELEMENT ttl (#PCDATA)>
+<!-- The TTL to use for all SIP and RTP packets -->
+<!ELEMENT renew (#PCDATA)>
+<!-- How often in seconds SIP registration is renewed -->
+<!ELEMENT proxy (#PCDATA)>
+<!-- The IP address or DNS name of the SIP proxy server -->
+<!ELEMENT rtpPort (#PCDATA)>
+<!-- Port the HNED uses to receive RTP packets if NAT is used -->
+<!ELEMENT tos (#PCDATA)>
+<!-- The TOS bits to use on all voice packets (e.g. 5) range 0-5 -->
+<!ELEMENT rxcodec (#PCDATA)>
+<!-- A list of CODECs to use to encode received analog data. CODECs include G.711, G.729, G.723 and GSM. Each CODEC is followed by a to indicate a-law or u for u-law (e.g. G711a, G729a) -->
+<!ELEMENT txcodec (#PCDATA)>
+<!-- A list of CODECs to use to decode received Voice data. CODECs include G.711, G.729, G.723 and GSM. Each CODEC is followed by a to indicate a-law or u for u-law (e.g. G711u, G729u, G723u) -->
+<!ELEMENT port (uid?, username?, password?, registrar?, ttl?, renew?, proxy?, rtpPort?, tos?, rxcodec?, txcodec?)>
+<!ATTLIST port name CDATA #REQUIRED>
+<!-- The name of this voice device (Voice 0) -->
+
+<!ELEMENT config (#PCDATA)>
+<!ELEMENT otherEntity (config*)>
+<!ATTLIST otherEntity name CDATA #REQUIRED>
+<!-- A name that uniquely identifies this entity (ie "Gizmo") -->
+
+<!ELEMENT configuration (deviceId?, timezone?, country?, hostname?, interval?, interface*, wireless*, accessList*, tunnel*, remoteControl?, voice*, otherEntity*)>
+
+<!ELEMENT configure (identifier, timestamp?, errorMessage?, configuration?)>
+<!ATTLIST configure action (wait | apply | save) #IMPLIED>
+
