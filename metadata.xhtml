@@ -34,8 +34,7 @@
             <li><a href="/metadata/css/css-ts.setup-data.json">/metadata/css/css-ts.setup-data.json</a></li>
         </ul>
 
-        <h3 id="sec:dvb-css-json-by-version">JSON schemas by schema version</h3>
-        <h4 id="sec:dvb-css-json-by-version-1.1.1">1.1.1</h4>
+        <h3 id="sec:dvb-css-json-by-version">All JSON schema versions</h3>
         <ul>
             <li><a href="/metadata/css/css-cii.cii-1.1.1.json">/metadata/css/css-cii.cii-1.1.1.json</a></li>
             <li><a href="/metadata/css/css-core-1.1.1.json">/metadata/css/css-core-1.1.1.json</a></li>
@@ -48,7 +47,7 @@
             <li><a href="/metadata/css/css-ts.setup-data-1.1.1.json">/metadata/css/css-ts.setup-data-1.1.1.json</a></li>
         </ul>
 
-        <h3 id="sec:dvb-css-by-etsi-version">Schemas ETSI spec version</h3>
+        <h3 id="sec:dvb-css-by-etsi-version">Schemas by ETSI spec version</h3>
 
         <h4 id="sec:dvb-css-by-etsi-version-1.2.1">ETSI TS 103 286 v1.2.1</h4>
         <ul>
@@ -67,11 +66,11 @@
         <h4 id="sec:dvb-css-by-etsi-version-1.1.1">ETSI TS 103 286 v1.1.1</h4>
         <p>These schemas pre-date the creation of dvb.org/metadata. Their 'id' fields
             therefore do not correctly reference the URLs at which they are hosted.
+            They are otherwise identical to the schemas published in v1.2.1:
         </p>
         <ul>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json</a></li>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json</a></li>
-            <li><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a> (do not use - see below)</li>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json</a></li>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json</a></li>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json</a></li>
@@ -80,12 +79,13 @@
             <li><a href="/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json</a></li>
             <li><a href="/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd">/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd</a></li>
         </ul>
-        <p>The schema file "css-mrs-mi-1.1.1.json" was published as part of v1.1.1 of the ETSI
-            specification. It has never been used and has been deprecated. A new and altered
-            version of this schema file has been published as part of v1.2.1 of the ETSI
-            specification must be used instead. Note that the version number has not been
-            incremented.
+        <p>There is one exception: the following schema, as published in specification v1.1.1,
+            must not be used. It is different from that published in specification
+            v1.2.1, even though the schema version number has not changed.
+            Do not use this version:
         </p>
-
+        <ul>
+            <li><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a> (do not use)</li>
+        </ul>
     </body>
 </html>
