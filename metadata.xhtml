@@ -4,10 +4,200 @@
     <head></head>
     <body>
         <!-- The static page's headline (as entered in the CMS) is rendered as a h1. Hence all headings in the page body must be h2 or deeper level -->
+        <!-- the first paragraph is rendered in a bigger font and in italics via a p:first-child css -->
+        <p>This page lists and briefly describes all generic, and application domain specific XML
+            and JSON Schemas and Classification Schemes published by DVB. These files are available
+            under the <a href="https://www.dvb.org/metadata/">https://www.dvb.org/metadata/</a> URL
+            root. Presence of an XML or JSON document under that URL root implies its status as a
+            formal DVB publication.</p>
         
-        <!-- the first paragraph is renderd in a bigger font and in italics via a p:first-child css -->
-        <p></p>
+        <!-- FIXME: add a paragraph talking about TS 102 851 -->
         
-        <h2 id="sec:first-head">First heading...</h2>
+        <!-- FIXME: add paragraph explaining the catalog.xml, and provide a link to it -->
+        
+        <!-- FIXME: add a paragraph offering the whole lot as a ZIP file for download -->
+        
+        <!-- ============================================================================== -->
+        <h2 id="sec:generic-metadata">Generic Metadata Definitions</h2>
+        <p>Generic metadata definitions are applicable to more than one application domain, and are thus generally referenced by application specific metadata definitions.</p>
+
+        <h3 id="sec:generic-xsd">XML Schemas</h3>
+
+        <h4 id="sec:generic-xsd-cs">DVB Classification Scheme schema</h4>
+        <p>This schema defines a schema for authoring classification schemes. It is derived from the TV-Anytime CS schema in that the form of the termIDType is restricted by a pattern, and the TextualType is extended by an optional language attribute. It however is backwards compatible with the TV-Anytime schema, and CS entries can therefore be referenced using the tva:controlledTermType.</p>
+        <p>All DVB classification schemes, whether generic or domain specific, are instance documents of this schema.</p>
+        <p>Latest version: <a href="https://dvb.org/metadata/schema/dvbCSschema.xsd">permalink</a></p>
+        <table>
+            <caption>DVB Classification Scheme schema versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/schema/2007/dvbCSschema.xsd">urn:dvb:metadata:schema:dvbCSschema:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        <h3 id="sec:generic-cs">Classification Schemes</h3>
+        <p>This section lists all XML Classification Schemes (CS) [i.1] defined by DVB in alphabetical order. These CS are written against the urn:dvb:metadata:schema:dvbCSschema:2007 namespace.</p>
+
+        <h4 id="sec:generic-cs-audiocodec">Audio codec classification scheme</h4>
+        <p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio codecs not part of the MPEG-7CS:</p>
+        <ul>
+            <li>MPEG-4 DVB Audio</li>
+            <li>MPEG-4 High Efficiency Advanced Audio Profile</li>
+            <li>PEG-4 High Efficiency Advanced Audio v2 Profile</li>
+            <li>AMR DVB</li>
+            <li>AC-3</li>
+        </ul>
+        <p>Latest version: <a href="https://dvb.org/metadata/cs/AudioCodecCS.xml">permalink</a></p>
+        <table>
+            <caption>DVB audio codec classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/cs/2007/AudioCodecCS.xml">urn:dvb:metadata:cs:AudioCodecCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+        <h4 id="sec:generic-cs-bcgtype">BCG type classification scheme</h4>
+        <p>This CS lists the types of content described by Broadband Content Guides (BCG). Currently the following types are defined:</p>
+        <ul>
+            <li>BCG for live TV programs</li>
+            <li>BCG for Content on Demand (CoD) programs</li>
+            <li>BCG for downloadable content</li>
+        </ul>
+        <p>Latest version: <a href="https://dvb.org/metadata/cs/BCGTypeCS.xml">permalink</a></p>        
+        <table>
+            <caption>DVB BCG type classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/cs/2007/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4 id="sec:generic-cs-parentalguidance">Parental guidance classification scheme</h4>
+        <p>This CS lists the parental guidance restriction recommendations for currently 21 regions. It will be extended to further regions and content as new services and applications emerge.</p>
+        <p>Latest version: <a href="https://dvb.org/metadata/cs/ParentalGuidanceCS.xml">permalink</a></p>        
+        <table>
+            <caption>DVB parental guidance classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/cs/2005/ParentalGuidanceCS.xml"
+                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2005</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/cs/2007/ParentalGuidanceCS.xml"
+                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2007</a></td>
+                    <td>none</td>
+                    <td><!-- FIXME -->minor editorials on text content</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4 id="sec:generic-cs-videocodec">Video codec classification scheme</h4>
+        <p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video codecs not
+            part of the MPEG-7CS:</p>
+        <ul>
+            <li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li>
+            <li>VC-1</li>
+        </ul>
+        <p>Latest version: <a href="https://dvb.org/metadata/cs/VideoCodecCS.xml">permalink</a></p>        
+        <table>
+            <caption>DVB video codec classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Namespace</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://dvb.org/metadata/cs/2007/VideoCodecCS.xml"
+                        >urn:dvb:metadata:cs:VideoCodecCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>        
+        <!-- ============================================================================== -->
+        <h2 id="sec:ciplus-metadata">DVB CI-Plus Metadata Definitions</h2>
+        
+        <!-- ============================================================================== -->
+        <h2 id="sec:css-metadata">DVB CSS Metadata Definitions</h2>
+        <h3 id="sec:css-xsd">XML Schemas</h3>
+        <h3 id="sec:css-json">JSON Schemas</h3>
+        
+        <!-- ============================================================================== -->
+        <h2 id="sec:iptv-metadata">DVB IPTV Metadata Definitions</h2>
+        <h3 id="sec:iptv-dtd">Document Type Definitions</h3>
+        <h3 id="sec:iptv-xsd">XML Schemas</h3>
+        
+        <!-- ============================================================================== -->
+        <h2 id="sec:mis-metadata">DVB HBB Metadata Definitions</h2>
+        <h3 id="sec:mis-xsd">XML Schemas</h3>
     </body>
 </html>
