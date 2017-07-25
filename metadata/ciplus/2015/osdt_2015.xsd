@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:xml="http://www.w3.org/XML/1998/namespace"
+   xmlns:mpeg7="urn:tva:mpeg7:2008"
+   xmlns:tva="urn:tva:metadata:2012"
+   xmlns:sds="urn:dvb:metadata:iptv:sdns:2008-1"
+   xmlns:casd="urn:oipf:iptv:ContentAccessStreamingDescriptor:2008-1"
+   xmlns:osdt="urn:dvb:metadata:ciplus:osdt:2015"
+   targetNamespace="urn:dvb:metadata:ciplus:osdt:2015"
+   elementFormDefault="qualified"
+   attributeFormDefault="unqualified">
+
+   <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+   <import namespace="urn:tva:mpeg7:2008" schemaLocation="tva_mpeg7.xsd"/>
+   <import namespace="urn:tva:metadata:2012" schemaLocation="tva_metadata_3-1_v181.xsd"/>
+   <import namespace="urn:dvb:metadata:iptv:sdns:2008-1" schemaLocation="sdns_v1.4r13.xsd"/>
+   <import namespace="urn:oipf:iptv:ContentAccessStreamingDescriptor:2008-1" schemaLocation="iptv-ContentAccessStreamingDescriptor.xsd"/>
+
+   <element name="IPServiceList" type="osdt:IPServiceListType"/>
+   <element name="ServiceLocation" type="osdt:ServiceLocationType"/>
+
+   <complexType name="SubRegionType">
+      <sequence>
+         <element name="Region" type=" mpeg7:TextualType" maxOccurs="unbounded"/>
+         <element name="SubRegion" type="osdt:SubRegionType" minOccurs="0"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="RegionListType">
+      <sequence>
+         <element name="PrimaryRegion" type="osdt:SubRegionType" minOccurs="0"/>
+      </sequence>
+      <attribute name="CountryCodes" type=" sds:ISO-3166-List"/>
+   </complexType>
+
+   <complexType name="TargetRegionType">
+      <sequence>
+         <element name="RegionList" type="osdt:RegionListType" maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="AccessibleOutOfRegion" type="boolean" default="true"/>
+   </complexType>
+
+   <complexType name="ServiceLocationType">
+      <sequence>
+         <any processContents="lax" id="ProtocolDependentInformation"/>
+         <element name="DRMControlInformation" type="casd:DRMControlInformationType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="ContentAttributes" type="osdt:ContentAttributesType" minOccurs="0"/>
+         <choice>
+            <element name="IPMulticastAddress" type="sds:McastType"/>
+            <element name="RTSPURL" type="sds:RTSPURLType"/>
+            <element name="UriBasedLocation" type="osdt:ExtendedURIType"/>
+         </choice>
+      </sequence>
+      <attribute name="priority" type="integer" default="0"/>
+   </complexType>
+
+   <complexType name="ExtendedURIType">
+      <sequence>
+         <element name="URI" type="anyURI"/>
+      </sequence>
+      <attribute name="contentType" type="mpeg7:mimeType" use="required"/>
+   </complexType>
+
+   <complexType name="ContentAttributesType">
+      <sequence>
+         <element name="AudioAttributes" type="tva:AudioAttributesType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="VideoAttributes" type="tva:VideoAttributesType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="CaptionLanguage" type="tva:CaptionLanguageType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="SignLanguage" type="tva:SignLanguageType" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="LCNType">
+      <attribute name="LCN" type="positiveInteger" use="required"/>
+      <attribute name="subscribed" type="boolean" use="optional"/>
+      <attribute name="selectable" type="boolean" use="optional" default="true"/>
+      <attribute name="visible" type="boolean" use="optional" default="true"/>
+   </complexType>
+
+   <complexType name="IPServiceType">
+      <sequence>
+         <element name="UniqueIdentifier" type=" sds:TextualIdentifier"/>
+         <element name="DVBTriplet" type="sds:DVBTriplet" minOccurs="0"/>
+         <element name="ServiceLocation" type="osdt:ServiceLocationType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="LCN" type="osdt:LCNType" minOccurs="0"/>
+         <element name="TargetRegions" type="osdt:TargetRegionType" minOccurs="0"/>
+         <element name="ServiceName" type="sds:MultilingualType" maxOccurs="unbounded"/>
+         <element name="ApplicationLocation" type="anyURI" minOccurs="0"/>
+         <element name="ServiceGenre" type="sds:Genre" minOccurs="0"/>
+         <element name="ServiceType" type="sds:ServiceType" minOccurs="0"/>
+         <element name="ContentAttributes" type="osdt:ContentAttributesType" minOccurs="0"/>
+         <element name="BCG" type="sds:BCGOffering" minOccurs="0"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="IPServiceListType">
+      <sequence>
+         <element name="IPService" type="osdt:IPServiceType" maxOccurs="unbounded"/>
+         <element name="BCG" type="sds:BCGOffering" minOccurs="0"/>
+         <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="Version" type="positiveInteger" use="required"/>
+   </complexType>
+</schema>
