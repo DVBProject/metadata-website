@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ********************************************************************************
+DVB schema for use in definition of classification schemes. The
+element names and structure are compatible with MPEG-7 and TV-Anytime.
+************************************************************************************* -->
+<schema xmlns:dvbCs="urn:dvb:metadata:schema:dvbCSschema:2007"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="urn:dvb:metadata:schema:dvbCSschema:2007"
+   elementFormDefault="qualified"
+   attributeFormDefault="unqualified">
+
+   <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+   <!-- #################################################################### -->
+
+   <element name="ClassificationScheme" type="dvbCs:ClassificationSchemeType"/>
+
+   <complexType name="ClassificationSchemeType">
+      <sequence>
+         <element name="Import" type="dvbCs:ImportType"         minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Term"   type="dvbCs:TermDefinitionType" minOccurs="1" maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="uri" type="anyURI" use="required"/>
+      <attribute ref="xml:lang"           use="optional"/> <!-- default language of the CS -->
+   </complexType>
+
+   <complexType name="TermDefinitionType">
+      <sequence>
+         <element name="Name"       type="dvbCs:TextualType"        minOccurs="1" maxOccurs="unbounded"/>
+         <element name="Definition" type="dvbCs:TextualType"        minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Term"       type="dvbCs:TermDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="termID"      type="dvbCs:termIDType" use="required"/>
+   </complexType>
+
+   <complexType name="ImportType">
+      <attribute name="href" type="anyURI" use="required"/>
+   </complexType>
+
+   <simpleType name="termIDType">
+      <restriction base="string">
+         <pattern value="[1-9]\d*(\.[1-9]\d*)*"/>
+      </restriction>
+   </simpleType>
+
+   <complexType name="TextualType">
+      <simpleContent>
+         <extension base="string">
+            <attribute ref="xml:lang" use="optional"/>
+         </extension>
+      </simpleContent>
+   </complexType>
+
+</schema>
