@@ -6,6 +6,6 @@
    <nextCatalog catalog="css/catalog.xml"/>
    <nextCatalog catalog="ff/catalog.xml"/>
    <nextCatalog catalog="iptv/catalog.xml"/>
-   <nextCatalog catalog="mis/catalog.xml"/>
+   <nextCatalog catalog="mhp/catalog.xml"/>
    <nextCatalog catalog="schema/catalog.xml"/>
 </catalog>
