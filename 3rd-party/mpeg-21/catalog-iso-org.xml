@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/">
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/celxsd-mcoowl/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:cel:core:2012" uri="cel-core.xsd"/>
+      <uri name="urn:mpeg:mpeg21:cel:ipre:2012" uri="cel-ipre.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/cs/">
+      <!-- Classification Schemes -->
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-AdaptationQoSCS-NS" uri="AdaptationQoSCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-AQoSRoundingMethodCS-NS" uri="AQoSRoundingMethodCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-CPUBenchmarkCS-NS" uri="CPUBenchmarkCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-DeviceClassCS-NS" uri="DeviceClassCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-GraphicsCodingFormatCS-NS" uri="GraphicsCodingFormatCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-InvariantDimensionCS-NS" uri="InvariantDimensionCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-KeyInputCS-NS" uri="KeyInputCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-LocationTypeCS-NS" uri="LocationTypeCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-MediaInformationCS" uri="MediaInformationCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-PlaceTypeCS-NS" uri="PlaceTypeCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-RenderingFormatCS-NS" uri="RenderingFormatCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-RightsLanguagesCS-NS" uri="RightsLanguagesCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-SceneCodingFormatCS-NS" uri="SceneCodingFormatCS.xml"/>
+      <uri name="urn:mpeg:mpeg21: 2003:01-DIA-SegmentDecompositionInfoCS-NS" uri="SegmentDecompositionInfoCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-StackFunctionOperatorCS-NS" uri="StackFunctionOperatorCS.xml"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-ThreeDBenchmarkCS-NS" uri="ThreeDBenchmarkCS.xml"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dia/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="AQoS-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="AQoS.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ArgumentTypes.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BaseStackFunction.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL0-NS" uri="BSDL-0-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL1-NS" uri="BSDL-1-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL1-NS" uri="BSDL-1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL1x-NS" uri="BSDL-1x-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL2-NS" uri="BSDL-2-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL2-NS" uri="BSDL-2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL2x-NS" uri="BSDL-2x1-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL2x-NS" uri="BSDL-2x2-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BSDLink-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BSDLink-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BSDLink.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="CCQoS-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="CCQoS-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ChangeCond-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ChangeCond-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvCapab-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvCapab-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvD-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvL-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="DIA-2004-AMD1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="DIA-2004-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="DIA-2004.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="DIA.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-DIAC-NS" uri="DIAConfiguration-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-DIAC-NS" uri="DIAConfiguration.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-gBSD-NS" uri="gBSSchema-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-gBSD-NS" uri="gBSSchema.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="MatrixDatatypes.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="MetadataAdaptation.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="mpeg7-udp-2004.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-MSI-NS" uri="MSI-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-PSS-NS" uri="PSS-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-SM-NS" uri="SessionMobility.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="SingleValueDatatypes.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UCD-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UCD.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UED-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UED.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="VectorDatatypes-AMD2.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="VectorDatatypes.xsd"/>
+      <uri name="http://www.w3.org/XML/1998/namespace" uri="xml-1998.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-XSI-NS" uri="XSI-AMD2.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dia-2nd/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="AQoS-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ArgumentTypes-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BaseStackFunction-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="BSDLink-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="CCQoS-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ChangeCond-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvD-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="ConvL-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="DIA-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-DIAC-NS" uri="DIAConfiguration-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-gBSD-NS" uri="gBSSchema-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="MatrixDatatypes-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="MetaDataAdaptation-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL1-NS" uri="MPEG-B-BSDL-1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-BSDL2-NS" uri="MPEG-B-BSDL-2.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="mpeg7-udp-2004.xsd"/>
+      <uri name="urn:mpeg:mpqf:schema:2008" uri="mpqf-acap.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="MPQFCap-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-MSI-NS" uri="MSI-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-PSS-NS" uri="PSS-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-SM-NS" uri="SessionMobility-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="SingleValueDatatypes-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UCD-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="UED-2nd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-NS" uri="VectorDatatypes-2nd.xsd"/>
+      <uri name="http://www.w3.org/XML/1998/namespace" uri="xml-1998.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-DIA-XSI-NS" uri="XSI-2nd.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2002:02-DIDL-NS" uri="didl.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2002:02-DIDMODEL-NS" uri="didmodel.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2002:01-DII-NS" uri="dii.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dip/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2005:01-DIP-NS" uri="dip.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dis/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2007:01-BBL-NS" uri="bbl-amd1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2007:01-BBL-NS" uri="bbl.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2007:01-BBL-NS:handler:MPEG2TS" uri="MPEG2TS-Handler.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2007:01-BBL-NS:handler:RTP" uri="RTP-Handler.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/er/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2005:01-ERL-NS" uri="er.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/fid/">
+      <!-- W3C XML Schemas -->
+      <uri name="http://www.foo.org/audiocd" uri="cd.xsd"/>
+      <uri name="http://www.foo.org/dvd" uri="dvd.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2006:01-LM-NS" uri="lm.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2006:01-LM-MP4-NS" uri="mp4.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/ipmp/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2004:01-IPMPDIDL-NS" uri="ipmpdidl.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2004:01-IPMPINFO-NS" uri="ipmpgeneral.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2004:01-IPMPINFO-NS" uri="ipmpinfo.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/rel-dac/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2005:01-REL-M1X-NS" uri="rel-m1x-dac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2006:01-REL-M2X-NS" uri="rel-m2x-dac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx-dac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r-dac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx-dac-v1.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/rel-mam/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2005:01-REL-M1X-NS" uri="rel-m1x.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx-mam-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r-mam-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx-mam-v1.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/rel-oac/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2005:01-REL-M1X-NS" uri="rel-m1x-oac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2006:01-REL-M3X-NS" uri="rel-m3x-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx-oac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r-oac-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx-oac-v1.xsd"/>
+   </group>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/rel-r/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-MX-NS" uri="rel-mx.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-R-NS" uri="rel-r.xsd"/>
+      <uri name="urn:mpeg:mpeg21:2003:01-REL-SX-NS" uri="rel-sx.xsd"/>
+   </group>
+</catalog>
