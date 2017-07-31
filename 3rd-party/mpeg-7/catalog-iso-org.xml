@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-   <!-- W3C XML Schemas -->
-   <uri name="urn:mpeg:mpeg7:schema:2001" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/mpeg7-v1.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2004" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/mpeg7-v2.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2004" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/mpeg7-v3.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2004" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/mpeg7-v4.xsd"/>
-   <uri name="urn:mpeg:mpqf:schema:2008"  uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/mpqf.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2001" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/profiles/mpeg7-cdp.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2001" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/profiles/mpeg7-smp.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2001" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/profiles/mpeg7-udp.xsd"/>
-   <uri name="urn:mpeg:mpeg7:schema:2004" uri="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/profiles/avdp.xsd"/>
+   <group xml:base="http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-7_schema_files/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="mpeg7-v1.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2004" uri="mpeg7-v2.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2004" uri="mpeg7-v3.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2004" uri="mpeg7-v4.xsd"/>
+      <uri name="urn:mpeg:mpqf:schema:2008"  uri="mpqf.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="profiles/mpeg7-cdp.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="profiles/mpeg7-smp.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2001" uri="profiles/mpeg7-udp.xsd"/>
+      <uri name="urn:mpeg:mpeg7:schema:2004" uri="profiles/avdp.xsd"/>
+   </group>
 </catalog>
