@@ -10,4 +10,9 @@
       <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
       <uri name="urn:dvb:mis:dsmcc:2009" uri="stream-event.xsd"/>
    </group>
+   <group xml:base="ts_102809v010301p0/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
+      <uri name="urn:dvb:mis:dsmcc:2009" uri="stream-event.xsd"/>
+   </group>
 </catalog>
