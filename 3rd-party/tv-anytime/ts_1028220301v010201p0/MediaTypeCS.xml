@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:MediaTypeCS:2004">
+	<!-- ##################################################################### -->
+	<!-- MEDIATYPE                                                                                  -->
+	<!-- Definition: Definitions of medias supported-->
+	<!-- ##################################################################### -->
+	<Term termID="7.1">
+		<Name xml:lang="en">Linear</Name>
+		<Term termID="7.1.1">
+			<Name xml:lang="en">Audio only</Name>
+		</Term>
+		<Term termID="7.1.2">
+			<Name xml:lang="en">Video only</Name>
+		</Term>
+		<Term termID="7.1.3">
+			<Name xml:lang="en">Audio and video</Name>
+		</Term>
+		<Term termID="7.1.4">
+			<Name xml:lang="en">Multimedia</Name>
+			<Term termID="7.1.4.1">
+				<Name xml:lang="en">Text</Name>
+			</Term>
+			<Term termID="7.1.4.2">
+				<Name xml:lang="en">Graphics</Name>
+			</Term>
+			<Term termID="7.1.4.3">
+				<Name xml:lang="en">Application</Name>
+			</Term>
+		</Term>
+	</Term>
+	<Term termID="7.2">
+		<Name xml:lang="en">Non linear</Name>
+		<Term termID="7.2.1">
+			<Name xml:lang="en">Audio only</Name>
+		</Term>
+		<Term termID="7.2.2">
+			<Name xml:lang="en">Video only</Name>
+		</Term>
+		<Term termID="7.2.3">
+			<Name xml:lang="en">Audio and video</Name>
+		</Term>
+		<Term termID="7.2.4">
+			<Name xml:lang="en">Multimedia</Name>
+			<Term termID="7.2.4.1">
+				<Name xml:lang="en">Text</Name>
+			</Term>
+			<Term termID="7.2.4.2">
+				<Name xml:lang="en">Graphics</Name>
+			</Term>
+			<Term termID="7.2.4.3">
+				<Name xml:lang="en">Application</Name>
+			</Term>
+		</Term>
+	</Term>
+	<Term termID="7.3">
+		<Name xml:lang="en">Audio video enhancements</Name>
+		<Term termID="7.3.1">
+			<Name xml:lang="en">Linear with non-sync</Name>
+			<Definition xml:lang="en">Linear programme with non-syncronised, non av content. Example: DTT Wimbledon</Definition>
+		</Term>
+		<Term termID="7.3.2">
+			<Name xml:lang="en">Linear with sync</Name>
+			<Definition xml:lang="en">Linear programme with syncronised non av content. Example: Weakest Link Dsat Quiz, TV Nav bar</Definition>
+		</Term>
+		<Term termID="7.3.3">
+			<Name xml:lang="en">Multi stream audio</Name>
+			<Definition xml:lang="en">Multi, parallel stream linear audio programme. Example: Parallel audio radio drama</Definition>
+		</Term>
+		<Term termID="7.3.4">
+			<Name xml:lang="en">Multi stream video</Name>
+			<Definition xml:lang="en">Multi, parallel stream linear audio/video programme. Example: Interactive Wimbledon, Walking with Beasts</Definition>
+		</Term>
+		<Term termID="7.3.5">
+			<Name xml:lang="en">Non-linear one stream AV show</Name>
+			<Definition xml:lang="en">Non-linear single video/audio programme</Definition>
+		</Term>
+		<Term termID="7.3.6">
+			<Name xml:lang="en">Non-linear multi stream</Name>
+			<Definition xml:lang="en">Non-linear multi, parallel stream video programme</Definition>
+		</Term>
+		<Term termID="7.3.7">
+			<Name xml:lang="en">Hybrid NVOD</Name>
+			<Definition xml:lang="en">Hybrid NVOD - locally stored material linking back to scheduled AV content. Example: Viewer can choose a movie off a PDR immediately (it has been pre-cached), watch and then they will be linked seamlessly back into a 'live' looped channel at an appropriate point</Definition>
+		</Term>
+		<Term termID="7.3.8">
+			<Name xml:lang="en">Mix and match</Name>
+			<Definition xml:lang="en">Video with audio programme (component) Ids eg: BBC1 video with BBC2 audio</Definition>
+		</Term>
+		<Term termID="7.3.9">
+			<Name xml:lang="en">Parallel 'layer controlled' audio or video support</Name>
+			<Definition xml:lang="en">Multiple decoders allow dynamic mixing of audio or video</Definition>
+		</Term>
+		<Term termID="7.3.10">
+			<Name xml:lang="en">Linear broadcast with online insertions</Name>
+			<Definition xml:lang="en">Linear broadcast programme with dynamically inserted online content. Example: Inserted ads into broadcast content, alternate tangents against broadcast content</Definition>
+		</Term>
+		<Term termID="7.3.11">
+			<Name xml:lang="en">Other</Name>
+		</Term>
+	</Term>
+</ClassificationScheme>

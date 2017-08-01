@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <documentation> WSDL Service Interface for a TV Anytime web service API. This WSDL document defines the API calls for the two types of TV Anytime ports</documentation>
+    <!-- Basic input and output messages. -->
+    <message name="get_Data">
+        <part name="body" element="tva:get_Data"/>
+    </message>
+    <message name="get_Data_Result">
+        <part name="body" element="tva:get_Data_Result"/>
+    </message>
+    <message name="describe_get_Data">
+        <part name="body" element="tva:describe_get_Data"/>
+    </message>
+    <message name="describe_get_Data_Result">
+        <part name="body" element="tva:describe_get_Data_Result"/>
+    </message>
+    <message name="submit_Data">
+        <part name="body" element="tva:submit_Data"/>
+    </message>
+    <message name="submit_Data_Result">
+        <part name="body" element="tva:submit_Data_Result"/>
+    </message>
+    <message name="describe_submit_Data">
+        <part name="body" element="tva:describe_submit_Data"/>
+    </message>
+    <message name="describe_submit_Data_Result">
+        <part name="body" element="tva:describe_submit_Data_Result"/>
+    </message>
+    <message name="upload_Personal_Data">
+        <part name="body" element="tva:upload_Personal_Data"/>
+    </message>
+    <message name="upload_Personal_Data_Result">
+        <part name="body" element="tva:upload_Personal_Data_Result"/>
+    </message>
+    <message name="describe_upload_Personal_Data">
+        <part name="body" element="tva:describe_upload_Personal_Data"/>
+    </message>
+    <message name="describe_upload_Personal_Data_Result">
+        <part name="body" element="tva:describe_upload_Personal_Data_Result"/>
+    </message>
+    <message name="clear_Personal_Data">
+        <part name="body" element="tva:clear_Personal_Data"/>
+    </message>
+    <message name="clear_Personal_Data_Result">
+        <part name="body" element="tva:clear_Personal_Data_Result"/>
+    </message>
+    <message name="ErrorReportMessage">
+        <part name="body" element="tva:ErrorReport"/>
+    </message>
+    <!-- The different types of services (ports) with their inputs and outputs. -->
+    <portType name="get_Data_Port">
+        <operation name="get_Data">
+            <input message="tns:get_Data"/>
+            <output message="tns:get_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+        <operation name="describe_get_Data">
+            <input message="tns:describe_get_Data"/>
+            <output message="tns:describe_get_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+    </portType>
+    <portType name="submit_Data_Port">
+        <operation name="submit_Data">
+            <input message="tns:submit_Data"/>
+            <output message="tns:submit_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+        <operation name="describe_submit_Data">
+            <input message="tns:describe_submit_Data"/>
+            <output message="tns:describe_submit_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+    </portType>
+    <portType name="upload_Personal_Data_Port">
+        <operation name="upload_Personal_Data">
+            <input message="tns:upload_Personal_Data"/>
+            <output message="tns:upload_Personal_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+        <operation name="describe_upload_Personal_Data">
+            <input message="tns:describe_upload_Personal_Data"/>
+            <output message="tns:describe_upload_Personal_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+    </portType>
+    <portType name="clear_Personal_Data_Port">
+        <operation name="clear_Personal_Data">
+            <input message="tns:clear_Personal_Data"/>
+            <output message="tns:clear_Personal_Data_Result"/>
+            <fault name="error" message="tns:ErroReportMessage"/>
+        </operation>
+    </portType>
+    <!-- The bindings: defines how SOAP/HTTP is used to carry the service. -->
+    <binding name="get_Data_SOAP" type="tns:get_Data_Port">
+        <documentation>TV Anytime get_Data binding</documentation>
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="get_Data">
+            <soap:operation soapAction="get_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+        <operation name="describe_get_Data">
+            <soap:operation soapAction="describe_get_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <binding name="submit_Data_SOAP" type="tns:submit_Data_Port">
+        <documentation>TV Anytime submit_Data binding</documentation>
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="submit_Data">
+            <soap:operation soapAction="submit_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+        <operation name="describe_submit_Data">
+            <soap:operation soapAction="describe_submit_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <binding name="upload_Personal_Data_SOAP" type="tns:upload_Personal_Data_Port">
+        <documentation>TV Anytime upload_Personal_Data binding</documentation>
+        <soap:binding style="document"
+            transport="https://schemas.xmlsoap.org/soap/https"/>
+        <operation name="upload_Personal_Data">
+            <soap:operation soapAction="upload_Personal_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+        <operation name="describe_upload_Personal_Data">
+            <soap:operation soapAction="describe_upload_Personal_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <binding name="clear_Personal_Data_SOAP" type="tns:clear_Personal_Data_Port">
+        <documentation>TV Anytime clear_Personal_Data binding</documentation>
+        <soap:binding style="document"
+            transport="https://schemas.xmlsoap.org/soap/https"/>
+        <operation name="clear_Personal_Data">
+            <soap:operation soapAction="clear_Personal_Data"/>
+            <input>
+                <soap:body use="literal" parts="body"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="body"/>
+            </output>
+            <fault name="error">
+                <soap:fault use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+</definitions>

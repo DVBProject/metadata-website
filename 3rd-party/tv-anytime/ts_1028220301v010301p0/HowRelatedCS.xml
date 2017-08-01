@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:HowRelatedCS:2005">
+	<!-- ##################################################################### -->
+	<!-- HOWRELATED                                                                                  -->
+	<!--Definition: A series of definitions for possible relations between programmes-->
+	<!-- ##################################################################### -->
+	<Term termID="1">
+		<Name xml:lang="en">Trailer</Name>
+		<Definition xml:lang="en">Relation: The current A/V content is a trailer for the programme identifying the CRID. Example: Record the film being trailer</Definition>
+	</Term>
+	<Term termID="2">
+		<Name xml:lang="en">GroupTrailer</Name>
+		<Definition xml:lang="en">Relation: The current A/V content is a trailer for the group of programmes identified by the CRID. Example: Record a forthcoming series being trailed</Definition>
+	</Term>
+	<Term termID="3">
+		<Name xml:lang="en">Sibling</Name>
+		<Definition xml:lang="en">Relation: The programme identified by the CRID is a sibling of the current A/V content.	Example: Record the next episode in a series whilst watching an earlier episode</Definition>
+	</Term>
+	<Term termID="4">
+		<Name xml:lang="en">Alternative</Name>
+		<Definition xml:lang="en">Relation: The identifier references an alternative version of the current A/V stream. Example: Whilst watching a programme, or part of programme, the user is able to discover that a high definition version is available elsewhere</Definition>
+	</Term>
+	<Term termID="5">
+		<Name xml:lang="en">Parent</Name>
+		<Definition xml:lang="en">Relation: A group of programmes identified by the CRID contain the programme which is the current A/V content. Example: "Record an entire series, whilst watching one of the episodes"</Definition>
+	</Term>
+	<Term termID="6">
+		<Name xml:lang="en">Recommendation</Name>
+		<Definition xml:lang="en">Relation: The broadcaster considers there to be a relationship between the current A/V content and the programme identified by the CRID. Example: Record a programme which the broadcaster recommends because of what the user is watching</Definition>
+	</Term>
+	<Term termID="7">
+		<Name xml:lang="en">GroupRecommendation</Name>
+		<Definition xml:lang="en">Relation: The broadcaster considers there to be a relationship between the current A/V content and the group of programmes identified by the CRID. Example: Record a series which the broadcaster recommends because of what the user is watching</Definition>
+	</Term>
+	<Term termID="8">
+		<Name xml:lang="en">Commercial advert</Name>
+		<Definition xml:lang="en">Relation: A product or service featured in the current A/V content is being advertised elsewhere. The CRID identifies the A/V content of that advert. Example: The user is watching a film containing a desirable product. If the user indicates interest in that product an advert is captured providing further information</Definition>
+	</Term>
+	<Term termID="8.1">
+		<Name xml:lang="en"> Normal Advert </Name>
+	</Term>
+	<Term termID="8.2">
+		<Name xml:lang="en"> Telescoped Advert </Name>
+		<Definition xml:lang="en">An extended version of an advertisement</Definition>
+	</Term>
+	<Term termID="8.3">
+		<Name xml:lang="en"> Speedbump </Name>
+		<Definition xml:lang="en">The superimposition of related or unrelated content over content in trick play mode</Definition>
+	</Term>
+	<Term termID="9">
+		<Name xml:lang="en">Direct product purchase</Name>
+		<Definition xml:lang="en">Relation: A product or service is directly linked to the programme being watched and can be purchased directly from this linked resource. Example: The user is watching a film containing a desirable product or service. (The recipe book from a cookery series for instance) If the user indicates interest in that product they are taken to a web page (or interactive application) which is able to fulfil their purchasing requirement</Definition>
+	</Term>
+	<Term termID="10">
+		<Name xml:lang="en">For more information</Name>
+		<Definition xml:lang="en">Relation: A programme has additional information in the form of audio/video/text/graphics/interactive app/web content. Example: The user watching a programme for which the content provider has made available additional information. If the user indicates interest they are taken directly to that additional content and then returned to the original content</Definition>
+	</Term>
+	<Term termID="11">
+		<Name xml:lang="en">Programme review information</Name>
+		<Definition xml:lang="en">Relation: A programme has a review or critique that may be of interest to the user in deciding whether to continue to watch. Example: The user can look at the additional information and use it to decide whether to continue watching the programme</Definition>
+	</Term>
+	<Term termID="12">
+		<Name xml:lang="en">Recap</Name>
+		<Definition xml:lang="en">Relation: A programme in a series has a text or av recap. Example: The user can chose to read/watch a recap if they have missed a previous episode or forgotten the thread of the series	</Definition>
+	</Term>
+	<Term termID="13">
+		<Name xml:lang="en">The making of</Name>
+		<Definition xml:lang="en">Relation: The broadcaster has produced a "making of" programme or  information. Example: "The user, if interested can view the background to how the programme was made"</Definition>
+	</Term>
+	<Term termID="14">
+		<Name xml:lang="en">Support</Name>
+		<Definition xml:lang="en">Relation: A programme that contains issues the user may wish to enquire about. Example: The user can find out if there is support in the form of a telephone help line, postal or email address or web page that provides them with the ability to seek advice on the subject matter of the programme</Definition>
+	</Term>
+	<Term termID="15">
+		<Name xml:lang="en">Segmentation</Name>
+		<Definition xml:lang="en">Relation: A pointer to a segmentation group</Definition>
+	</Term>
+	<Term termID="16">
+		<Name xml:lang="en">Derived</Name>
+		<Definition xml:lang="en"/>
+	</Term>
+	<Term termID="17">
+		<Name xml:lang="en">TVA RMPI document</Name>
+		<Definition xml:lang="en">Relation: The broadcaster and/or rights holder provides, for informative purposes only, viewers with the ability to view TVA-compliant rights information about a programme. Example: "The user, during the process of deciding whether to select a programme for acquisition, can view information in the TVA RMPI document for that programme."</Definition>
+	</Term>
+	<Term termID="18">
+		<Name xml:lang="en">Content Package</Name>
+		<Definition xml:lang="en">Relation: A pointer to a content package.</Definition>
+	</Term>
+</ClassificationScheme>

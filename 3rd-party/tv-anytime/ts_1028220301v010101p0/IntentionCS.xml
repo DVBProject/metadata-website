@@ -1,0 +1,87 @@
+<ClassificationScheme uri="urn:tva:metadata:cs:IntentionCS:2002">
+	<!-- ##################################################################### -->
+	<!-- INTENTION	                                                                                     -->
+	<!--Definition: The broadcaster's primary apparent intention in transmitting the programme-->
+	<!-- ##################################################################### -->
+	<Term termID="1.1">
+		<Name xml:lang="en">Entertainment</Name>
+		<Definition xml:lang="en">Programme intended primarily to evoke relaxation, feelings of pleasure and/or awareness of beauty</Definition>
+		<Term termID="1.1.1">
+			<Name xml:lang="en">Pure entertainment</Name>
+		</Term>
+		<Term termID="1.1.2">
+			<Name xml:lang="en">Informative entertainment</Name>
+			<Definition xml:lang="en">Programmes intended primarily to entertain but with informative elements</Definition>
+		</Term>
+	</Term>
+	<Term termID="1.2">
+		<Name xml:lang="en">Information</Name>
+		<Definition xml:lang="en">Programme intended primarily to inform about current facts, situations, events, theories or forecasts, or to provide explanatory background information and advice.  Information programme content has to be non-durable, that is to say that one could not imagine that the same programme would be transmitted e.g. one year later without losing most of its relevance. Examples: news, documentaries about current subjects, consumer information, charity fund raising. Restriction: Not: sports coverages</Definition>
+		<Term termID="1.2.1">
+			<Name xml:lang="en">Government</Name>
+			<Definition xml:lang="en">Official material broadcast on behalf of the government of the country concerned. Examples: A short message warning of the dangers of using fireworks, AIDS awareness campaigns etc</Definition>
+		</Term>
+		<Term termID="1.2.2">
+			<Name xml:lang="en">Pure information</Name>
+		</Term>
+		<Term termID="1.2.3">
+			<Name xml:lang="en">Infotainment</Name>
+			<Definition xml:lang="en">Programmes intended primarily to inform but with entertaining elements</Definition>
+		</Term>
+		<Term termID="1.2.4">
+			<Name xml:lang="en">Advice</Name>
+			<Definition xml:lang="en">Programme intended to advise about matters of personal interest such as consumer prices and quality, financial matters, health, or, for the interest of special groups, weather or traffic information</Definition>
+		</Term>
+	</Term>
+	<Term termID="1.3">
+		<Name xml:lang="en">Education</Name>
+		<Definition xml:lang="en">Programme primarily intended to increase knowledge about non-current subjects in a didactic or non-didactic way, or to religiously inspire</Definition>
+		<Term termID="1.3.1">
+			<Name xml:lang="en">School programmes</Name>
+			<Term termID="1.3.1.1">
+				<Name xml:lang="en">Primary</Name>
+				<Definition xml:lang="en">Youth education in the first stages - between the ages of approx 4 and 12/13</Definition>
+			</Term>
+			<Term termID="1.3.1.2">
+				<Name xml:lang="en">Secondary</Name>
+				<Definition xml:lang="en">Youth Education in the second stage - between the ages of approx 12/13 and 18</Definition>
+			</Term>
+			<Term termID="1.3.1.3">
+				<Name xml:lang="en">Tertiary</Name>
+				<Definition xml:lang="en">University/College education</Definition>
+			</Term>
+		</Term>
+		<Term termID="1.3.2">
+			<Name xml:lang="en">Lifelong/Further education</Name>
+			<Definition xml:lang="en">Adult education: Additional learning such as post graduate and distance learning</Definition>
+		</Term>
+	</Term>
+	<Term termID="1.4">
+		<Name xml:lang="en">Promotional</Name>
+		<Definition xml:lang="en">Intended to promote content. Produced by the broadcaster or media owner. eg trails for TV/Radio</Definition>
+	</Term>
+	<Term termID="1.5">
+		<Name xml:lang="en">Advertising</Name>
+		<Definition xml:lang="en">Intended to inform consumers about commercial products and services. Produced by/on behalf the owners/sellers of the product or service. Example: Interstitial commercials</Definition>
+	</Term>
+	<Term termID="1.6">
+		<Name xml:lang="en">Retail</Name>
+		<Definition xml:lang="en">Full length programmes designed to sell a product or service to the consumer. Example: Programmes on a shopping channel and advertorials</Definition>
+	</Term>
+	<Term termID="1.7">
+		<Name xml:lang="en">Fund-raising</Name>
+		<Definition xml:lang="en">Appeals for charities and other recognised good causes. Examples: Telethons and disaster appeal programmes</Definition>
+	</Term>
+	<Term termID="1.8">
+		<Name xml:lang="en">Enrichment</Name>
+		<Definition xml:lang="en">Programme primarily intended to increase knowledge about non-current subjects in a didactic or non-didactic way, or to religiously inspire. Enrichment programme content has to be durable, that is to say, one could very well imagine that the programme would be broadcast one year later, without loosing its relevance. Examples: travelogues, war documentaries, educational programmes, religious programmes</Definition>
+		<Term termID="1.8.1">
+			<Name xml:lang="en">General enrichment</Name>
+			<Definition xml:lang="en">Programme primarily intended to increase knowledge about non current subjects in a non-didactic way</Definition>
+		</Term>
+		<Term termID="1.8.2">
+			<Name xml:lang="en">Inspirational enrichment</Name>
+			<Definition xml:lang="en">Programme based on different forms of religious beliefs or intended to edify the audience</Definition>
+		</Term>
+	</Term>
+</ClassificationScheme>

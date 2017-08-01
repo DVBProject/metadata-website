@@ -1,0 +1,149 @@
+<ClassificationScheme uri="urn:tva:metadata:cs:ContentAlertCS:2002">
+	<!-- ##################################################################### -->
+	<!-- CONTENTALERT                                                                                  -->
+	<!-- Definition: Alerting users for content in any of the categories below-->
+	<!-- ##################################################################### -->
+	<Term termID="6.0">
+		<Name xml:lang="en">Alert not required</Name>
+		<Term termID="6.0.1">
+			<Name xml:lang="en">No content that requires alerting in any of the categories below</Name>
+		</Term>
+	</Term>
+	<Term termID="6.1">
+		<Name xml:lang="en">Sex</Name>
+		<Term termID="6.1.1">
+			<Name xml:lang="en">No sex descriptors</Name>
+		</Term>
+		<Term termID="6.1.2">
+			<Name xml:lang="en">Obscured or implied sexual activity</Name>
+		</Term>
+		<Term termID="6.1.3">
+			<Name xml:lang="en">Frank portrayal of sex and sexuality</Name>
+		</Term>
+		<Term termID="6.1.4">
+			<Name xml:lang="en">Scenes of explicit sexual behaviour suitable for adults only</Name>
+		</Term>
+		<Term termID="6.1.5">
+			<Name xml:lang="en">Sexual Violence</Name>
+		</Term>
+	</Term>
+	<Term termID="6.2">
+		<Name xml:lang="en">Nudity</Name>
+		<Term termID="6.2.1">
+			<Name xml:lang="en">No nudity descriptors</Name>
+		</Term>
+		<Term termID="6.2.2">
+			<Name xml:lang="en">Partial nudity</Name>
+		</Term>
+		<Term termID="6.2.3">
+			<Name xml:lang="en">Full frontal nudity</Name>
+		</Term>
+	</Term>
+	<Term termID="6.3">
+		<Name xml:lang="en">Violence – human beings</Name>
+		<Term termID="6.3.1">
+			<Name xml:lang="en">No violence descriptors human beings</Name>
+		</Term>
+		<Term termID="6.3.2">
+			<Name xml:lang="en">Deliberate infliction of pain to human beings</Name>
+			<Definition xml:lang="en">Example: Mild psychological or physical violence to human beings (psychological pressure, punching, slapping, knocking down...)</Definition>
+		</Term>
+		<Term termID="6.3.3">
+			<Name xml:lang="en">Infliction of strong psychological or physical pain to human beings</Name>
+			<Definition xml:lang="en">Example: Heavy intimidation, torture, bloody scenes, accidental killing of human beings</Definition>
+		</Term>
+		<Term termID="6.3.4">
+			<Name xml:lang="en">Deliberate killing of human beings</Name>
+		</Term>
+	</Term>
+	<Term termID="6.4">
+		<Name xml:lang="en">Violence - Animals</Name>
+		<Term termID="6.4.1">
+			<Name xml:lang="en">No violence descriptors animals</Name>
+		</Term>
+		<Term termID="6.4.2">
+			<Name xml:lang="en">Deliberate infliction of pain to animals</Name>
+		</Term>
+		<Term termID="6.4.3">
+			<Name xml:lang="en">Deliberate killing of animals</Name>
+		</Term>
+	</Term>
+	<Term termID="6.5">
+		<Name xml:lang="en">Violence – Fantasy characters</Name>
+		<Term termID="6.5.1">
+			<Name xml:lang="en">No violence descriptors</Name>
+		</Term>
+		<Term termID="6.5.2">
+			<Name xml:lang="en">Deliberate infliction of pain to fantasy characters (including animation)</Name>
+		</Term>
+		<Term termID="6.5.3">
+			<Name xml:lang="en">Deliberate killing of fantasy characters (including animation)</Name>
+		</Term>
+	</Term>
+	<Term termID="6.6">
+		<Name xml:lang="en">Language</Name>
+		<Term termID="6.6.1">
+			<Name xml:lang="en">No language descriptors</Name>
+		</Term>
+		<Term termID="6.6.2">
+			<Name xml:lang="en">Occasional use of mild swear words and profanities</Name>
+		</Term>
+		<Term termID="6.6.3">
+			<Name xml:lang="en">Frequent use of mild swear words and profanities</Name>
+		</Term>
+		<Term termID="6.6.4">
+			<Name xml:lang="en">Occasional use of very strong language</Name>
+		</Term>
+		<Term termID="6.6.5">
+			<Name xml:lang="en">Frequent use of very strong language</Name>
+		</Term>
+	</Term>
+	<Term termID="6.7">
+		<Name xml:lang="en">Disturbing scenes</Name>
+		<Term termID="6.7.1">
+			<Name xml:lang="en">No disturbing scenes descriptors</Name>
+		</Term>
+		<Term termID="6.7.2">
+			<Name xml:lang="en">Factual material that may cause distress, including verbal descriptions of traumatic events and the telling of sensitive human interest stories</Name>
+		</Term>
+		<Term termID="6.7.3">
+			<Name xml:lang="en">Mild scenes of blood and gore (including medical procedures, injuries from accidents, terrorist attacks, murder, disaster, war)</Name>
+		</Term>
+		<Term termID="6.7.4">
+			<Name xml:lang="en">Severe scenes of blood and gore (as 6.7.3 above)</Name>
+		</Term>
+		<Term termID="6.7.5">
+			<Name xml:lang="en">Scenes with extreme horror effects</Name>
+		</Term>
+	</Term>
+	<Term termID="6.8">
+		<Name xml:lang="en">Discrimination</Name>
+		<Term termID="6.8.1">
+			<Name xml:lang="en">No discrimination descriptors</Name>
+		</Term>
+		<Term termID="6.8.2">
+			<Name xml:lang="en">Deliberate discrimination or the portrayal of deliberate discrimination (including discrimination on the basis of gender, sexual orientation, race, religion, colour, nationality or ethnic background)</Name>
+		</Term>
+	</Term>
+	<Term termID="6.9">
+		<Name xml:lang="en">Illegal drugs</Name>
+		<Term termID="6.9.1">
+			<Name xml:lang="en">No illegal drugs descriptors</Name>
+		</Term>
+		<Term termID="6.9.2">
+			<Name xml:lang="en">Portrayal of illegal drug use</Name>
+		</Term>
+		<Term termID="6.9.3">
+			<Name xml:lang="en">Portrayal of illegal drug use with instructive detail</Name>
+		</Term>
+	</Term>
+	<Term termID="6.10">
+		<Name xml:lang="en">Strobing</Name>
+		<Term termID="6.10.1">
+			<Name xml:lang="en">No strobing</Name>
+		</Term>
+		<Term termID="6.10.2">
+			<Name xml:lang="en">Strobing that could impact on those suffering from Photosensitive epilepsy</Name>
+		</Term>
+	</Term>
+</ClassificationScheme>
