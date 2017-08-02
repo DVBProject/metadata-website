@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ####################################################################
+     DVB File Format Mandatory Description Schema
+     (c) 2008 Micronas GmbH
+     All rights reserved.
+     #################################################################### -->
+
+<schema
+	targetNamespace="urn:dvb:metadata:schema:fileContentItemInformation:2007"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:dvbfile="urn:dvb:metadata:schema:fileContentItemInformation:2007"
+	xmlns:dvb="urn:dvb:metadata:schema:contentItemInformation:2007"
+	xmlns:tva="urn:tva:metadata:2007"
+	xmlns:mpeg7="urn:tva:mpeg7:2005"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+
+	<import namespace="http://www.w3.org/2001/XMLSchema" />
+	<import namespace="urn:tva:mpeg7:2005" />
+	<import namespace="urn:tva:metadata:2007" />
+	<import namespace="urn:dvb:metadata:schema:contentItemInformation:2007" schemaLocation="ContentItemInformation.xsd" />
+
+	<!-- #################################################################### -->
+
+	<element name="FileContentItemInformation" type="dvbfile:FileContentItemInformationType" />
+
+	<element name="SelfRecordingInfo"          type="dvbfile:SelfRecordedInfoType" />
+
+	<!-- #################################################################### -->
+
+	<complexType name="FileContentItemInformationType">
+		<sequence>
+			<element name="ContentItemInformation" type="dvb:ContentItemInformationType" />
+			<element name="BroadcastServiceName"   type="mpeg7:TextualType"         minOccurs="0" >
+				<annotation>
+					<documentation>
+						The name of the broadcast service from which
+						this file was recorded. Alternatively, the
+						serviceIDRef in the BroadcastEvent can be used.
+					</documentation>
+				</annotation></element>
+			<element name="ScheduleEvent"        type="tva:ScheduleEventType"       minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SelfRecordedInfoType">
+		<sequence>
+			<element name="RecordingDescription" type="mpeg7:TextualType" />
+			<element name="RecordedLocation"     type="dvbfile:GeoGridLocationType" minOccurs="0">
+				<annotation>
+					<documentation>
+						Use this for self-recorded content when location
+						coordinates are available (e.g. built-in GPS).
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="RecordedTimeDate" type="dateTime">
+			<annotation>
+				<documentation>
+					The RecordedTimeDate and RecordedDuration should
+					cover all RecordedLocation listed.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="RecordedDuration" type="duration">
+			<annotation>
+				<documentation>
+					The RecordedTimeDate and RecordedDuration should
+					cover all RecordedLocation listed.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	
+	<complexType name="GeoGridLocationType">
+		<attribute name="Latitude" type="float">
+			<annotation>
+				<documentation>
+					Positive values refer to the Northern hemisphere,
+					negative values to the Southern hemisphere.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="Longitude" type="float">
+			<annotation>
+				<documentation>
+					Positive values refer to the Eastern hemisphere,
+					negative values to the Western hemisphere.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	
+</schema>
