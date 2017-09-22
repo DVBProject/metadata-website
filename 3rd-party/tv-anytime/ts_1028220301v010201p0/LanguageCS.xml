@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:LanguageCS:2004">
+	<!-- ##################################################################### -->
+	<!-- LANGUAGE CODES   -->
+	<!-- Definitions from ISO/IEC 639-1                                                                               -->
+	<!--	As used and maintained by ISO 639-1                                                                              -->
+	<!-- ##################################################################### -->
+	<Term termID="om">
+		<Name xml:lang="en">(Afan) Oromo</Name>
+	</Term>
+	<Term termID="ab">
+		<Name xml:lang="en">Abkhazian</Name>
+	</Term>
+	<Term termID="aa">
+		<Name xml:lang="en">Afar</Name>
+	</Term>
+	<Term termID="af">
+		<Name xml:lang="en">Afrikaans</Name>
+	</Term>
+	<Term termID="sq">
+		<Name xml:lang="en">Albanian</Name>
+	</Term>
+	<Term termID="am">
+		<Name xml:lang="en">Amharic</Name>
+	</Term>
+	<Term termID="ar">
+		<Name xml:lang="en">Arabic</Name>
+	</Term>
+	<Term termID="hy">
+		<Name xml:lang="en">Armenian</Name>
+	</Term>
+	<Term termID="as">
+		<Name xml:lang="en">Assamese</Name>
+	</Term>
+	<Term termID="ay">
+		<Name xml:lang="en">Aymara</Name>
+	</Term>
+	<Term termID="az">
+		<Name xml:lang="en">Azerbaijani</Name>
+	</Term>
+	<Term termID="ba">
+		<Name xml:lang="en">Bashkir</Name>
+	</Term>
+	<Term termID="eu">
+		<Name xml:lang="en">Basque</Name>
+	</Term>
+	<Term termID="bn">
+		<Name xml:lang="en">Bengali</Name>
+	</Term>
+	<Term termID="dz">
+		<Name xml:lang="en">Bhutani</Name>
+	</Term>
+	<Term termID="bh">
+		<Name xml:lang="en">Bihari</Name>
+	</Term>
+	<Term termID="bi">
+		<Name xml:lang="en">Bislama</Name>
+	</Term>
+	<Term termID="br">
+		<Name xml:lang="en">Breton</Name>
+	</Term>
+	<Term termID="bg">
+		<Name xml:lang="en">Bulgarian</Name>
+	</Term>
+	<Term termID="my">
+		<Name xml:lang="en">Burmese</Name>
+	</Term>
+	<Term termID="be">
+		<Name xml:lang="en">Byelorussian</Name>
+	</Term>
+	<Term termID="km">
+		<Name xml:lang="en">Cambodian</Name>
+	</Term>
+	<Term termID="ca">
+		<Name xml:lang="en">Catalan</Name>
+	</Term>
+	<Term termID="zh">
+		<Name xml:lang="en">Chinese</Name>
+	</Term>
+	<Term termID="co">
+		<Name xml:lang="en">Corsican</Name>
+	</Term>
+	<Term termID="hr">
+		<Name xml:lang="en">Croatian</Name>
+	</Term>
+	<Term termID="cs">
+		<Name xml:lang="en">Czech</Name>
+	</Term>
+	<Term termID="da">
+		<Name xml:lang="en">Danish</Name>
+	</Term>
+	<Term termID="nl">
+		<Name xml:lang="en">Dutch</Name>
+	</Term>
+	<Term termID="en">
+		<Name xml:lang="en">English</Name>
+	</Term>
+	<Term termID="eo">
+		<Name xml:lang="en">Esperanto</Name>
+	</Term>
+	<Term termID="et">
+		<Name xml:lang="en">Estonian</Name>
+	</Term>
+	<Term termID="fo">
+		<Name xml:lang="en">Faeroese</Name>
+	</Term>
+	<Term termID="fj">
+		<Name xml:lang="en">Fiji</Name>
+	</Term>
+	<Term termID="fi">
+		<Name xml:lang="en">Finnish</Name>
+	</Term>
+	<Term termID="fr">
+		<Name xml:lang="en">French</Name>
+	</Term>
+	<Term termID="fy">
+		<Name xml:lang="en">Frisian</Name>
+	</Term>
+	<Term termID="gl">
+		<Name xml:lang="en">Galician</Name>
+	</Term>
+	<Term termID="ka">
+		<Name xml:lang="en">Georgian</Name>
+	</Term>
+	<Term termID="de">
+		<Name xml:lang="en">German</Name>
+	</Term>
+	<Term termID="el">
+		<Name xml:lang="en">Greek</Name>
+	</Term>
+	<Term termID="kl">
+		<Name xml:lang="en">Greenlandic</Name>
+	</Term>
+	<Term termID="gn">
+		<Name xml:lang="en">Guarani</Name>
+	</Term>
+	<Term termID="gu">
+		<Name xml:lang="en">Gujarati</Name>
+	</Term>
+	<Term termID="ha">
+		<Name xml:lang="en">Hausa</Name>
+	</Term>
+	<Term termID="he">
+		<Name xml:lang="en">Hebrew (former iw)</Name>
+	</Term>
+	<Term termID="hi">
+		<Name xml:lang="en">Hindi</Name>
+	</Term>
+	<Term termID="hu">
+		<Name xml:lang="en">Hungarian</Name>
+	</Term>
+	<Term termID="is">
+		<Name xml:lang="en">Icelandic</Name>
+	</Term>
+	<Term termID="id">
+		<Name xml:lang="en">Indonesian(prev in)</Name>
+	</Term>
+	<Term termID="ia">
+		<Name xml:lang="en">Interlingua</Name>
+	</Term>
+	<Term termID="ie">
+		<Name xml:lang="en">Interlingue</Name>
+	</Term>
+	<Term termID="ik">
+		<Name xml:lang="en">Inupiak</Name>
+	</Term>
+	<Term termID="iu">
+		<Name xml:lang="en">Inuktitut (Eskimo)</Name>
+	</Term>
+	<Term termID="ga">
+		<Name xml:lang="en">Irish</Name>
+	</Term>
+	<Term termID="it">
+		<Name xml:lang="en">Italian</Name>
+	</Term>
+	<Term termID="ja">
+		<Name xml:lang="en">Japanese</Name>
+	</Term>
+	<Term termID="jw">
+		<Name xml:lang="en">Javanese</Name>
+	</Term>
+	<Term termID="kn">
+		<Name xml:lang="en">Kannada</Name>
+	</Term>
+	<Term termID="ks">
+		<Name xml:lang="en">Kashmiri</Name>
+	</Term>
+	<Term termID="kk">
+		<Name xml:lang="en">Kazakh</Name>
+	</Term>
+	<Term termID="rw">
+		<Name xml:lang="en">Kinyarwanda</Name>
+	</Term>
+	<Term termID="ky">
+		<Name xml:lang="en">Kirghiz</Name>
+	</Term>
+	<Term termID="rn">
+		<Name xml:lang="en">Kirundi</Name>
+	</Term>
+	<Term termID="ko">
+		<Name xml:lang="en">Korean</Name>
+	</Term>
+	<Term termID="ku">
+		<Name xml:lang="en">Kurdish</Name>
+	</Term>
+	<Term termID="lo">
+		<Name xml:lang="en">Laothian</Name>
+	</Term>
+	<Term termID="la">
+		<Name xml:lang="en">Latin</Name>
+	</Term>
+	<Term termID="lv">
+		<Name xml:lang="en">Latvian, Lettish</Name>
+	</Term>
+	<Term termID="ln">
+		<Name xml:lang="en">Lingala</Name>
+	</Term>
+	<Term termID="lt">
+		<Name xml:lang="en">Lithuanian</Name>
+	</Term>
+	<Term termID="mk">
+		<Name xml:lang="en">Macedonian</Name>
+	</Term>
+	<Term termID="mg">
+		<Name xml:lang="en">Malagasy</Name>
+	</Term>
+	<Term termID="ms">
+		<Name xml:lang="en">Malay</Name>
+	</Term>
+	<Term termID="ml">
+		<Name xml:lang="en">Malayalam</Name>
+	</Term>
+	<Term termID="mt">
+		<Name xml:lang="en">Maltese</Name>
+	</Term>
+	<Term termID="mi">
+		<Name xml:lang="en">Maori</Name>
+	</Term>
+	<Term termID="mr">
+		<Name xml:lang="en">Marathi</Name>
+	</Term>
+	<Term termID="mo">
+		<Name xml:lang="en">Moldavian</Name>
+	</Term>
+	<Term termID="mn">
+		<Name xml:lang="en">Mongolian</Name>
+	</Term>
+	<Term termID="na">
+		<Name xml:lang="en">Nauru</Name>
+	</Term>
+	<Term termID="ne">
+		<Name xml:lang="en">Nepali</Name>
+	</Term>
+	<Term termID="no">
+		<Name xml:lang="en">Norwegian</Name>
+	</Term>
+	<Term termID="oc">
+		<Name xml:lang="en">Occitan</Name>
+	</Term>
+	<Term termID="or">
+		<Name xml:lang="en">Oriya</Name>
+	</Term>
+	<Term termID="ps">
+		<Name xml:lang="en">Pashto, Pushto</Name>
+	</Term>
+	<Term termID="fa">
+		<Name xml:lang="en">Persian</Name>
+	</Term>
+	<Term termID="pl">
+		<Name xml:lang="en">Polish</Name>
+	</Term>
+	<Term termID="pt">
+		<Name xml:lang="en">Portuguese</Name>
+	</Term>
+	<Term termID="pa">
+		<Name xml:lang="en">Punjabi</Name>
+	</Term>
+	<Term termID="qu">
+		<Name xml:lang="en">Quechua</Name>
+	</Term>
+	<Term termID="rm">
+		<Name xml:lang="en">Rhaeto-Romance</Name>
+	</Term>
+	<Term termID="ro">
+		<Name xml:lang="en">Romanian</Name>
+	</Term>
+	<Term termID="ru">
+		<Name xml:lang="en">Russian</Name>
+	</Term>
+	<Term termID="sm">
+		<Name xml:lang="en">Samoan</Name>
+	</Term>
+	<Term termID="sg">
+		<Name xml:lang="en">Sangro</Name>
+	</Term>
+	<Term termID="sa">
+		<Name xml:lang="en">Sanskrit</Name>
+	</Term>
+	<Term termID="gd">
+		<Name xml:lang="en">Scots Gaelic</Name>
+	</Term>
+	<Term termID="sr">
+		<Name xml:lang="en">Serbian</Name>
+	</Term>
+	<Term termID="sh">
+		<Name xml:lang="en">Serbo-Croatian</Name>
+	</Term>
+	<Term termID="st">
+		<Name xml:lang="en">Sesotho</Name>
+	</Term>
+	<Term termID="tn">
+		<Name xml:lang="en">Setswana</Name>
+	</Term>
+	<Term termID="sn">
+		<Name xml:lang="en">Shona</Name>
+	</Term>
+	<Term termID="sd">
+		<Name xml:lang="en">Sindhi</Name>
+	</Term>
+	<Term termID="si">
+		<Name xml:lang="en">Singhalese</Name>
+	</Term>
+	<Term termID="ss">
+		<Name xml:lang="en">Siswati</Name>
+	</Term>
+	<Term termID="sk">
+		<Name xml:lang="en">Slovak</Name>
+	</Term>
+	<Term termID="sl">
+		<Name xml:lang="en">Slovenian</Name>
+	</Term>
+	<Term termID="so">
+		<Name xml:lang="en">Somali</Name>
+	</Term>
+	<Term termID="es">
+		<Name xml:lang="en">Spanish</Name>
+	</Term>
+	<Term termID="su">
+		<Name xml:lang="en">Sudanese</Name>
+	</Term>
+	<Term termID="sw">
+		<Name xml:lang="en">Swahili</Name>
+	</Term>
+	<Term termID="sv">
+		<Name xml:lang="en">Swedish</Name>
+	</Term>
+	<Term termID="tl">
+		<Name xml:lang="en">Tagalog</Name>
+	</Term>
+	<Term termID="tg">
+		<Name xml:lang="en">Tajik</Name>
+	</Term>
+	<Term termID="ta">
+		<Name xml:lang="en">Tamil</Name>
+	</Term>
+	<Term termID="tt">
+		<Name xml:lang="en">Tatar</Name>
+	</Term>
+	<Term termID="te">
+		<Name xml:lang="en">Tegulu</Name>
+	</Term>
+	<Term termID="th">
+		<Name xml:lang="en">Thai</Name>
+	</Term>
+	<Term termID="bo">
+		<Name xml:lang="en">Tibetan</Name>
+	</Term>
+	<Term termID="ti">
+		<Name xml:lang="en">Tigrinya</Name>
+	</Term>
+	<Term termID="to">
+		<Name xml:lang="en">Tonga</Name>
+	</Term>
+	<Term termID="ts">
+		<Name xml:lang="en">Tsonga</Name>
+	</Term>
+	<Term termID="tr">
+		<Name xml:lang="en">Turkish</Name>
+	</Term>
+	<Term termID="tk">
+		<Name xml:lang="en">Turkmen</Name>
+	</Term>
+	<Term termID="tw">
+		<Name xml:lang="en">Twi</Name>
+	</Term>
+	<Term termID="ug">
+		<Name xml:lang="en">Uigur</Name>
+	</Term>
+	<Term termID="uk">
+		<Name xml:lang="en">Ukrainian</Name>
+	</Term>
+	<Term termID="ur">
+		<Name xml:lang="en">Urdu</Name>
+	</Term>
+	<Term termID="uz">
+		<Name xml:lang="en">Uzbek</Name>
+	</Term>
+	<Term termID="vi">
+		<Name xml:lang="en">Vietnamese</Name>
+	</Term>
+	<Term termID="vo">
+		<Name xml:lang="en">Volapuk</Name>
+	</Term>
+	<Term termID="cy">
+		<Name xml:lang="en">Welsh</Name>
+	</Term>
+	<Term termID="wo">
+		<Name xml:lang="en">Wolof</Name>
+	</Term>
+	<Term termID="xh">
+		<Name xml:lang="en">Xhosa</Name>
+	</Term>
+	<Term termID="yi">
+		<Name xml:lang="en">Yiddish (former ji)</Name>
+	</Term>
+	<Term termID="yo">
+		<Name xml:lang="en">Yoruba</Name>
+	</Term>
+	<Term termID="za">
+		<Name xml:lang="en">Zhuang</Name>
+	</Term>
+	<Term termID="zu">
+		<Name xml:lang="en">Zulu</Name>
+	</Term>
+</ClassificationScheme>

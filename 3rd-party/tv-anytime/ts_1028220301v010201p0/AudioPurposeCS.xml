@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:AudioPurposeCS:2004">
+	<!-- ##################################################################### -->
+	<!-- AUDIOPURPOSE -->
+	<!-- ##################################################################### -->
+	<Term termID="1">
+		<Name xml:lang="en">Audio description for the visually impaired</Name>
+	</Term>
+	<Term termID="2">
+		<Name xml:lang="en">Audio description for the hard of hearing</Name>
+	</Term>
+	<Term termID="3">
+		<Name xml:lang="en">Supplemental commentary</Name>
+	</Term>
+	<Term termID="4">
+		<Name xml:lang="en">Director's commentary</Name>
+	</Term>
+	<Term termID="5">
+		<Name xml:lang="en">Educational notes</Name>
+	</Term>
+</ClassificationScheme>

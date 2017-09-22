@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT deviceId (#PCDATA)>
+<!ELEMENT event (identifier, timestamp?, deviceId, configuration?)>
+<!ATTLIST event action (none | configure | inventory | status | update | boot) #REQUIRED>
+
+<!--
+The event action attribute is used to indicate the nature of this event.
+ A value of "none" indicates that there are no events for this HNED.
+ A value of "configure" is used to indicate that the HNED should report it's current configuration.
+ A value of "inventory" indicates that the HNED should generate an inventory report.
+ A value of "status" indicates that the HNED should generate a status report.
+ A value of "update" tells the HNED to update it's configuration, either using the configuration element enclosed or, if none was included, to request a configuration normally.
+ A value of "boot" indicates that the HNED should initiate a reboot.
+
+The identifier element is copied to any XML required to further process this event.
+
+An optional ISO 8601 format timestamp [9] may be used to indicate when this XML was generated.
+
+The deviceId element is used to further identify this device.
+-->
+
+

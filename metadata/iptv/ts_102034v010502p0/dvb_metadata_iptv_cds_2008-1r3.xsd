@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
+<xs:schema targetNamespace="urn:dvb:metadata:iptv:cds:2008-1" xmlns:cds="urn:dvb:metadata:iptv:cds:2008-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdns="urn:dvb:metadata:iptv:sdns:2008-1" xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:dvb:metadata:iptv:sdns:2008-1" schemaLocation="./sdns_v1.4r13.xsd"/>
+	<xs:annotation>
+		<xs:documentation xml:lang="en">This document defines XML schemas used for DVB IPTV Content Dwonload Services (CDS)</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation xml:lang="en">XML schema for download session description</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="Download-Session-General-ParametersType">
+		<xs:sequence>
+			<xs:element name="Service-Provider-Domain" type="sdns:DomainType"/>
+			<xs:element name="Download-Session-ID" type="xs:nonNegativeInteger"/>
+			<xs:element name="Download-Session-Version" type="xs:nonNegativeInteger"/>
+			<xs:element name="Content-Item-Format" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedByte">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Download-Session-Time-Information">
+				<xs:complexType>
+					<xs:attribute name="Start-Time" type="xs:dateTime" use="required"/>
+					<xs:attribute name="Stop-Time" type="xs:dateTime" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Reception-Reporting" minOccurs="0">
+				<xs:complexType mixed="false">
+					<xs:complexContent mixed="false">
+						<xs:extension base="cds:Distribution-Of-Requests-Over-Time-And-ServersType">
+							<xs:attribute name="Mode" use="optional" default="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:unsignedByte">
+										<xs:enumeration value="0"/>
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Unicast-Download-Session">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Download-Session-General-ParametersType">
+					<xs:sequence>
+						<xs:element name="File-Info" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="File-Server-Info" type="cds:File-Server-InfoType"/>
+									<xs:element name="File-Server-Chunk-Info" type="cds:File-Server-Chunk-InfoType"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Multicast-Download-SessionType" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="cds:Download-Session-General-ParametersType">
+				<xs:sequence>
+					<xs:element name="File-Reference" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:anyURI"/>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="IP-Multicast-Address-Source" type="sdns:IPOrDomainType"/>
+					<xs:element name="Transport-Session-Identifier">
+						<xs:simpleType>
+							<xs:restriction base="xs:unsignedLong">
+								<xs:maxInclusive value="281474976710655"/>
+								<xs:minInclusive value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="Number-Of-Channels" default="1" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:unsignedByte">
+								<xs:maxInclusive value="16"/>
+								<xs:minInclusive value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="Channel" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="IP-Multicast-Address" type="sdns:IPType" use="required"/>
+							<xs:attribute name="IP-Multicast-Port-Number" type="xs:unsignedShort" use="required"/>
+							<xs:attribute name="Max-Bandwidth-Requirement" type="xs:positiveInteger" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="FEC-Encoding-ID" type="xs:unsignedByte" default="0" minOccurs="0"/>
+					<xs:element name="Recovery" minOccurs="0">
+						<xs:complexType mixed="false">
+							<xs:complexContent mixed="false">
+								<xs:extension base="cds:Distribution-Of-Requests-Over-Time-And-ServersType">
+									<xs:attribute name="Mode" use="optional" default="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:unsignedByte">
+												<xs:enumeration value="0"/>
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Carousel-Multicast-Download-Session">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Multicast-Download-SessionType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Scheduled-Multicast-Download-Session">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Multicast-Download-SessionType">
+					<xs:sequence>
+						<xs:element name="Completion-Poll-Response-Server" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="IP-Address" type="sdns:IPOrDomainType" use="required"/>
+								<xs:attribute name="Port-Number" type="xs:unsignedShort" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Distribution-Of-Requests-Over-Time-And-ServersType">
+		<xs:sequence>
+			<xs:element name="Server-URI" type="xs:anyURI" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Offset-Time" type="xs:unsignedShort" default="0"/>
+		<xs:attribute name="Random-Time-Period" type="xs:unsignedShort" default="0"/>
+	</xs:complexType>
+	<xs:complexType name="File-InfoType">
+		<xs:sequence>
+			<xs:element name="File-Reference" type="xs:anyURI"/>
+			<xs:element name="File-Content-Typ" type="xs:string" minOccurs="0"/>
+			<xs:element name="File-Length" type="xs:unsignedLong" minOccurs="0"/>
+			<xs:element name="File-Digest" type="xs:base64Binary" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="File-Server-InfoType" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="cds:File-InfoType">
+				<xs:sequence>
+					<xs:element name="Server-Info" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Server-Base-URI" type="xs:anyURI"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="File-Server-Chunk-InfoType" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="cds:File-InfoType">
+				<xs:sequence>
+					<xs:element name="Chunk-Length" type="xs:unsignedLong"/>
+					<xs:element name="Chunk-Digest" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Digest" type="xs:base64Binary"/>
+								<xs:element name="Chunk-Number" type="xs:unsignedLong"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Server-Info" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Server-Base-URI" type="xs:anyURI"/>
+								<xs:element name="Available-Chunk-List" type="cds:Available-Chunk-ListType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="Available-Chunk-ListType">
+		<xs:list itemType="xs:positiveInteger"/>
+	</xs:simpleType>
+	<xs:annotation>
+		<xs:documentation xml:lang="en">XML schema for reception reporting</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Content-Item-Reception-Report">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Basic-Reception-Report-Type">
+					<xs:sequence>
+						<xs:element name="File" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="File-URI" type="xs:anyURI"/>
+									<xs:element name="Download-Action">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="download"/>
+												<xs:enumeration value="skipped"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="File-Reception-Report">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Basic-Reception-Report-Type">
+					<xs:sequence>
+						<xs:element name="File" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="File-URI" type="xs:anyURI"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Chunk-Reception-Report">
+		<xs:complexType mixed="false">
+			<xs:complexContent mixed="false">
+				<xs:extension base="cds:Basic-Reception-Report-Type">
+					<xs:sequence>
+						<xs:element name="File" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="File-URI" type="xs:anyURI"/>
+									<xs:element name="Byte-Range" type="cds:ByteRange" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Basic-Reception-Report-Type">
+		<xs:sequence>
+			<xs:element name="Client-ID" type="xs:string"/>
+			<xs:element name="Push-Action" type="xs:boolean"/>
+			<xs:element name="CRID" type="xs:anyURI"/>
+			<xs:element name="Content-Version" type="xs:unsignedByte"/>
+			<xs:element name="Service-Provider-Domain" type="sdns:DomainType"/>
+			<xs:element name="Download-Session_ID" type="xs:nonNegativeInteger"/>
+			<xs:element name="Download-Session-Version" type="xs:nonNegativeInteger"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ByteRange">
+		<xs:attribute name="first-byte-pos" type="xs:unsignedLong" use="required"/>
+		<xs:attribute name="last-byte-pos" type="xs:unsignedLong" use="required"/>
+	</xs:complexType>
+</xs:schema>

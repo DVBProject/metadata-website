@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme xml:lang="en" uri="urn:dvb:metadata:cs:BCGTypeCS:2007" xmlns="urn:dvb:metadata:schema:dvbCSschema:2007" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dvb:metadata:schema:dvbCSschema:2007 dvbCSschema.xsd">
+
+    <Term termID="1">
+      <Name xml:lang="en">Live</Name>
+      <Definition xml:lang="en">BCG for live TV programs</Definition>
+    </Term>
+    <Term termID="2">
+      <Name xml:lang="en">CoD</Name>
+      <Definition xml:lang="en">BCG for Content on Demand programs </Definition>
+    </Term>
+    <Term termID="3">
+      <Name xml:lang="en">Downloadable Content</Name>
+      <Definition xml:lang="en">BCG for downloadable content</Definition>
+    </Term>
+</ClassificationScheme>

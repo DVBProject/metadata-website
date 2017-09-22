@@ -1,0 +1,15 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "http://www.dvb.org/json-schemas/css-ts.setup-data-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TS Setup Data message representation schema",
+	"description" : "",
+	
+	"type"       : "object",
+	"properties" : {
+		"contentIdStem"    : { "$ref" : "css-core-1.1.1#/definitions/contentIdStem" },
+		"timelineSelector" : { "$ref" : "css-core-1.1.1#/definitions/timelineSelector" },
+		"private"          : { "$ref" : "css-core-1.1.1#/definitions/private" }
+	},
+	"required" : [ "contentIdStem", "timelineSelector" ],
+	"additionalProperties" : true
+}

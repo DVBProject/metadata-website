@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:TVARoleCS:2010">
+	<!-- ##################################################################### -->
+	<!-- TVAROLE                                                                                  -->
+	<!-- Definition: Key cast roles-->
+	<!-- ##################################################################### -->
+	<Import href="urn:mpeg:mpeg7:cs:RoleCS:2001"/>
+	<Term termID="V708">
+		<Name xml:lang="en">Dubber</Name>
+	</Term>
+	<Term termID="V709">
+		<Name xml:lang="en">Key character</Name>
+	</Term>
+	<Term termID="V106">
+		<Name xml:lang="en">Key talent</Name>
+	</Term>
+	<Term termID="V43">
+		<Name xml:lang="en">Participant</Name>
+	</Term>
+	<Term termID="V813">
+		<Name xml:lang="en">Puppeteer</Name>
+	</Term>
+	<Term termID="V710">
+		<Name xml:lang="en">Stunts</Name>
+	</Term>
+	<Term termID="V80">
+		<Name xml:lang="en">Choreographer</Name>
+	</Term>
+	<Term termID="V484">
+		<Name xml:lang="en">Costume designer</Name>
+	</Term>
+	<Term termID="V83">
+		<Name xml:lang="en">Director of photography</Name>
+	</Term>
+	<Term termID="V714">
+		<Name xml:lang="en">Fight Director</Name>
+	</Term>
+	<Term termID="V487">
+		<Name xml:lang="en">Floor Manager</Name>
+	</Term>
+	<Term termID="V490">
+		<Name xml:lang="en">Post-Production editor</Name>
+	</Term>
+	<Term termID="V715">
+		<Name xml:lang="en">Script Supervisor</Name>
+	</Term>
+	<Term termID="V716">
+		<Name xml:lang="en">Second Assistant Director</Name>
+	</Term>
+	<Term termID="V717">
+		<Name xml:lang="en">Second Unit Director</Name>
+	</Term>
+	<Term termID="V718">
+		<Name xml:lang="en">Sound Designer</Name>
+	</Term>
+	<Term termID="V76">
+		<Name xml:lang="en">Adaptor</Name>
+	</Term>
+	<Term termID="V2">
+		<Name xml:lang="en">Scenario</Name>
+	</Term>
+	<Term termID="V94">
+		<Name xml:lang="en">Treatment/Programme Proposal</Name>
+	</Term>
+	<Term termID="V807">
+		<Name xml:lang="en">Choir</Name>
+	</Term>
+	<Term termID="V42">
+		<Name xml:lang="en">Conductor</Name>
+	</Term>
+	<Term termID="V808">
+		<Name xml:lang="en">Ensemble</Name>
+	</Term>
+	<Term termID="V810">
+		<Name xml:lang="en">Librettist</Name>
+	</Term>
+	<Term termID="V811">
+		<Name xml:lang="en">Lyricist</Name>
+	</Term>
+	<Term termID="V719">
+		<Name xml:lang="en">Music Arranger</Name>
+	</Term>
+	<Term termID="V809">
+		<Name xml:lang="en">Music Group</Name>
+	</Term>
+	<Term termID="V88">
+		<Name xml:lang="en">Orchestra</Name>
+	</Term>
+	<Term termID="V103">
+		<Name xml:lang="en">Announcer</Name>
+	</Term>
+	<Term termID="V720">
+		<Name xml:lang="en">Causeur</Name>
+	</Term>
+	<Term termID="V32">
+		<Name xml:lang="en">Commentary or Commentator</Name>
+	</Term>
+	<Term termID="V483">
+		<Name xml:lang="en">Correspondent</Name>
+	</Term>
+	<Term termID="V486">
+		<Name xml:lang="en">Editor/Producer (News)</Name>
+	</Term>
+	<Term termID="V30">
+		<Name xml:lang="en">Editor-in-chief</Name>
+	</Term>
+	<Term termID="V31">
+		<Name xml:lang="en">Editor-of-the-Day</Name>
+	</Term>
+	<Term termID="V96">
+		<Name xml:lang="en">Expert</Name>
+	</Term>
+	<Term termID="V97">
+		<Name xml:lang="en">Interviewed Guest</Name>
+	</Term>
+	<Term termID="V721">
+		<Name xml:lang="en">News Reader</Name>
+	</Term>
+	<Term termID="V117">
+		<Name xml:lang="en">Witness</Name>
+	</Term>
+	<Term termID="V19">
+		<Name xml:lang="en">Commissioning Broadcaster</Name>
+	</Term>
+	<Term termID="V55">
+		<Name xml:lang="en">Manufacturer</Name>
+	</Term>
+	<Term termID="V20">
+		<Name xml:lang="en">Production Company</Name>
+	</Term>
+	<Term termID="V22">
+		<Name xml:lang="en">Production Department</Name>
+	</Term>
+	<Term termID="V724">
+		<Name xml:lang="en">Assistant Chief Lighting Technician</Name>
+	</Term>
+	<Term termID="V498">
+		<Name xml:lang="en">Broadcast Assistant</Name>
+	</Term>
+	<Term termID="V725">
+		<Name xml:lang="en">Carpenter</Name>
+	</Term>
+	<Term termID="V727">
+		<Name xml:lang="en">Dialogue Coach</Name>
+	</Term>
+	<Term termID="V728">
+		<Name xml:lang="en">Draughtsman</Name>
+	</Term>
+	<Term termID="V485">
+		<Name xml:lang="en">Dresser</Name>
+	</Term>
+	<Term termID="V489">
+		<Name xml:lang="en">Graphic Designer</Name>
+	</Term>
+	<Term termID="V729">
+		<Name xml:lang="en">Hairdresser</Name>
+	</Term>
+	<Term termID="V44">
+		<Name xml:lang="en">Illustrator</Name>
+	</Term>
+	<Term termID="V730">
+		<Name xml:lang="en">Leadman</Name>
+	</Term>
+	<Term termID="V496">
+		<Name xml:lang="en">Scenic Operative</Name>
+	</Term>
+	<Term termID="V77">
+		<Name xml:lang="en">Set Dresser</Name>
+	</Term>
+	<Term termID="V82">
+		<Name xml:lang="en">Visual Editor</Name>
+	</Term>
+	<Term termID="V734">
+		<Name xml:lang="en">Assistant Visual Editor</Name>
+	</Term>
+	<Term termID="V735">
+		<Name xml:lang="en">Clapper Loader</Name>
+	</Term>
+	<Term termID="V736">
+		<Name xml:lang="en">Focus Puller</Name>
+	</Term>
+	<Term termID="V737">
+		<Name xml:lang="en">Foley Artist</Name>
+	</Term>
+	<Term termID="V738">
+		<Name xml:lang="en">Foley Editor</Name>
+	</Term>
+	<Term termID="V739">
+		<Name xml:lang="en">Foley Mixer</Name>
+	</Term>
+	<Term termID="V488">
+		<Name xml:lang="en">Graphic Assistant</Name>
+	</Term>
+	<Term termID="V740">
+		<Name xml:lang="en">Grip</Name>
+	</Term>
+	<Term termID="V741">
+		<Name xml:lang="en">Key Grip</Name>
+	</Term>
+	<Term termID="V742">
+		<Name xml:lang="en">Matte Artist</Name>
+	</Term>
+	<Term termID="V45">
+		<Name xml:lang="en">Photographer</Name>
+	</Term>
+	<Term termID="V743">
+		<Name xml:lang="en">Pyrotechnician</Name>
+	</Term>
+	<Term termID="V494">
+		<Name xml:lang="en">Rigger</Name>
+	</Term>
+	<Term termID="V744">
+		<Name xml:lang="en">Second Assistant Camera</Name>
+	</Term>
+	<Term termID="V745">
+		<Name xml:lang="en">Sound Mixer</Name>
+	</Term>
+	<Term termID="V49">
+		<Name xml:lang="en">Sound Recordist</Name>
+	</Term>
+	<Term termID="V105">
+		<Name xml:lang="en">Special Effects</Name>
+	</Term>
+	<Term termID="V746">
+		<Name xml:lang="en">Vision mixer</Name>
+	</Term>
+	<Term termID="V748">
+		<Name xml:lang="en">Animal Trainer</Name>
+	</Term>
+	<Term termID="V749">
+		<Name xml:lang="en">Armourer</Name>
+	</Term>
+	<Term termID="V812">
+		<Name xml:lang="en">Computer programmer</Name>
+	</Term>
+	<Term termID="V79">
+		<Name xml:lang="en">Consultant</Name>
+	</Term>
+	<Term termID="V750">
+		<Name xml:lang="en">Greensman</Name>
+	</Term>
+	<Term termID="V751">
+		<Name xml:lang="en">Location Manager</Name>
+	</Term>
+	<Term termID="V493">
+		<Name xml:lang="en">Programme Production Researcher</Name>
+	</Term>
+	<Term termID="V495">
+		<Name xml:lang="en">Runner</Name>
+	</Term>
+	<Term termID="V753">
+		<Name xml:lang="en">Sign Language</Name>
+	</Term>
+	<Term termID="V754">
+		<Name xml:lang="en">Subtitles</Name>
+	</Term>
+	<Term termID="V95">
+		<Name xml:lang="en">Translation</Name>
+	</Term>
+	<Term termID="V755">
+		<Name xml:lang="en">Transportation Manager</Name>
+	</Term>
+	<Term termID="V497">
+		<Name xml:lang="en">Assistant Producer</Name>
+	</Term>
+	<Term termID="V110">
+		<Name xml:lang="en">Casting</Name>
+	</Term>
+	<Term termID="V491">
+		<Name xml:lang="en">Production Manager</Name>
+	</Term>
+	<Term termID="V492">
+		<Name xml:lang="en">Production Secretary</Name>
+	</Term>
+	<!--Term termID="V493">
+		DEPRECATED UNDER THIS TERMID ALREADY ATTRIBUTED TO ANOTHER TERM
+		<Name xml:lang="en">Caption Author</Name>
+	</Term-->
+	<Term termID="AD1">
+		<Name xml:lang="en">Advertising Agency</Name>
+	</Term>
+	<Term termID="AD2">
+		<Name xml:lang="en">Advertising Production Company</Name>
+	</Term>
+	<Term termID="AD3">
+		<Name xml:lang="en">Advertiser</Name>
+	</Term>
+	<Term termID="AD4">
+		<Name xml:lang="en">Commissioning Channel</Name>
+	</Term>
+	<Term termID="AD5">
+		<Name xml:lang="en">Commissioning Brand</Name>
+	</Term>
+	<Term termID="AD6">
+		<Name xml:lang="en">Presenter</Name>
+	</Term>
+	<Term termID="AD7">
+		<Name xml:lang="en">Studio Manager</Name>
+	</Term>
+	<Term termID="AD8">
+		<Name xml:lang="en">Assistant Studio Manager</Name>
+	</Term>
+	<Term termID="AD9">
+		<Name xml:lang="en">Caption Author</Name>
+	</Term>
+	<Term termID="AD10">
+		<Name xml:lang="en">Electrician</Name>
+	</Term>
+	<Term termID="AD11">
+		<Name xml:lang="en">Judge</Name>
+	</Term>
+	<Term termID="AD12">
+		<Name xml:lang="en">Series Editor</Name>
+	</Term>
+	<Term termID="AD13">
+		<Name xml:lang="en">Series Producer</Name>
+	</Term>
+</ClassificationScheme>

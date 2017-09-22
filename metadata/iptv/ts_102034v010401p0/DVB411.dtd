@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT deviceId (#PCDATA)>
+<!ELEMENT clock EMPTY>
+<!ATTLIST clock sync (lost | ntp | sntp) #REQUIRED>
+
+<!ELEMENT ipAddress (#PCDATA)>
+<!ELEMENT ipMask (#PCDATA)>
+<!ELEMENT ipGateway (#PCDATA)>
+<!ELEMENT timeServer (#PCDATA)>
+<!--	The IP address or DNS name of time server(s)
+	Up to three of these may be reported-->
+<!ELEMENT ntpServer (#PCDATA)>
+<!--	The IP address or DNS name of NTP server(s)
+	Up to three of these may be reported-->
+<!ELEMENT domain (#PCDATA)>
+<!ELEMENT dnsServer (#PCDATA)>
+<!--	The IP address of the DNS server(s)
+	Up to three of these may be reported-->
+<!ELEMENT dhcpServer (#PCDATA)>
+<!ELEMENT leaseRenew (#PCDATA)>
+
+<!--Selected item from RFC 1213 (mib-2) [10]-->
+<!ELEMENT sysUpTime (#PCDATA)>
+
+<!--Selected items from RFC 2863 (interfaces) [11]-->
+<!ELEMENT ifDescr (#PCDATA)>
+<!ELEMENT ifType (#PCDATA)>
+<!ELEMENT ifMtu (#PCDATA)>
+<!ELEMENT ifSpeed (#PCDATA)>
+<!ELEMENT ifPhysAddress (#PCDATA)>
+<!ELEMENT ifAdminStatus (#PCDATA)>
+<!ELEMENT ifOperStatus (#PCDATA)>
+<!ELEMENT ifLastChange (#PCDATA)>
+<!ELEMENT ifInOctets (#PCDATA)>
+<!ELEMENT ifInUcastPkts (#PCDATA)>
+<!ELEMENT ifInDiscards (#PCDATA)>
+<!ELEMENT ifInErrors (#PCDATA)>
+<!ELEMENT ifInUnknownProtos (#PCDATA)>
+<!ELEMENT ifOutOctets (#PCDATA)>
+<!ELEMENT ifOutUcastPkts (#PCDATA)>
+<!ELEMENT ifOutDiscards (#PCDATA)>
+<!ELEMENT ifOutErrors (#PCDATA)>
+
+<!--Selected items from RFC 2011 (ip) [12]-->
+<!ELEMENT ipForwarding (#PCDATA)>
+<!ELEMENT ipDefaultTTL (#PCDATA)>
+<!ELEMENT ipInReceives (#PCDATA)>
+<!ELEMENT ipInHdrErrors (#PCDATA)>
+<!ELEMENT ipInAddrErrors (#PCDATA)>
+<!ELEMENT ipForwDatagrams (#PCDATA)>
+<!ELEMENT ipInUnknownProtos (#PCDATA)>
+<!ELEMENT ipInDiscards (#PCDATA)>
+<!ELEMENT ipInDelivers (#PCDATA)>
+<!ELEMENT ipOutRequests (#PCDATA)>
+<!ELEMENT ipOutDiscards (#PCDATA)>
+<!ELEMENT ipOutNoRoutes (#PCDATA)>
+<!ELEMENT ipReasmTimeout (#PCDATA)>
+<!ELEMENT ipReasmReqds (#PCDATA)>
+<!ELEMENT ipReasmOKs (#PCDATA)>
+<!ELEMENT ipReasmFails (#PCDATA)>
+<!ELEMENT ipFragOKs (#PCDATA)>
+<!ELEMENT ipFragFails (#PCDATA)>
+<!ELEMENT ipFragCreates (#PCDATA)>
+<!ELEMENT ipNetToMediaPhyAddress (#PCDATA)>
+<!ELEMENT ipNetToMediaNetAddress (#PCDATA)>
+<!ELEMENT ipNetToMediaType (#PCDATA)>
+
+<!--Selected items from RFC 2011 (icmp) [12]-->
+<!ELEMENT icmpInMsgs (#PCDATA)>
+<!ELEMENT icmpInErrors (#PCDATA)>
+<!ELEMENT icmpInDestUnreachs (#PCDATA)>
+<!ELEMENT icmpInTimeExcds (#PCDATA)>
+<!ELEMENT icmpInParmProbs (#PCDATA)>
+<!ELEMENT icmpInSrcQuenchs (#PCDATA)>
+<!ELEMENT icmpInRedirects (#PCDATA)>
+<!ELEMENT icmpInEchos (#PCDATA)>
+<!ELEMENT icmpInEchosReps (#PCDATA)>
+<!ELEMENT icmpInTimestamps (#PCDATA)>
+<!ELEMENT icmpInTimestampsReps (#PCDATA)>
+<!ELEMENT icmpInAddrMasks (#PCDATA)>
+<!ELEMENT icmpInAddrMaskReps (#PCDATA)>
+<!ELEMENT icmpOutMsgs (#PCDATA)>
+<!ELEMENT icmpOutErrors (#PCDATA)>
+<!ELEMENT icmpOutDestUnreachs (#PCDATA)>
+<!ELEMENT icmpOutTimeExcds (#PCDATA)>
+<!ELEMENT icmpOutParmProbs (#PCDATA)>
+<!ELEMENT icmpOutSrcQuenchs (#PCDATA)>
+<!ELEMENT icmpOutRedirects (#PCDATA)>
+<!ELEMENT icmpOutEchos (#PCDATA)>
+<!ELEMENT icmpOutEchosReps (#PCDATA)>
+<!ELEMENT icmpOutTimestamps (#PCDATA)>
+<!ELEMENT icmpOutTimestampReps (#PCDATA)>
+<!ELEMENT icmpOutAddrMasks (#PCDATA)>
+<!ELEMENT icmpOutAddrMaskReps (#PCDATA)>
+
+<!--Selected items from RFC 2013 (udp)  [13]-->
+<!ELEMENT udpInDatagrams (#PCDATA)>
+<!ELEMENT udpNoPorts (#PCDATA)>
+<!ELEMENT udpInErrors (#PCDATA)>
+<!ELEMENT udpOutDatagrams (#PCDATA)>
+<!ELEMENT udpLocalAddress (#PCDATA)>
+<!ELEMENT udpLocalPort (#PCDATA)>
+<!ELEMENT udpEntry (udpLocalAddress, udpLocalPort)>
+<!ATTLIST udpEntry index CDATA #REQUIRED>
+<!ELEMENT udpTable (udpEntry*)>
+
+<!--Selected items from RFC 2863 (ifMIB)[11]-->
+<!ELEMENT ifInMulticastPkts (#PCDATA)>
+<!ELEMENT ifInBroadcastPkts (#PCDATA)>
+<!ELEMENT ifOutMulticastPkts (#PCDATA)>
+<!ELEMENT ifOutBroadcastPkts (#PCDATA)>
+<!ELEMENT ifLinkUpDownTrapEnable (#PCDATA)>
+<!ELEMENT ifHighSpeed (#PCDATA)>
+<!ELEMENT ifPromiscuousMode (#PCDATA)>
+<!ELEMENT ifConnectorPresent (#PCDATA)>
+<!ELEMENT ifAlias (#PCDATA)>
+<!ELEMENT ifCounterDiscontinuityTime (#PCDATA)>
+
+<!ELEMENT freeSpace (#PCDATA)>
+<!--	The current amount of free space, in bytes, on the HNED non-volatile store -->
+<!ELEMENT display (#PCDATA)>
+<!--	The current contents of the LCD display on the HNED (if any) -->
+<!ELEMENT temperature (#PCDATA)>
+<!--	The current temperature of the HNED (if instrumented) -->
+
+<!ELEMENT snmp (sysUpTime?, ifDescr?, ifType?, ifMtu?, ifSpeed?, ifPhysAddress?, ifAdminStatus?,
+ifOperStatus?, ifLastChange?, ifInOctets?, ifInUcastPkts?, ifInDiscards?, ifInErrors?,
+ifInUnknownProtos?, ifOutOctets?, ifOutUcastPkts?, ifOutDiscards?, ifOutErrors?, ipForwarding?,
+ipDefaultTTL?, ipInReceives?, ipInHdrErrors?, ipInAddrErrors?, ipForwDatagrams?,
+ipInUnknownProtos?, ipInDiscards?, ipInDelivers?, ipOutRequests?, ipOutDiscards?,
+ipOutNoRoutes?, ipReasmTimeout?, ipReasmReqds?, ipReasmOKs?, ipReasmFails?, ipFragOKs?,
+ipFragFails?, ipFragCreates?, ipNetToMediaPhyAddress?, ipNetToMediaNetAddress?,
+ipNetToMediaType?, icmpInMsgs?, icmpInErrors?, icmpInDestUnreachs?, icmpInTimeExcds?,
+icmpInParmProbs?, icmpInSrcQuenchs?, icmpInRedirects?, icmpInEchos?, icmpInEchosReps?,
+icmpInTimestamps?, icmpInTimestampsReps?, icmpInAddrMasks?, icmpInAddrMaskReps?, icmpOutMsgs?,
+icmpOutErrors?, icmpOutDestUnreachs?, icmpOutTimeExcds?, icmpOutParmProbs?,
+icmpOutSrcQuenchs?, icmpOutRedirects?, icmpOutEchos?, icmpOutEchosReps?, icmpOutTimestamps?, icmpOutTimestampReps?, icmpOutAddrMasks?, icmpOutAddrMaskReps?, udpInDatagrams?, udpNoPorts?,
+udpInErrors?, udpOutDatagrams?, udpTable?, udpLocalAddress?, udpLocalPort?, ifInMulticastPkts?,
+ifInBroadcastPkts?, ifOutMulticastPkts?, ifOutBroadcastPkts?, ifLinkUpDownTrapEnable?,
+ifHighSpeed?, ifPromiscuousMode?, ifConnectorPresent?, ifAlias?, ifCounterDiscontinuityTime?)>
+
+<!ELEMENT dhcp (ipAddress?, ipMask?, ipGateway?, timeServer*, ntpServer*, domain?, dnsServer*, dhcpServer?, leaseRenew?)>
+<!ELEMENT interface (dhcp, snmp?)>
+<!ATTLIST interface name CDATA #REQUIRED>
+<!ELEMENT status (identifier, timestamp?, deviceId, clock?, interface*, freeSpace?, display?, temperature?)>
+
+<!--
+The status element is used to report on the current status of the HNED.
+
+The identifier element is copied from the XML that was being processed.
+
+An optional ISO 8601 format timestamp may be used to indicate when this XML was generated.
+
+The deviceId element is used to further identify this device.
+
+The clock element is used to describe the synchronization status of the clock of this HNED.
+
+The dhcp element is used to describe the status of the dhcp client(s).
+Within the dhcp element, an element for each interface may be included.
+This will include the name of the device (which coincides with the configuration) and the parameters most recently received from the DHCP server for that interface.
+-->

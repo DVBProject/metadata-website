@@ -1,0 +1,14 @@
+{
+	"$schema"     : "http://json-schema.org/draft-04/schema#",
+	"id"          : "https://www.dvb.org/metadata/css/css-te.tess-1.1.1#",
+	"title"       : "DVB Companion Screens and Streams - CSS-TE Trigger Event Session Setup message representation schema ",
+	"description" : "",
+	
+	"type"       : "object",
+	"properties" : {
+		"contentIdStem" : { "$ref" : "css-core-1.1.1#/definitions/contentIdStem" },
+		"private"       : { "$ref" : "css-core-1.1.1#/definitions/private" }
+	},
+	"required" : [ "contentIdStem" ],
+	"additionalProperties" : true
+}

@@ -1,21 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head></head>
+    <head>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            table, tr, th, td {
+                border: 1px solid black;
+            }
+            
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+            
+            caption {
+                font-weight: bold;
+        </style>
+    </head>
     <body>
         <!-- The static page's headline (as entered in the CMS) is rendered as a h1. Hence all headings in the page body must be h2 or deeper level -->
         
-        <!-- the first paragraph is renderd in a bigger font and in italics via a p:first-child css -->
-        <p>DVB is in the process of migrating metadata files to canonical URLs
-            that will be linked from here. If you cannot find a metadata file here
-            then it may still be hosted on the <a href="/standards">main DVB standards
-            page</a>.</p>
+        <!-- the first paragraph is rendered in a bigger font and in italics via a p:first-child css -->
+        <p>This page lists and briefly describes all generic, and application domain specific XML
+            and JSON Schemas and Classification Schemes published by DVB. These files are available
+            under the <a href="/metadata/">https://www.dvb.org/metadata/</a> URL
+            root. Presence of an XML or JSON document under that URL root implies its status as a
+            formal DVB publication.</p>
+        <p>Compared to the metadata definition files that can be obtained from the <a
+                href="http://www.etsi.org/standards/">ETSI website</a> in ZIP files along with the
+            specification documents, the file location attributes in some files available from the
+            DVB website have been modified. This was done to accommodate the structure of the DVB
+            website, and for instance document authors' convenience by enabling automatic handling
+            of the files by authoring tools. These modifications do hence not affect instance
+            documents in any way.</p>
+        <p>To further help authoring automation, <a href="https://en.wikipedia.org/wiki/XML_Catalog"
+                >XML catalog</a> files are also provided. These will help authoring tools to make
+            use of DVB metadata definitions for document validation, content completion, etc. To
+            directly use the files provided from the DVB website, simply add the URL of the <a
+                href="metadata/catalog.xml">top-level XML catalog file</a> to the list of XML
+            catalog files consulted by your authoring tool. For as long as you have an Internet
+            connection, you will now be able to make use of all DVB metadata definitions to the
+            extent provided by your authoring tool. If you want to be able to use the DVB metadata
+            files also when offline, download the <a href="/metadata/DVB.zip">ZIP archive of the whole
+            lot</a>, unpack it in a convenient location on your system, and add the file
+            DVB/metadata/catalog.xml to the list of XML catalog files consulted by your authoring
+            tool. Even when offline, you will now be able to make use of all DVB metadata
+            definitions to the extent provided by your authoring tool.</p>
+        <p>DVB's metadata definitions build upon metadata definitions from other organisations and
+            standards by reusing elements from them. For this to be supported by authoring tools,
+            all files referenced by the DVB files must also be available to the authoring tool. Most
+            often, these other organisations also make their files available online. Where this is
+            not the case, we provide copies under the <a href="/3rdparty/"
+                >https://www.dvb.org/3rdparty/</a> URL root. DVB provides these files for
+            completeness, and they are not to be considered canonical. If, for any of them, you are
+            aware of an official online location that could be referenced instead, please contact us
+            at <a href="mailto:webmaster@dvb.org">webmaster@dvb.org</a>. For convenience, all
+            necessary metadata definitions from other organisations (whether available from their
+            originating organisation or from the DVB website) are also listed in the XML catalog
+            files and included in the global ZIP archive.</p>
+        <p>Where DVB uses URNs to identify DVB metadata definitions, these URNs conform to clauses 5
+            and 7 of <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102851/01.03.01_60/ts_102851v010301p.pdf"
+                >ETSI TS 102 851</a>.</p>
+        <!-- ============================================================================== -->
+        <h2 id="sec:generic-metadata">Generic Metadata Definitions</h2>
+        <p>Generic metadata definitions are applicable to more than one application domain, and are
+            thus generally referenced by application specific metadata definitions.</p>
+        <h3 id="sec:generic-xsd">XML Schemas</h3>
+        <h4 id="sec:generic-xsd-cs">DVB Classification Scheme schema</h4>
+        <p>This schema defines a schema for authoring classification schemes. It is derived from the
+            TV-Anytime CS schema in that the form of the termIDType is restricted by a pattern, and
+            the TextualType is extended by an optional language attribute. It however is backwards
+            compatible with the TV-Anytime schema, and CS entries can therefore be referenced using
+            the tva:controlledTermType.</p>
+        <p>All DVB classification schemes, whether generic or domain specific, are instance
+            documents of this schema.</p>
+        <p>Latest version: <a href="/metadata/schema/dvbCSschema.xsd"
+            >permalink</a></p>
+        <table>
+            <caption>DVB Classification Scheme schema versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/schema/2007/dvbCSschema.xsd"
+                            >urn:dvb:metadata:schema:dvbCSschema:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="sec:generic-cs">Classification Schemes</h3>
+        <p>This section lists all XML Classification Schemes (CS) [i.1] defined by DVB in
+            alphabetical order. These CS are written against the
+            urn:dvb:metadata:schema:dvbCSschema:2007 namespace.</p>
+        <h4 id="sec:generic-cs-audiocodec">Audio codec classification scheme</h4>
+        <p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio
+            codecs not part of the MPEG-7CS:</p>
+        <ul>
+            <li>MPEG-4 DVB Audio</li>
+            <li>MPEG-4 High Efficiency Advanced Audio Profile</li>
+            <li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li>
+            <li>AMR DVB</li>
+            <li>AC-3</li>
+        </ul>
+        <p>Latest version: <a href="/metadata/cs/AudioCodecCS.xml">permalink</a></p>
+        <table>
+            <caption>DVB audio codec classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/cs/2007/AudioCodecCS.xml"
+                            >urn:dvb:metadata:cs:AudioCodecCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:generic-cs-bcgtype">BCG type classification scheme</h4>
+        <p>This CS lists the types ofcontent described by Broadband Content Guides (BCG). Currently
+            the following types are defined:</p>
+        <ul>
+            <li>BCG for live TV programs</li>
+            <li>BCG for Content on Demand (CoD) programs</li>
+            <li>BCG for downloadable content</li>
+        </ul>
+        <p>Latest version: <a href="/metadata/cs/BCGTypeCS.xml">permalink</a></p>
+        <table>
+            <caption>DVB BCG type classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/cs/2007/BCGTypeCS.xml"
+                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:generic-cs-parentalguidance">Parental guidance classification scheme</h4>
+        <p>This CS lists the parental guidance restriction recommendations for currently 21 regions.
+            It will be extended to further regions and content as new services and applications
+            emerge.</p>
+        <p>Latest version: <a href="/metadata/cs/ParentalGuidanceCS.xml"
+                >permalink</a></p>
+        <table>
+            <caption>DVB parental guidance classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/cs/2005/ParentalGuidanceCS.xml"
+                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2005</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/cs/2007/ParentalGuidanceCS.xml"
+                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2007</a></td>
+                    <td>none</td>
+                    <td><!-- FIXME -->minor editorials on text content</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:generic-cs-videocodec">Video codec classification scheme</h4>
+        <p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video
+            codecs not part of the MPEG-7CS:</p>
+        <ul>
+            <li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li>
+            <li>VC-1</li>
+        </ul>
+        <p>Latest version: <a href="/metadata/cs/VideoCodecCS.xml">permalink</a></p>
+        <table>
+            <caption>DVB video codec classification scheme versions</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/cs/2007/VideoCodecCS.xml"
+                            >urn:dvb:metadata:cs:VideoCodecCS:2007</a></td>
+                    <td>none</td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- ============================================================================== -->
+        <h2 id="sec:ciplus-metadata">DVB CI-Plus Metadata Definitions</h2>
+        <h3 id="sec:ciplus-by-spec">Metadata definitions by specification version</h3>
+        <p>This section lists the metadata definitions associated with each published specification
+            document. Links to the specification documents are provided, and a zip archive
+            containing all files for each specification document is also provided.</p>
+        <p>In case you are looking for details about a particular metadata definition, you will find
+            these in the <a href="#sec:ciplus-detailed">next section</a>.</p>
+        <h3 id="sec:ciplus-detailed">Detailed descriptions of metadata definitions</h3>
+        <p>This section briefly describes each metadata definition, lists all versions of each
+            definition that have been published, and indicates with which specification version(s)
+            each metadata definition is associated.</p>
+        <p>In case you are looking for details about a particular specification document, you will
+            find these in the <a href="#sec:ciplus-by-spec">previous section</a>.</p>
+        <!-- ============================================================================== -->
+        <h2 id="sec:css-metadata">DVB CSS Metadata Definitions</h2>
+        <h3 id="sec:css-by-spec">Metadata definitions by specification version</h3>
+        <p>This section lists the metadata definitions associated with each published specification
+            document. Links to the specification documents are provided, and a zip archive
+            containing all files for each specification document is also provided.</p>
+        <p>In case you are looking for details about a particular metadata definition, you will find
+            these in the <a href="#sec:css-detailed">next section</a>.</p>
+        <h3 id="sec:css-detailed">Detailed descriptions of metadata definitions</h3>
+        <p>This section briefly describes each metadata definition, lists all versions of each
+            definition that have been published, and indicates with which specification version(s)
+            each metadata definition is associated.</p>
+        <p>In case you are looking for details about a particular specification document, you will
+            find these in the <a href="#sec:css-by-spec">previous section</a>.</p>
+        <h4 id="sec:css-xsd">XML Schemas</h4>
+        <h4 id="sec:css-json">JSON Schemas</h4>
         
-        <h2 id="sec:dvb-css">DVB-CSS</h2>
-
-        <p>Schemas for the <a href="/standards/dvb_css">DVB Companion Screens and Streams</a> specifications
-            published as ETSI TS 103 286.</p>
-
+        
         <h3 id="sec:dvb-css-dash">DASH MPD extensions schema</h3>
         <ul>
             <li><a href="/metadata/css/dash-css-schema.xsd">/metadata/css/dash-css-schema.xsd</a></li>
@@ -87,5 +343,269 @@
         <ul>
             <li><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json">/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a> (do not use)</li>
         </ul>
+        
+        
+        <!-- ============================================================================== -->
+        <h2 id="sec:iptv-metadata">DVB IPTV Metadata Definitions</h2>
+        <h3 id="sec:iptv-by-spec">Metadata definitions by specification version</h3>
+        <p>This section lists the metadata definitions associated with each published specification
+            document. Links to the specification documents are provided, and a zip archive
+            containing all files for each specification document is also provided.</p>
+        <p>In case you are looking for details about a particular metadata definition, you will find
+            these in the <a href="#sec:iptv-detailed">next section</a>.</p>
+        <h3 id="sec:iptv-detailed">Detailed descriptions of metadata definitions</h3>
+        <p>This section briefly describes each metadata definition, lists all versions of each
+            definition that have been published, and indicates with which specification version(s)
+            each metadata definition is associated.</p>
+        <p>In case you are looking for details about a particular specification document, you will
+            find these in the <a href="#sec:iptv-by-spec">previous section</a>.</p>
+        <h4>XML Schemas</h4>
+        <!-- ============================================================================== -->
+        <h2 id="sec:mhp-metadata">Metadata Definitions for Globally Executable MHP (GEM), Multimedia
+            Home Platform (DVB-MHP), and Other Technologies</h2>
+        <h3 id="sec:mhp-by-spec">Metadata definitions by specification version</h3>
+        <p>This section lists the metadata definitions associated with each published specification
+            document. Links to the specification documents are provided, and a zip archive
+            containing all files for each specification document is also provided.</p>
+        <p>In case you are looking for details about a particular metadata definition, you will find
+            these in the <a href="#sec:mhp-detailed">next section</a>.</p>
+        <h4 id="sec:mhp-spec-1-1-1">ETSI TS 102 809 v 1.1.1</h4>
+        <p>Specification document: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p.pdf"
+                >TS 102 809 v 1.1.1</a></p>
+        <p>All files for this version: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p0.zip"
+                >ts_102809v010101p0.zip</a></p>
+        <table id="tab:mhp-spec-1-1-1">
+            <caption>Metadata definitions shipped with ETSI TS 102 809 v 1.1.1</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>URI</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd"
+                            >urn:dvb:mhp:2009</a></td>
+                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
+                </tr>
+                <tr>
+                    <td>XML DTD</td>
+                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
+                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:mhp-spec-1-2-1">ETSI TS 102 809 v 1.2.1</h4>
+        <p>Specification document: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p.pdf"
+                >TS 102 809 v 1.2.1</a></p>
+        <p>All files for this version: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p0.zip"
+                >ts_102809v010201p0.zip</a></p>
+        <table id="tab:mhp-spec-1-2-1">
+            <caption>Metadata definitions shipped with ETSI TS 102 809 v 1.2.1</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>URI</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd"
+                            >urn:dvb:mhp:2009</a></td>
+                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
+                </tr>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd"
+                            >urn:dvb:mhp:dsmcc:2009</a></td>
+                    <td><a href="#sec:mhp-xsd-strev">File info</a></td>
+                </tr>
+                <tr>
+                    <td>XML DTD</td>
+                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
+                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:mhp-spec-1-3-1">ETSI TS 102 809 v 1.3.1</h4>
+        <p>Specification document: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p.pdf"
+                >TS 102 809 v 1.3.1</a></p>
+        <p>All files for this version: <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p0.zip"
+                >ts_102809v010301p0.zip</a></p>
+        <table id="tab:mhp-spec-1-3-1">
+            <caption>Metadata definitions shipped with ETSI TS 102 809 v 1.3.1</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>URI</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/mhp/ts_102809v010301p0/mis_xmlait.xsd"
+                            >urn:dvb:mhp:2009</a></td>
+                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
+                </tr>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/mhp/ts_102809v010301p0/stream-event.xsd"
+                            >urn:dvb:mhp:dsmcc:2009</a></td>
+                    <td><a href="#sec:mhp-xsd-strev">File info</a></td>
+                </tr>
+                <tr>
+                    <td>XML DTD</td>
+                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
+                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="sec:mhp-detailed">Detailed descriptions of metadata definitions</h3>
+        <p>This section briefly describes each metadata definition, lists all versions of each
+            definition that have been published, and indicates with which specification version(s)
+            each metadata definition is associated.</p>
+        <p>In case you are looking for details about a particular specification document, you will
+            find these in the <a href="#sec:mhp-by-spec">previous section</a>.</p>
+        <h4 id="sec:mhp-xsd">XML Schemas</h4>
+        <h5 id="sec:mhp-xsd-strev">DSM-CC stream event messages without an object carousel</h5>
+        <p>See clause 8.2 of TS 102 809. XML documents according to this schema can be used with
+            streams not containing a DSM-CC object carousel to find DSM-CC stream events for
+            synchronisation.</p>
+        <p>Latest version: <a href="/metadata/mhp/stream-event.xsd">permalink</a></p>
+        <table id="tab:mhp-xsd-strev">
+            <caption>DSM-CC stream event messages without an object carousel</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd"
+                            >urn:dvb:mhp:dsmcc:2009</a></td>
+                    <td><a href="#sec:mhp-spec-1-2-1">TS 102 809 v 1.2.1</a><br /><a
+                            href="#sec:mhp-spec-1-3-1">TS 102 809 v 1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5 id="sec:mhp-xsd-ait">XML encoding of the AIT</h5>
+        <p>See clause 5.4 of TS 102 809. The XML AIT enables signalling of metadata about
+            interactive applications when an XML syntax would be more appropriate than an MPEG-2
+            table, section and descriptor syntax would be more appropriate. </p>
+        <p>Latest version: <a href="/metadata/mhp/mis_xmlait.xsd">permalink</a></p>
+        <table id="tab:mhp-xsd-ait">
+            <caption>XML encoding of the AIT</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd"
+                            >urn:dvb:mhp:2009</a></td>
+                    <td><a href="#sec:mhp-spec-1-1-1">TS 102 809 v 1.1.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd"
+                            >urn:dvb:mhp:2009</a></td>
+                    <td><a href="#sec:mhp-spec-1-2-1">TS 102 809 v 1.2.1</a><br /><a
+                            href="#sec:mhp-spec-1-3-1">TS 102 809 v 1.3.1</a></td>
+                    <td>Updated references to IPTV schemas</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="sec:mhp-dtd">Document Type Definitions</h4>
+        <h5 id="sec:mhp-dtd-adf">Application description file</h5>
+        <p>See clause 5.2.12 of TS 102 809. The Application Description File (ADF) provides the list
+            of files in an object carousel that need to be stored for an application as well as
+            other related necessary information.
+            <?oxy_comment_start author="alexanderadolf" timestamp="20170726T164140+0200" comment="I have a copy of the DTD. I have asked Jon whether he would be ok with publishing it."?>No
+            copy of the DTD is available.<?oxy_comment_end?></p>
+        <p>Latest version: <a href="/metadata/mhp/mis-adf.dtd">permalink</a></p>
+        <table id="tab:mhp-dtd-adf">
+            <caption>Application Description File (ADF)</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>SystemID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
+                    <td>http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd</td>
+                    <td><a href="#sec:mhp-spec-1-1-1">TS 102 809 v 1.1.1</a><br /><a
+                            href="#sec:mhp-spec-1-2-1">TS 102 809 v 1.2.1</a><br />
+                        <a href="#sec:mhp-spec-1-3-1">TS 102 809 v 1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- ============================================================================== -->
+        <h2 id="sec:ff-metadata">DVB File Format Metadata Definitions</h2>
+        <h3 id="sec:ff-by-spec">Metadata definitions by specification version</h3>
+        <p>This section lists the metadata definitions associated with each published specification
+            document. Links to the specification documents are provided, and a zip archive
+            containing all files for each specification document is also provided.</p>
+        <p>In case you are looking for details about a particular metadata definition, you will find
+            these in the <a href="#sec:ff-detailed">next section</a>.</p>
+        <h3 id="sec:ff-detailed">Detailed descriptions of metadata definitions</h3>
+        <p>This section briefly describes each metadata definition, lists all versions of each
+            definition that have been published, and indicates with which specification version(s)
+            each metadata definition is associated.</p>
+        <p>In case you are looking for details about a particular specification document, you will
+            find these in the <a href="#sec:ff-by-spec">previous section</a>.</p>
+        <h4>XML Schemas</h4>
     </body>
 </html>

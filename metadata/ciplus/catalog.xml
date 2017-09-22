@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <group xml:base="2013/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:dvb:metadata:ciplus:osdt:2013" uri="osdt_2013.xsd"/>
+   </group>
+   <group xml:base="2015/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:dvb:metadata:ciplus:osdt:2015" uri="osdt_2015.xsd"/>
+   </group>
+</catalog>

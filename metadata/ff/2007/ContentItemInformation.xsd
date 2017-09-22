@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ####################################################################
+     DVB CMT Content Item Description Schema
+     (c) 2008 Micronas GmbH
+     All rights reserved.
+     #################################################################### -->
+
+<schema
+   xmlns:dvb="urn:dvb:metadata:schema:contentItemInformation:2007"
+   xmlns:dvbCs="urn:dvb:metadata:schema:dvbCSschema:2007"
+   xmlns:tva="urn:tva:metadata:2007"
+   xmlns:mpeg7="urn:tva:mpeg7:2005"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="urn:dvb:metadata:schema:contentItemInformation:2007"
+   elementFormDefault="qualified"
+   attributeFormDefault="unqualified">
+
+   <import namespace="urn:tva:mpeg7:2005"/>
+   <import namespace="urn:tva:metadata:2007"/>
+   <import namespace="urn:dvb:metadata:schema:dvbCSschema:2007"
+           schemaLocation="http://www.dvb.org/metadata/schema/dvbCSschema.xsd"/>
+
+   <!-- #################################################################### -->
+
+   <element name="ContentItemInformation" type="dvb:ContentItemInformationType"/>
+
+   <!-- #################################################################### -->
+
+   <complexType name="ContentItemInformationType">
+   <!-- This happens to be largely compatible with tva:ProgramInformationType -->
+      <sequence>
+         <element name="BasicDescription"        type="dvb:BasicContentDescriptionType"/>
+         <element name="OtherIdentifier"         type="mpeg7:UniqueIDType"     minOccurs="0" maxOccurs="unbounded"/>
+         <element name="AVAttributes"            type="tva:AVAttributesType"   minOccurs="0"/>
+         <element name="MemberOf"                type="tva:BaseMemberOfType"   minOccurs="0" maxOccurs="unbounded"/>
+         <element name="DerivedFrom"             type="tva:DerivedFromType"    minOccurs="0"/>
+         <element name="EpisodeOf"               type="tva:EpisodeOfType"      minOccurs="0"/>
+         <element name="PartOfAggregatedProgram" type="tva:CRIDType"           minOccurs="0"/>
+         <element name="AggregationOf"           type="tva:AggregationOfType"  minOccurs="0"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="BasicContentDescriptionType">
+   <!-- This happens to be compatible with tva:BasicContentDescriptionType -->
+      <sequence>
+         <element name="Title"                  type="mpeg7:TitleType"             maxOccurs="unbounded"/>
+         <element name="MediaTitle"             type="mpeg7:TitleMediaType"        minOccurs="0" maxOccurs="unbounded"/>
+         <element name="ShortTitle"             type="tva:ShortTitleType"          minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Synopsis"               type="tva:SynopsisType"            minOccurs="0" maxOccurs="unbounded"/>
+         <element name="PromotionalInformation" type="mpeg7:TextualType"           minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Keyword"                type="tva:KeywordType"             minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Genre"                  type="tva:GenreType"               minOccurs="0" maxOccurs="unbounded"/>
+         <element name="ParentalGuidance"       type="tva:TVAParentalGuidanceType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Language"               type="mpeg7:ExtendedLanguageType"  minOccurs="0" maxOccurs="unbounded"/>
+         <element name="CaptionLanguage"        type="tva:CaptionLanguageType"     minOccurs="0" maxOccurs="unbounded"/>
+         <element name="SignLanguage"           type="tva:SignLanguageType"        minOccurs="0" maxOccurs="unbounded"/>
+         <element name="CreditsList"            type="tva:CreditsListType"         minOccurs="0"/>
+         <element name="AwardsList"             type="tva:AwardsListType"          minOccurs="0"/>
+         <element name="RelatedMaterial"        type="tva:RelatedMaterialType"     minOccurs="0" maxOccurs="unbounded"/>
+         <element name="ProductionDate"         type="tva:TVATimeType"             minOccurs="0"/>
+         <element name="ProductionLocation"     type="mpeg7:regionCode"            minOccurs="0" maxOccurs="unbounded"/>
+         <element name="CreationCoordinates"    type="tva:CreationCoordinatesType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="DepictedCoordinates"    type="tva:DepictedCoordinatesType" minOccurs="0" maxOccurs="unbounded"/>
+         <element name="ReleaseInformation"     type="tva:ReleaseInformationType"  minOccurs="0" maxOccurs="unbounded"/>
+         <element name="Duration"               type="duration"                    minOccurs="0"/>
+         <element name="PurchaseList"           type="tva:PurchaseListType"        minOccurs="0"/>
+      </sequence>
+   </complexType>
+
+</schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT deviceId (#PCDATA)>
+<!ELEMENT vendor (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT serial (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT speed (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT checksum (#PCDATA)>
+<!ELEMENT hardware (vendor, model, serial?, name?, type, speed?, size?)>
+<!ELEMENT software (name, version, size, checksum)>
+<!ELEMENT inventory (identifier, timestamp?, deviceId, hardware*, software*)>
+<!ATTLIST inventory report (full | add | change | remove) #REQUIRED>
+
+<!--
+The inventory element is used to report on the current contents of the HNED.
+
+The report attribute is used to designate if this XML represents the
+ A value of "full" represents all components of this box
+ A value of "add" represents only the component(s) added
+ A value of "remove" represents only the component(s) removed
+ A value of "change" represents only the component(s) that changed
+
+The identifier element is copied from the XML that was being processed.
+
+An optional ISO 8601 format timestamp may be used to indicate when this XML was generated.
+
+The deviceId element is used to further identify this device.
+
+The hardware element is used to describe the attributes of the hardware components of this HNED.
+
+The software element is used to describe the attributes of the software components of this HNED.
+
+Within the hardware element, an element for each interface will be included. This will include the name of the device (which coincides with the configuration) and the type of the device. This will optionally (as applicable) indicate the speed in bps of that interface (eg.e.g. 100000000 for 100Mbps ethernet) and/or the size in bytes (e.g. 90000000000 for a 90GB disk drive).
+
+The software element is used to report on the name, version, size and checksum of each software image currently running on the HNED.
+-->

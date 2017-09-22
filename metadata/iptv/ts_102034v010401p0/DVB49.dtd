@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT deviceId (#PCDATA)>
+<!ELEMENT success (identifier, timestamp?, deviceId)>
+
+<!--
+The identifier element is copied from the XML that was being processed.
+
+An optional ISO 8601 format timestamp may be used to indicate when this XML was generated.
+
+The deviceId element is used to further identify this device.
+-->
+
