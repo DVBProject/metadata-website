@@ -1146,6 +1146,70 @@
             containing all files for each specification document is also provided.</p>
         <p>In case you are looking for details about a particular metadata definition, you will find
             these in the <a href="#sec:ff-detailed">next section</a>.</p>
+        <h4>ETSI TS 102 833 v1.1.1</h4>
+        <p>Specification document: 
+            <a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf"
+                >TS 102 833 v1.1.1</a></p>
+        <p>All files for this version: 
+            <a href="/metadata/ff/ts_102833v010101p.zip">ts_102833v010101p.zip</a></p>
+        <table>
+            <caption>Metadata definitions shipped with ETSI TS 102 833 v1.1.1</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>URI</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd"
+                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br />
+                        (supporting type definitions: <a
+                            href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd"
+                            >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
+                    <td><a href="#sec:ff-basic-desc">File info</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>ETSI TS 102 833 v1.2.1</h4>
+        <p>Specification document: <a
+            href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf"
+                >TS 102 833 v1.2.1</a></p>
+        <p>All files for this version: <a href="/metadata/ff/ts_102833v010201p.zip"
+                >ts_102833v010201p.zip</a></p>
+        <table>
+            <caption>Metadata definitions shipped with ETSI TS 102 833 v1.2.1</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>URI</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>W3C XML Schema</td>
+                    <td><a href="/metadata/ff/ts_102833v010201p/FileContentItemDescription.xsd"
+                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br />
+                        (supporting type definitions: <a
+                            href="/metadata/ff/ts_102833v010201p/ContentItemInformation.xsd"
+                            >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
+                    <td><a href="#sec:ff-basic-desc">File info</a></td>
+                </tr>
+            </tbody>
+        </table>
         <h3 id="sec:ff-detailed">Detailed descriptions of metadata definitions</h3>
         <p>This section briefly describes each metadata definition, lists all versions of each
             definition that have been published, and indicates with which specification version(s)
@@ -1153,5 +1217,46 @@
         <p>In case you are looking for details about a particular specification document, you will
             find these in the <a href="#sec:ff-by-spec">previous section</a>.</p>
         <h4>XML Schemas</h4>
+        <h5 id="sec:ff-basic-desc">Mandatory Basic Description</h5>
+        <p>The mandatory metadata description is designed to be easily generated from either
+            TV-Anytime or IPDC ESG based metadata descriptions. This basic description provides an
+            interoperability point to assist in the interchange of content between devices. The
+            basic description can take one of two forms. The first form (FileContentInformation)
+            contains information about a program, at a minimum the title, but it may be populated
+            with additional information such as is typically provided by DVB SI, the IPDC ESG, the
+            IPTV BCG or TV-Anytime data carried over a transport stream. The second form
+            (SelfRecordingInfo) contains only a description of the recording and will typically be
+            used where the user initiates a recording and may include such details as the time of
+            the recording and a description of the channels recorded. See clause 5.1.4 of TS 102
+            833.</p>
+        <p>Latest version: <a href="/metadata/ff/FileContentItemDescription.xsd">permalink</a>
+            (<a href="/metadata/ff/FileContentItemDescription.xsd">supporting type definitions</a>)</p>
+        <table>
+            <caption>DVB File Format Mandatory Basic Description</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd"
+                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br/>
+                        (supporting type definitions: <a
+                            href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd"
+                                    >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
+                    <td><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf">TS 102 833 v1.1.1</a><br /><a
+                        href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf">TS 102 833 v1.2.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
