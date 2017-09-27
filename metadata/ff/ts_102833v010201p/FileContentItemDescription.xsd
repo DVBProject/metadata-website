@@ -39,7 +39,8 @@
 						serviceIDRef in the BroadcastEvent can be used.
 					</documentation>
 				</annotation></element>
-			<element name="ScheduleEvent"        type="tva:ScheduleEventType"       minOccurs="0" />
+			<element name="ScheduleEvent"        type="tva:ScheduleEventType"       minOccurs="0" />
+
 		</sequence>
 	</complexType>
 
