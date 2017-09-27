@@ -1,0 +1,16 @@
+<!-- 
+    "-//DVB//DTD Application Description File 1.0//EN"
+-->
+<!ENTITY % object "(dir|file)">
+<!-- the main element for the application description -->
+<!ELEMENT applicationdescription (%object;)+>
+<!ATTLIST applicationdescription version NMTOKEN #REQUIRED>
+<!ELEMENT dir (%object;)*>
+<!ATTLIST dir
+ name CDATA #REQUIRED
+ priority NMTOKEN #IMPLIED>
+<!ELEMENT file EMPTY>
+<!ATTLIST file
+ name CDATA #REQUIRED
+ priority NMTOKEN #IMPLIED
+ size NMTOKEN #REQUIRED>
