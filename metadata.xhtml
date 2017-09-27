@@ -19,6 +19,7 @@
             
             caption {
                 font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -27,9 +28,13 @@
         <!-- the first paragraph is rendered in a bigger font and in italics via a p:first-child css -->
         <p>This page lists and briefly describes all generic, and application domain specific XML
             and JSON Schemas and Classification Schemes published by DVB. These files are available
-            under the <a href="/metadata/">https://www.dvb.org/metadata/</a> URL
-            root. Presence of an XML or JSON document under that URL root implies its status as a
-            formal DVB publication.</p>
+            under the URL root <a href="/metadata/">https://www.dvb.org/metadata/</a>. Presence of
+            an XML or JSON document under that URL root implies its status as a formal DVB
+            publication.</p>
+        <p>Where DVB uses URNs to identify DVB metadata definitions, these URNs conform to clauses 5
+            and 7 of <a
+                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102851/01.03.01_60/ts_102851v010301p.pdf"
+                >ETSI TS 102 851</a>.</p>
         <p>Compared to the metadata definition files that can be obtained from the <a
                 href="http://www.etsi.org/standards/">ETSI website</a> in ZIP files along with the
             specification documents, the file location attributes in some files available from the
@@ -37,6 +42,21 @@
             website, and for instance document authors' convenience by enabling automatic handling
             of the files by authoring tools. These modifications do hence not affect instance
             documents in any way.</p>
+        <h3>Third Party Files</h3>
+        <p>DVB's metadata definitions build upon metadata definitions from other organisations and
+            standards by reusing elements from them. For this to be supported by authoring tools,
+            all files referenced by the DVB files must also be available to the authoring tool. Most
+            often, these other organisations also make their files available online. Where this is
+            not the case, we provide copies under the URL root <a href="/3rdparty/"
+                >https://www.dvb.org/3rdparty/</a>. DVB provides these files for completeness, and
+            they are not to be considered canonical. If, for any of them, you are aware of an
+            official online location that could be referenced instead, please contact us at <a
+                href="mailto:webmaster@dvb.org">webmaster@dvb.org</a>. For convenience, all
+            necessary metadata definitions from other organisations (whether available from their
+            originating organisation or from the DVB website) are also listed in the XML catalog
+            files and included in the <a href="/metadata/DVB.zip">complete DVB metadata ZIP
+                archive</a>.</p>
+        <h3>Installation and Use</h3>
         <p>To further help authoring automation, <a href="https://en.wikipedia.org/wiki/XML_Catalog"
                 >XML catalog</a> files are also provided. These will help authoring tools to make
             use of DVB metadata definitions for document validation, content completion, etc. To
@@ -45,27 +65,11 @@
             catalog files consulted by your authoring tool. For as long as you have an Internet
             connection, you will now be able to make use of all DVB metadata definitions to the
             extent provided by your authoring tool. If you want to be able to use the DVB metadata
-            files also when offline, download the <a href="/metadata/DVB.zip">ZIP archive of the whole
-            lot</a>, unpack it in a convenient location on your system, and add the file
+            files also when offline, download the <a href="/metadata/DVB.zip">complete DVB metadata
+                ZIP archive</a>, unpack it in a convenient location on your system, and add the file
             DVB/metadata/catalog.xml to the list of XML catalog files consulted by your authoring
             tool. Even when offline, you will now be able to make use of all DVB metadata
             definitions to the extent provided by your authoring tool.</p>
-        <p>DVB's metadata definitions build upon metadata definitions from other organisations and
-            standards by reusing elements from them. For this to be supported by authoring tools,
-            all files referenced by the DVB files must also be available to the authoring tool. Most
-            often, these other organisations also make their files available online. Where this is
-            not the case, we provide copies under the <a href="/3rdparty/"
-                >https://www.dvb.org/3rdparty/</a> URL root. DVB provides these files for
-            completeness, and they are not to be considered canonical. If, for any of them, you are
-            aware of an official online location that could be referenced instead, please contact us
-            at <a href="mailto:webmaster@dvb.org">webmaster@dvb.org</a>. For convenience, all
-            necessary metadata definitions from other organisations (whether available from their
-            originating organisation or from the DVB website) are also listed in the XML catalog
-            files and included in the global ZIP archive.</p>
-        <p>Where DVB uses URNs to identify DVB metadata definitions, these URNs conform to clauses 5
-            and 7 of <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102851/01.03.01_60/ts_102851v010301p.pdf"
-                >ETSI TS 102 851</a>.</p>
         <!-- ============================================================================== -->
         <h2 id="sec:generic-metadata">Generic Metadata Definitions</h2>
         <p>Generic metadata definitions are applicable to more than one application domain, and are
@@ -474,8 +478,8 @@
         <h5 id="sec:css-json-core">Schema for common data types used in schemas for other JSON messages</h5>
         <p>This schema is referenced by JSON schemas for protocol messages for the CSS-CII, CSS-TS,
             CSS-TE and CSS-MRS protocols.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-core.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-core-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-core.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-core-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-core">
             <caption>Schema for common data types used in schemas for other JSON messages</caption>
             <colgroup>
@@ -509,8 +513,8 @@
         <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-CII protocol.
             It conveys a content identifier and other information relating to the state of media presentation of
             the TV Device.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-cii.cii.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-cii.cii-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-cii.cii.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-cii.cii-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-cii-cii">
             <caption>Common data types used in schemas for other JSON messages</caption>
             <colgroup>
@@ -545,8 +549,8 @@
             It is used at the beginning of the protocol session to specify the timeline that the TV Device is
             to derive and convey to the Companion Screen Application via subsequent "Control Timestamp"
             messages.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.setup-data.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-ts.setup-data-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-ts.setup-data.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.setup-data-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-ts-setup-data">
             <caption>Schema for a "Setup Data" JSON message</caption>
             <colgroup>
@@ -579,8 +583,8 @@
         <h5 id="sec:css-json-ts-ct">Schema for a "Control Timestamp" JSON message</h5>
         <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol.
             It describes the state (position and speed) of the timeline for the media being presented by the TV.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.ct.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-ts.ct-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-ts.ct.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.ct-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-ts-ct">
             <caption>Schema for a Control Timestamp" JSON message</caption>
             <colgroup>
@@ -615,8 +619,8 @@
         <p>This message is sent from TV Device to Companion Screen Application as part of the
             CSS-TS protocol. It describes the state (position and speed) of the timeline for
             the media being presented by the TV.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.apteptlpt.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-ts.apteptlpt-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-ts.apteptlpt.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.apteptlpt-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-ts-apteptlpt">
             <caption>Schema for an "Actual, Earliest and Latest Presentation Timestamp"
                 JSON message</caption>
@@ -651,8 +655,8 @@
         <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol.
             It is used at the beginning of the protocol session to specify the content IDs for which Trigger
             Event Notification messages are required.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-te.tess.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-te.tess-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-te.tess.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-te.tess-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-te-tess">
             <caption>Schema for a "Trigger Event Session Setup" JSON message</caption>
             <colgroup>
@@ -686,8 +690,8 @@
         <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE
             protocol. It is used to subscribe or unsubscribe from receiving notification messages for a
             specified Trigger Event.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-te.tesm.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-te.tesm-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-te.tesm.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-te.tesm-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-te-tesm">
             <caption>Schema for a "Trigger Event Subscription Management" JSON message</caption>
             <colgroup>
@@ -759,8 +763,8 @@
             content is being presented and the timeline position within that editorial content. The
             message can take the form of a fresh response to a supplied Content ID, or an update
             describing changes to a previous response.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-mrs.mi.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-mrs.mi-1.1.1.json">permalink</a></p>
+        <p>Schema latest version: <a href="/metadata/css/css-mrs.mi.json">permalink</a></p>
+        <p>Schema version 1.1.1: <a href="/metadata/css/css-mrs.mi-1.1.1.json">permalink</a></p>
         <table id="tab:css-json-mrs-mi">
             <caption>Schema for a "Material Information" JSON message</caption>
             <colgroup>
