@@ -17,24 +17,12 @@
       <uri name="urn:mpeg:mpeg7:cs:VisualCodingFormatCS:2001" uri="MPEG7 VisualCodingFormatCS.xml"/>
       <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
       <!-- DTDs -->
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB410.dtd"/>
-      <system systemId="" uri="DVB410.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB411.dtd"/>
-      <system systemId="" uri="DVB411.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB46.dtd"/>
-      <system systemId="" uri="DVB46.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB47.dtd"/>
-      <system systemId="" uri="DVB47.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB48.dtd"/>
-      <system systemId="" uri="DVB48.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB49.dtd"/>
-      <system systemId="" uri="DVB49.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Inventory 1.0//EN" uri="DVB410.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Status 1.0//EN" uri="DVB411.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Event 1.0//EN" uri="DVB46.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Configuration 1.0//EN" uri="DVB47.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Failure 1.0//EN" uri="DVB48.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Success 1.0//EN" uri="DVB49.dtd"/>
    </group>
    <group xml:base="ts_102034v010401p0/">
       <!-- W3C XML Schemas -->
@@ -46,24 +34,12 @@
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
       <!-- DTDs -->
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB410.dtd"/>
-      <system systemId="" uri="DVB410.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB411.dtd"/>
-      <system systemId="" uri="DVB411.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB46.dtd"/>
-      <system systemId="" uri="DVB46.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB47.dtd"/>
-      <system systemId="" uri="DVB47.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB48.dtd"/>
-      <system systemId="" uri="DVB48.dtd"/>
-      <!-- FIXME: please fill in the public and/or system ID for this DTD, and remove any unneeded entry -->
-      <public publicId="" uri="DVB49.dtd"/>
-      <system systemId="" uri="DVB49.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Inventory 1.0//EN" uri="DVB410.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Status 1.0//EN" uri="DVB411.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Event 1.0//EN" uri="DVB46.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Configuration 1.0//EN" uri="DVB47.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Failure 1.0//EN" uri="DVB48.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Success 1.0//EN" uri="DVB49.dtd"/>
    </group>
    <group xml:base="ts_102034v010501p0/">
       <!-- W3C XML Schemas -->
