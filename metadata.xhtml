@@ -901,6 +901,12 @@
             containing all files for each specification document is also provided.</p>
         <p>In case you are looking for details about a particular metadata definition, you will find
             these in the <a href="#sec:iptv-detailed">next section</a>.</p>
+        <h4 id="sec:iptv-spec-1-1-1">ETSI TS 102 034 v1.1.1</h4>
+        <h4 id="sec:iptv-spec-1-3-1">ETSI TS 102 034 v1.3.1</h4>
+        <h4 id="sec:iptv-spec-1-4-1">ETSI TS 102 034 v1.4.1</h4>
+        <h4 id="sec:iptv-spec-1-5-1">ETSI TS 102 034 v1.5.1</h4>
+        <h4 id="sec:iptv-spec-1-5-2">ETSI TS 102 034 v1.5.2</h4>
+        <h4 id="sec:iptv-spec-2-1-1">ETSI TS 102 034 v2.1.1</h4>
         <h3 id="sec:iptv-detailed">Detailed descriptions of metadata definitions</h3>
         <p>This section briefly describes each metadata definition, lists all versions of each
             definition that have been published, and indicates with which specification version(s)
@@ -909,19 +915,169 @@
             find these in the <a href="#sec:iptv-by-spec">previous section</a>.</p>
         <h4>XML Schemas</h4>
         <h5>Service Discovery and Selection (SDnS)</h5>
-        <p>Service discovery is the mechanism enabling the discovery of DVB-IPTV services available
-            over bi-directional IP network. The service discovery results in the presentation of a
-            list of services with sufficient information for the user to make a choice and access
-            the chosen service. Selection takes place after the user has made a choice about which
-            service to view. Live Media Broadcast, Content on Demand (CoD) and Content Download
-            Services (CDS) are covered. Two types of Live Media broadcast services have been
-            identified: broadcast services with DVB SI embedded in the stream (referenced as "TS
-            Full SI") and broadcast services without in-band SI except for MPEG PSI (referenced as
-            "TS optional SI"). See clause 5 of TS 102 034.</p>
+        <p>See clause 5 of TS 102 034. Service discovery is the mechanism enabling the discovery of
+            DVB-IPTV services available over bi-directional IP network. The service discovery
+            results in the presentation of a list of services with sufficient information for the
+            user to make a choice and access the chosen service. Selection takes place after the
+            user has made a choice about which service to view. Live Media Broadcast, Content on
+            Demand (CoD) and Content Download Services (CDS) are covered. Two types of Live Media
+            broadcast services have been identified: broadcast services with DVB SI embedded in the
+            stream (referenced as "TS Full SI") and broadcast services without in-band SI except for
+            MPEG PSI (referenced as "TS optional SI").</p>
+        <p>Latest version: <a href="/metadata/iptv/sdns.xsd">permalink</a></p>
+        <table>
+            <caption>Service Discovery and Selection (SDnS)</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v010101p0/ipisdns-p1-v1-0-0.xsd"
+                            >urn:dvb:ipisdns:2003</a></td>
+                    <td><a href="#sec:iptv-spec-1-1-1">TS 102 034 v1.1.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v010301p0/sdns3r7.xsd">urn:dvb:ipi:sdns:2006</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
+                    <td>
+                        <ul>
+                            <li>added support for BCGD</li>
+                            <li>deprecating CoD</li>
+                            <li>extended IPService by audio and video attributes, and service
+                                availability information</li>
+                            <li>added FEC information for multicast delivery</li>
+                            <li>added audio support for mosaic services</li>
+                            <li>PullURL no longer restricted to http scheme</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v010401p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td>
+                    <td><a href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a></td>
+                    <td>
+                        <ul>
+                            <li>added support for more than one service provider</li>
+                            <li>added support for CDS</li>
+                            <li>added support for RMS FUS</li>
+                            <li>extended FEC information</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td>
+                    <td><a href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br /><a
+                            href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a></td>
+                    <td>
+                        <ul>
+                            <li>added support for SRM</li>
+                            <li>added support for emergency audio messages</li>
+                            <li>added support for services being available from more than one
+                                location</li>
+                            <li>added support for linking to other services</li>
+                            <li>added service usage hint</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.6r03.xsd">urn:dvb:metadata:iptv:sdns:2014-1</a></td>
+                    <td><a href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
+                    <td>
+                        <ul>
+                            <li>added support for DVB-CSS</li>
+                            <li>added support for IPv6</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <h5>Content Download Service (CDS)</h5>
-        <p>see clause 10 of TS 102 034</p>
+        <p>See clause 10 of TS 102 034. Content Download Services (CDS) allow for non-realtime
+            download of content items to local storage of an IPTV client via a broadband IP
+            connection. A CDS can be used to provide IPTV services in areas where a broadband
+            connection suitable for streaming services is not available or prone to transmission
+            errors, for simultaneous delivery of multiple content items to IPTV clients, or for
+            reduced cost IPTV offers since - unlike streaming services - the data rate consumption
+            of a CDS can be throttled. </p>
+        <p>Latest version: <a href="/metadata/iptv/dvb_metadata_iptv_cds.xsd">permalink</a></p>
+        <table>
+            <caption>Content Download Service (CDS)</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a
+                            href="/metadata/iptv/ts_102034v010501p0/dvb_metadata_iptv_cds_2008-1r2.xsd"
+                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
+                    <td><a href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br /><a
+                            href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+                <tr>
+                    <td><a
+                            href="/metadata/iptv/ts_102034v020101p0/dvb_metadata_iptv_cds_2008-1r3.xsd"
+                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
+                    <td><a href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
+                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
+                    <td>Fixed @schemaLocation in SDnS schema reference</td>
+                </tr>
+            </tbody>
+        </table>
         <h5>FLUTE Multicast System Renewability Message (SRM) Download</h5>
-        <p>See clause 12.5.2 of TS 102 034</p>
+        <p>See clause 12.5.2 of TS 102 034. An important function of Content Protection (CP) Systems
+            is the renewability in the field of important parts of the system implementation in
+            order to replace or revoke such parts which have been compromised and fail in further
+            preventing undesired use of content. This renewability information is conveyed to
+            consumer equipment in the form of System Renewability Messages (SRM). SRM services are
+            announced in Service Discovery and Selection (SDnS), and an IPTV client can obtain SRM
+            data via HTTP unicast, or FLUTE (see RFC 3926) multicast services. The FLUTE FDT is
+            extended by DVB to convey the CP System ID, CP System SRM ID, and SRM file version
+            number for each SRM file. This schema defines the DVB extensions to the FLUTE File
+            Delivery Table (FDT) structure for SRM delivery.</p>
+        <p>Latest version: <a href="/metadata/iptv/SRM.xsd">permalink</a></p>
+        <table>
+            <caption>DVB extensions to the FLUTE FDT</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>URI</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/metadata/iptv/ts_102034v020101p0/SRM_v1.5r2.xsd"
+                            >urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td>
+                    <td><a href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
+                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
         <h4>Classification Schemes</h4>
         <h5>Audio codec classification scheme</h5>
         <h5>Broadband Content Guide (BCG) type classification scheme</h5>
@@ -954,9 +1110,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event
                             1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                        >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
@@ -983,9 +1137,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB47.dtd">-//DVB//DTD Network
                             Provisioning Configuration 1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                            >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
@@ -1013,9 +1165,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB48.dtd">-//DVB//DTD Network
                             Provisioning Failure 1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                            >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
@@ -1042,9 +1192,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB49.dtd">-//DVB//DTD Network
                             Provisioning Success 1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                            >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
@@ -1073,9 +1221,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB410.dtd">-//DVB//DTD Network
                             Provisioning Inventory 1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                            >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
@@ -1104,9 +1250,7 @@
                 <tr>
                     <td><a href="metadata/iptv/ts_102034v010301p0/DVB411.dtd">-//DVB//DTD Network
                             Provisioning Status 1.0//EN</a></td>
-                    <td><a
-                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                            >TS 102 034 v1.3.1</a></td>
+                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
                     <td>Initial version</td>
                 </tr>
             </tbody>
