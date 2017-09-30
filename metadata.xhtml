@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <title>DVB Metadata Definitions</title>
         <style>
             table {
                 width: 100%;
@@ -147,7 +148,7 @@
             </tbody>
         </table>
         <h4 id="sec:generic-cs-bcgtype">BCG type classification scheme</h4>
-        <p>This CS lists the types ofcontent described by Broadband Content Guides (BCG). Currently
+        <p>This CS lists the types of content described by Broadband Content Guides (BCG). Currently
             the following types are defined:</p>
         <ul>
             <li>BCG for live TV programs</li>
@@ -907,6 +908,209 @@
         <p>In case you are looking for details about a particular specification document, you will
             find these in the <a href="#sec:iptv-by-spec">previous section</a>.</p>
         <h4>XML Schemas</h4>
+        <h5>Service Discovery and Selection (SDnS)</h5>
+        <p>Service discovery is the mechanism enabling the discovery of DVB-IPTV services available
+            over bi-directional IP network. The service discovery results in the presentation of a
+            list of services with sufficient information for the user to make a choice and access
+            the chosen service. Selection takes place after the user has made a choice about which
+            service to view. Live Media Broadcast, Content on Demand (CoD) and Content Download
+            Services (CDS) are covered. Two types of Live Media broadcast services have been
+            identified: broadcast services with DVB SI embedded in the stream (referenced as "TS
+            Full SI") and broadcast services without in-band SI except for MPEG PSI (referenced as
+            "TS optional SI"). See clause 5 of TS 102 034.</p>
+        <h5>Content Download Service (CDS)</h5>
+        <p>see clause 10 of TS 102 034</p>
+        <h5>FLUTE Multicast System Renewability Message (SRM) Download</h5>
+        <p>See clause 12.5.2 of TS 102 034</p>
+        <h4>Classification Schemes</h4>
+        <h5>Audio codec classification scheme</h5>
+        <h5>Broadband Content Guide (BCG) type classification scheme</h5>
+        <h5>Video codec classification scheme</h5>
+        <h4>Document Type Definitions</h4>
+        <p>The DTDs listed in this section are for network provisioning specified in clause 10 of
+            versions prior to release 1.4.1 of TS 102 034. This functionality is deprecated and has
+            been deleted from the document as of revision 1.4.1, and is now provided by the Remote
+            Management and Firmware Update Services (RMS-FUS) specification. <b>Hence, these files
+                are historic and provided here for completeness only.</b></p>
+        <h5>Network provisioning event DTD</h5>
+        <p>See clause 10.2.5 of TS 102 034 v1.3.1. When an IPTV client retrieves a network
+            provisioning event via HTTP GET, it receives it in the format defined by this DTD.</p>
+        <p>Latest version: <a href="/metadata/iptv/DVB46.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning event DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event
+                            1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                        >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Network provisioning configuration DTD</h5>
+        <p>See clause 10.2.6 of TS 102 034 v1.3.1. When an IPTV client receives or sends network
+            provisioning configuration, it uses the format defined by this DTD.</p>
+        <p>Latest version: <a href="/metadata/iptv/DVB47.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning configuration DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB47.dtd">-//DVB//DTD Network
+                            Provisioning Configuration 1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                            >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Network provisioning failure DTD</h5>
+        <p>See clause 10.2.7 of TS 102 034 v1.3.1. When an IPTV client needs to report an error that
+            occurred during the processing of XML it received, it uses the format defined by this
+            DTD. </p>
+        <p>Latest version: <a href="/metadata/iptv/DVB48.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning failure DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB48.dtd">-//DVB//DTD Network
+                            Provisioning Failure 1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                            >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Network provisioning success DTD</h5>
+        <p>See clause 10.2.8 of TS 102 034 v1.3.1. When an IPTV client processes XML it received
+            correctly, it uses the format defined by this DTD to report success. </p>
+        <p>Latest version: <a href="/metadata/iptv/DVB49.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning success DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB49.dtd">-//DVB//DTD Network
+                            Provisioning Success 1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                            >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Network provisioning inventory DTD</h5>
+        <p>See clause 10.2.9 of TS 102 034 v1.3.1. An IPTV client delivers inventory information in
+            the format defined by this DTD, either in response to an "inventory" event, to report an
+            inventory change (SIM card inserted), or upon boot up ensure that any hardware changes
+            which occurred during the power down are reported. </p>
+        <p>Latest version: <a href="/metadata/iptv/DVB410.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning success DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB410.dtd">-//DVB//DTD Network
+                            Provisioning Inventory 1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                            >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Network provisioning status DTD</h5>
+        <p>See clause 10.2.10 of TS 102 034 v1.3.1. An IPTV client delivers status information in
+            the format defined by this DTD, either in response to a "status" event, or to report a
+            status change (such as a new IP address delivered via DHCP). </p>
+        <p>DVB411.dtd, s</p>
+        <p>Latest version: <a href="/metadata/iptv/DVB411.dtd">permalink</a></p>
+        <table>
+            <caption>Network provisioning success DTD</caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>PublicID</th>
+                    <th>DVB Standard(s)</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="metadata/iptv/ts_102034v010301p0/DVB411.dtd">-//DVB//DTD Network
+                            Provisioning Status 1.0//EN</a></td>
+                    <td><a
+                            href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
+                            >TS 102 034 v1.3.1</a></td>
+                    <td>Initial version</td>
+                </tr>
+            </tbody>
+        </table>
         <!-- ============================================================================== -->
         <h2 id="sec:mhp-metadata">Metadata Definitions for Globally Executable MHP (GEM), Multimedia
             Home Platform (DVB-MHP), and Other Technologies</h2>
