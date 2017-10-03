@@ -3,13 +3,13 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
    <group xml:base="2005/">
       <!-- Classification Schemes -->
-      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2005" uri="ParentalGuidance.xml"/>
+      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2005" uri="ParentalGuidanceCS.xml"/>
    </group>
    <group xml:base="2007/">
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:AudioCodecCS:2007" uri="AudioCodecCS.xml"/>
       <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
-      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2007" uri="ParentalGuidance.xml"/>
+      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2007" uri="ParentalGuidanceCS.xml"/>
       <uri name="urn:dvb:metadata:cs:VideoCodecCS:2007" uri="VideoCodecCS.xml"/>
    </group>
 </catalog>

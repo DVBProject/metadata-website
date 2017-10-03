@@ -5,9 +5,4 @@
       <!-- W3C XML Schemas -->
       <uri name="urn:dvb:metadata:schema:dvbCSschema:2007" uri="dvbCSschema.xsd"/>
    </group>
-   <group xml:base="2008/">
-      <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:metadata:schema:contentItemInformation:2007" uri="ContentItemInformation.xsd"/>
-      <uri name="urn:dvb:metadata:schema:fileContentItemInformation:2007" uri="FileContentItemDescription.xsd"/>
-   </group>
 </catalog>

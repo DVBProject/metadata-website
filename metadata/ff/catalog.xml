@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-   <group xml:base="2007/">
+   <group xml:base="ts_102833v010101p/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:dvb:metadata:schema:contentItemInformation:2007" uri="ContentItemInformation.xsd"/>
+      <uri name="urn:dvb:metadata:schema:fileContentItemInformation:2007" uri="FileContentItemDescription.xsd"/>
+   </group>
+   <group xml:base="ts_102833v010201p/">
       <!-- W3C XML Schemas -->
       <uri name="urn:dvb:metadata:schema:contentItemInformation:2007" uri="ContentItemInformation.xsd"/>
       <uri name="urn:dvb:metadata:schema:fileContentItemInformation:2007" uri="FileContentItemDescription.xsd"/>
