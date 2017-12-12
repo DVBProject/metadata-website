@@ -32,7 +32,7 @@
             </Term>
             <Term termID="1.1.7">
                 <Name>urn:dvb:broadcast:ird:audio:MPEG-H</Name>
-                <Definition>MPEG-H audio as defined in clause 6. of ETSI TS 101 154</Definition>
+                <Definition>MPEG-H audio as defined in clause 6.8 of ETSI TS 101 154</Definition>
             </Term>
         </Term>
         <Term termID="1.2">
@@ -55,15 +55,15 @@
             </Term>
             <Term termID="1.2.5">
                 <Name>urn:dvb:broadcast:bitstream:audio:AC-4_channel_based</Name>
-                <Definition>AC-4 channel based audio as defined in clause 6.5 of ETSI TS 101 154</Definition>
+                <Definition>AC-4 channel based audio as defined in clause 6.6 of ETSI TS 101 154</Definition>
             </Term>
             <Term termID="1.2.6">
                 <Name>urn:dvb:broadcast:bitstream:audio:AC-4_channel_based_immersive_personalized</Name>
-                <Definition>AC-4 for channel-based, immersive and personalized audio as defined in clause 6. of ETSI TS 101 154</Definition>
+                <Definition>AC-4 for channel-based, immersive and personalized audio as defined in clause 6.7 of ETSI TS 101 154</Definition>
             </Term>
             <Term termID="1.2.7">
                 <Name>urn:dvb:broadcast:bitstream:audio:MPEG-H</Name>
-                <Definition>MPEG-H audio as defined in clause 6. of ETSI TS 101 154</Definition>
+                <Definition>MPEG-H audio as defined in clause 6.8 of ETSI TS 101 154</Definition>
             </Term>
         </Term>    
     </Term>
