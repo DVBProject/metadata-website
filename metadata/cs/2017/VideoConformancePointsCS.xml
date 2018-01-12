@@ -126,7 +126,7 @@
                 <Name>urn:dvb:dash:bitstream:video:hdr_hlg10</Name>
                 <Definition>High dynamic range UHD  bitstream using HLG10 as defined in clause 5.2.6 of ETSI TS 103 285</Definition>
             </Term>
-            <Term termID="2.2.1">
+            <Term termID="2.2.2">
                 <Name>urn:dvb:dash:bitstream:video:hdr_pq10</Name>
                 <Definition>High dynamic range UHD bitstream using PQ10 as defined in clause 5.2.7 of ETSI TS 103 285</Definition>
             </Term>
