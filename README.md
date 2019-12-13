@@ -2,51 +2,11 @@
 
 Recommended reading: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
-## `featuretest`
-
-This directory contains three files, which show what can be achieved
-when pasting the raw HTML into the web page editor of the DVB
-website's CMS:
-
-- `featuretest.xhtml` is a sample document trying to exercise the
-    basic layout features for static documents
-- `featuretest.pdf` shows how `featuretest.xhtml` is rendered in my
-    local browser (Opera)
-- `featuretest-results.pdf` shows what the DVB website CMS makes of
-    `featuretest.xhtml`
-
-It seems that:
-
-- normal flow text and outline levels works as expected
-- but line breaks are significant (this means that lengthy text
-    content, such as e.g. in a `<p>` or `<td>` element, must not
-    contain any line breaks, but the entire element must be on a
-    single line)
-- bold, italics, and underline tags are **stripped**
-- `<code>` tags are **stripped**
-- links to fragments on the same page may not work (but further
-    investigation needed)
-- flat lists work as expected
-- nested un-numbered lists work as expected
-- nested lists involving numbered lists **don't work**
-- having several `<p>` inside a list item **does not work** (due to a
-    special `p:first-child` CSS rule)
-- simple tables with and without captions work ok
-- left/centre/right aligning text inside table cells works
-- table header rows and header columns work
-- table borders **don't work**
-- table alignment **does not work** (tables are always stretched to
-    100% width)
-- merged/split cells in tables **don't work**
-- `<div>` **doesn't work**
-- `<section>` elements **are removed**, too
-
 ## `metadata.xhtml`
 
 This is the static page that will be hosted somewhere at
-<https://dvb.org/standards/>. Make sure you took the above listed
-go/no-go feature list above into account before pushing updates. It
-describes the contents of the files in the `metadata` tree.
+<https://dvb.org/metadata/>. It describes the contents of the
+files in the `metadata` tree.
 
 ## `metadata`
 
@@ -86,3 +46,12 @@ metadata/
 
 Here, the `second-schema.xsd` and `third-schema.xsd` would be picked
 up by the XML catalog builder script, but **not** `first-schema.xsd`.
+
+## Maintainer Notes
+
+Be mindful when regenerating `catalog.xml` files. There are DTDs in the
+tree, and their identifiers have been added manually to the `catalog.xml`
+files. Hence, after re-generating the catalogues using
+[XML Catalog Builder](https://github.com/c-alpha/XMLCatalogBuilder), be sure
+to discard the hunks with the DTD entries from the `catalog.xml` files before
+committing them.
