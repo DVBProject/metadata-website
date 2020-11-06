@@ -1,2084 +1,1089 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>DVB Metadata Definitions</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            
-            table, tr, th, td {
-                border: 1px solid black;
-            }
-            
-            th {
-                background-color: #f2f2f2;
-                font-weight: bold;
-            }
-            
-            caption {
-                font-weight: bold;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- The static page's headline (as entered in the CMS) is rendered as a h1. Hence all headings in the page body must be h2 or deeper level -->
-        
-        <!-- the first paragraph is rendered in a bigger font and in italics via a p:first-child css -->
-        <p>This page lists and briefly describes all generic, and application domain specific XML
-            and JSON Schemas and Classification Schemes published by DVB. These files are available
-            under the URL root <a href="/metadata/">https://www.dvb.org/metadata/</a>. Presence of
-            an XML or JSON document under that URL root implies its status as a formal DVB
-            publication.</p>
-        <p>Where DVB uses URNs to identify DVB metadata definitions, these URNs conform to clauses 5
-            and 7 of <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102851/01.03.01_60/ts_102851v010301p.pdf"
-                >ETSI TS 102 851</a>.</p>
-        <p>Compared to the metadata definition files that can be obtained from the <a
-                href="http://www.etsi.org/standards/">ETSI website</a> in ZIP files along with the
-            specification documents, the file location attributes in some files available from the
-            DVB website have been modified. This was done to accommodate the structure of the DVB
-            website, and for instance document authors' convenience by enabling automatic handling
-            of the files by authoring tools. These modifications do hence not affect instance
-            documents in any way.</p>
-        <h3>Third Party Files</h3>
-        <p>DVB's metadata definitions build upon metadata definitions from other organisations and
-            standards by reusing elements from them. For this to be supported by authoring tools,
-            all files referenced by the DVB files must also be available to the authoring tool. Most
-            often, these other organisations also make their files available online. Where this is
-            not the case, we provide copies under the URL root <a href="/3rdparty/"
-                >https://www.dvb.org/3rdparty/</a>. DVB provides these files for completeness, and
-            they are not to be considered canonical. If, for any of them, you are aware of an
-            official online location that could be referenced instead, please contact us at <a
-                href="mailto:webmaster@dvb.org">webmaster@dvb.org</a>. For convenience, all
-            necessary metadata definitions from other organisations (whether available from their
-            originating organisation or from the DVB website) are also listed in the XML catalog
-            files and included in the <a href="/metadata/DVB.zip">complete DVB metadata ZIP
-                archive</a>.</p>
-        <h3>Installation and Use</h3>
-        <p>To further help authoring automation, <a href="https://en.wikipedia.org/wiki/XML_Catalog"
-                >XML catalog</a> files are also provided. These will help authoring tools to make
-            use of DVB metadata definitions for document validation, content completion, etc. To
-            directly use the files provided from the DVB website, simply add the URL of the <a
-                href="/metadata/catalog.xml">top-level XML catalog file</a> to the list of XML
-            catalog files consulted by your authoring tool. For as long as you have an Internet
-            connection, you will now be able to make use of all DVB metadata definitions to the
-            extent provided by your authoring tool. If you want to be able to use the DVB metadata
-            files also when offline, download the <a href="/metadata/DVB.zip">complete DVB metadata
-                ZIP archive</a>, unpack it in a convenient location on your system, and add the file
-            DVB/metadata/catalog.xml to the list of XML catalog files consulted by your authoring
-            tool. Even when offline, you will now be able to make use of all DVB metadata
-            definitions to the extent provided by your authoring tool.</p>
-        <!-- ============================================================================== -->
-        <h2 id="sec:generic-metadata">Generic Metadata Definitions</h2>
-        <p>Generic metadata definitions are applicable to more than one application domain, and are
-            thus generally referenced by application specific metadata definitions.</p>
-        <h3 id="sec:generic-xsd">XML Schemas</h3>
-        <h4 id="sec:generic-xsd-cs">DVB Classification Scheme schema</h4>
-        <p>This schema defines a schema for authoring classification schemes. It is derived from the
-            TV-Anytime CS schema in that the form of the termIDType is restricted by a pattern, and
-            the TextualType is extended by an optional language attribute. It however is backwards
-            compatible with the TV-Anytime schema, and CS entries can therefore be referenced using
-            the tva:controlledTermType.</p>
-        <p>All DVB classification schemes, whether generic or domain specific, are instance
-            documents of this schema.</p>
-        <p>Latest version: <a href="/metadata/schema/dvbCSschema.xsd"
-            >permalink</a></p>
-        <table>
-            <caption>DVB Classification Scheme schema versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/schema/2007/dvbCSschema.xsd"
-                            >urn:dvb:metadata:schema:dvbCSschema:2007</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:generic-cs">Classification Schemes</h3>
-        <p>This section lists all XML Classification Schemes (CS) defined by DVB in
-            alphabetical order. These CS are written against the
-            urn:dvb:metadata:schema:dvbCSschema:2007 namespace.</p>
-        <h4 id="sec:generic-cs-audiocodec">Audio codec classification scheme</h4>
-        <p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio
-            codecs not part of the MPEG-7CS:</p>
-        <ul>
-            <li>MPEG-4 DVB Audio</li>
-            <li>MPEG-4 High Efficiency Advanced Audio Profile</li>
-            <li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li>
-            <li>AMR DVB</li>
-            <li>AC-3</li>
-        </ul>
-        <p>Latest version: <a href="/metadata/cs/AudioCodecCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB audio codec classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2007/AudioCodecCS.xml"
-                            >urn:dvb:metadata:cs:AudioCodecCS:2007</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>Audio conformance points classification scheme</h4>
-        <p>This CS Lists audio conformance points for broadcast receivers and bitstreams, and DASH
-            players and bitstreams. All conformance points are defined in ETSI TS 101 154 and ETSI
-            TS 103 285 respectively.</p>
-        <p>Latest version: <a href="/metadata/cs/AudioConformancePointsCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB audio conformance points classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2017/AudioConformancePointsCS.xml"
-                            >urn:dvb:metadata:cs:AudioConformancePointsCS:2017</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:generic-cs-bcgtype">BCG type classification scheme</h4>
-        <p>This CS lists the types of content described by Broadband Content Guides (BCG). Currently
-            the following types are defined:</p>
-        <ul>
-            <li>BCG for live TV programs</li>
-            <li>BCG for Content on Demand (CoD) programs</li>
-            <li>BCG for downloadable content</li>
-        </ul>
-        <p>Latest version: <a href="/metadata/cs/BCGTypeCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB BCG type classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2007/BCGTypeCS.xml"
-                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:generic-cs-parentalguidance">Parental guidance classification scheme</h4>
-        <p>This CS lists the parental guidance restriction recommendations for currently 21 regions.
-            It will be extended to further regions and content as new services and applications
-            emerge.</p>
-        <p>Latest version: <a href="/metadata/cs/ParentalGuidanceCS.xml"
-                >permalink</a></p>
-        <table>
-            <caption>DVB parental guidance classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2005/ParentalGuidanceCS.xml"
-                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2005</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/cs/2007/ParentalGuidanceCS.xml"
-                            >urn:dvb:metadata:cs:ParentalGuidanceCS:2007</a></td>
-                    <td>none</td>
-                    <td><!-- FIXME -->minor editorials on text content</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:generic-cs-videocodec">Video codec classification scheme</h4>
-        <p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video
-            codecs not part of the MPEG-7CS:</p>
-        <ul>
-            <li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li>
-            <li>VC-1</li>
-        </ul>
-        <p>Latest version: <a href="/metadata/cs/VideoCodecCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB video codec classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2007/VideoCodecCS.xml"
-                            >urn:dvb:metadata:cs:VideoCodecCS:2007</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>Video conformance points classification scheme</h4>
-        <p>This CS Lists video conformance points for broadcast receivers and bitstreams, and DASH
-            players and bitstreams. All conformance points are defined in ETSI TS 101 154 and ETSI
-            TS 103 285 respectively.</p>
-        <p>Latest version: <a href="/metadata/cs/VideoConformancePointsCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB video conformance points classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/cs/2017/VideoConformancePointsCS.xml"
-                            >urn:dvb:metadata:cs:VideoConformancePointsCS:2017</a></td>
-                    <td>none</td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- ============================================================================== -->
-        <h2 id="sec:ciplus-metadata">DVB CI-Plus Metadata Definitions</h2>
-        <h3 id="sec:ciplus-by-spec">Metadata definitions by specification version</h3>
-        <p>This section lists the metadata definitions associated with each published specification
-            document. Links to the specification documents are provided, and a zip archive
-            containing all files for each specification document is also provided.</p>
-        <p>In case you are looking for details about a particular metadata definition, you will find
-            these in the <a href="#sec:ciplus-detailed">next section</a>.</p>
-        <h4>ETSI TS 103 205 v1.1.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p.pdf"
-                >TS 103 205 v1.1.1</a></p>
-        <p>All files for this version: <a
-            href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p0.zip"
-            >ts_103205v010101p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 103 205 v1.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/ciplus/2013/osdt_2013.xsd"
-                            >urn:dvb:metadata:ciplus:osdt:2013</a></td>
-                    <td><a href="#sec:ciplus-osdt">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>ETSI TS 103 205 v1.2.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p.pdf"
-                >TS 103 205 v1.2.1</a></p>
-        <p>All files for this version: <a
-            href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p0.zip"
-            >ts_103205v010201p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 103 205 v1.2.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/ciplus/2015/osdt_2015.xsd"
-                            >urn:dvb:metadata:ciplus:osdt:2015</a></td>
-                    <td><a href="#sec:ciplus-osdt">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:ciplus-detailed">Detailed descriptions of metadata definitions</h3>
-        <p>This section briefly describes each metadata definition, lists all versions of each
-            definition that have been published, and indicates with which specification version(s)
-            each metadata definition is associated.</p>
-        <p>In case you are looking for details about a particular specification document, you will
-            find these in the <a href="#sec:ciplus-by-spec">previous section</a>.</p>
-        <h4 id="sec:ciplus-osdt">Online SDT (OSDT)</h4>
-        <p>The Online SDT (OSDT) is an XML structure that contains a list of IP-delivered services
-            available from a DVB CI-Plus Common Interface Conditional Access Module (CICAM). See
-            annex D of TS 103 205.</p>
-        <p>Latest version: <a href="/metadata/ciplus/osdt.xsd"
-                >permalink</a></p>
-        <table>
-            <caption>Online SDT for listing IP-delivered services available from a CICAM</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/ciplus/2013/osdt_2013.xsd"
-                            >urn:dvb:metadata:ciplus:osdt:2013</a></td>
-                    <td><a href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p.pdf">TS 103 205 v1.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/ciplus/2015/osdt_2015.xsd"
-                            >urn:dvb:metadata:ciplus:osdt:2015</a></td>
-                    <td><a href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p.pdf">TS 103 205 v1.2.1</a></td>
-                    <td>Added extension point in IPServiceListType</td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- ============================================================================== -->
-        <h2 id="sec:css-metadata">DVB CSS Metadata Definitions</h2>
-        <h3 id="sec:css-by-spec">Metadata definitions by specification version</h3>
-        <p>This section lists the metadata definitions associated with each published specification
-            document. Links to the specification documents are provided, and a zip archive
-            containing all files for each specification document is also provided.</p>
-        <p>In case you are looking for details about a particular metadata definition, you will find
-            these in the <a href="#sec:css-detailed">next section</a>.</p>
-        <h4 id="sec:css-spec-1-1-1">ETSI TS 103 286-2 v1.1.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.01.01_60/ts_10328602v010101p.pdf"
-                >TS 103 286-2 v1.1.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.01.01_60/ts_10328602v010101p0.zip"
-                >ts_10328602v010101p0.zip</a></p>
-        <table id="tab:css-spec-1-1-1">
-            <caption>Metadata definitions shipped with ETSI TS 103 286-2 v1.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd"
-                            >urn:dvb:css:dash:2014</a></td>
-                    <td><a href="#sec:css-xsd-dash">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-core">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-cii-cii">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-setup-data">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-ct">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-apteptlpt">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-tess">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-tesm">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-ten">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-mrs-mi">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <p><em>These schemas pre-date the creation of dvb.org/metadata. Their 'id' fields
-            therefore do not correctly reference the URLs at which they are hosted. They are
-            otherwise identical to the schemas published in v1.2.1</em></p>
-        <h4 id="sec:css-spec-1-2-1">ETSI TS 103 286-2 v1.2.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.02.01_60/ts_10328602v010201p.pdf"
-                >TS 103 286-2 v1.2.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.02.01_60/ts_10328602v010201p0.zip"
-                >ts_10328602v010201p0.zip</a></p>
-        <table id="tab:css-spec-1-2-1">
-            <caption>Metadata definitions shipped with ETSI TS 103 286-2 v1.2.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/dash-css-schema.xsd"
-                            >urn:dvb:css:dash:2014</a></td>
-                    <td><a href="#sec:css-xsd-dash">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-core">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-cii-cii">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-setup-data">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-ct">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-ts-apteptlpt">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-tess">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-tesm">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-te-ten">File info</a></td>
-                </tr>
-                <tr>
-                    <td>JSON Schema</td>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json</a></td>
-                    <td><a href="#sec:css-json-mrs-mi">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:css-detailed">Detailed descriptions of metadata definitions</h3>
-        <p>This section briefly describes each metadata definition, lists all versions of each
-            definition that have been published, and indicates with which specification version(s)
-            each metadata definition is associated.</p>
-        <p>In case you are looking for details about a particular specification document, you will
-            find these in the <a href="#sec:css-by-spec">previous section</a>.</p>
-        <h4 id="sec:css-xsd">XML Schemas</h4>
-        <h5 id="sec:css-xsd-dash">DASH MPD Schema extension for carriage of MRS URL and CI Ancillary Data</h5>
-        <p>See annex E.2 of TS 103 286-2. This schema extends the MPEG DASH MPD schema to
-            allow carriage of the URL for a Material Resolution Server (MRS) and CI
-            ancillary data that are passed by the TV Device to a Companion Screen
-            Application via the CSS-CII protocol</p>
-        <p>Latest version: <a href="/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd">permalink</a></p>
-        <table id="tab:css-xsd-dash">
-            <caption>DASH MPD Schema extension for carriage of MRS URL and CI Ancillary Data</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/dash-css-schema.xsd"
-                        >urn:dvb:dash:2014</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a><br /><a
-                            href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:css-json">JSON Schemas</h4>
-        <h5 id="sec:css-json-core">Schema for common data types used in schemas for other JSON messages</h5>
-        <p>This schema is referenced by JSON schemas for protocol messages for the CSS-CII, CSS-TS,
-            CSS-TE and CSS-MRS protocols.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-core.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-core-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-core">
-            <caption>Schema for common data types used in schemas for other JSON messages</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-cii-cii">Schema for a "Content Identification and other Information" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-CII protocol.
-            It conveys a content identifier and other information relating to the state of media presentation of
-            the TV Device.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-cii.cii.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-cii.cii-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-cii-cii">
-            <caption>Common data types used in schemas for other JSON messages</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-ts-setup-data">Schema for a "Setup Data" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol.
-            It is used at the beginning of the protocol session to specify the timeline that the TV Device is
-            to derive and convey to the Companion Screen Application via subsequent "Control Timestamp"
-            messages.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.setup-data.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.setup-data-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-ts-setup-data">
-            <caption>Schema for a "Setup Data" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-ts-ct">Schema for a "Control Timestamp" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol.
-            It describes the state (position and speed) of the timeline for the media being presented by the TV.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.ct.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.ct-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-ts-ct">
-            <caption>Schema for a Control Timestamp" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-ts-apteptlpt">Schema for an "Actual, Earliest and Latest Presentation
-            Timestamp" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the
-            CSS-TS protocol. It describes the state (position and speed) of the timeline for
-            the media being presented by the TV.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-ts.apteptlpt.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-ts.apteptlpt-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-ts-apteptlpt">
-            <caption>Schema for an "Actual, Earliest and Latest Presentation Timestamp"
-                JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-te-tess">Schema for a "Trigger Event Session Setup" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol.
-            It is used at the beginning of the protocol session to specify the content IDs for which Trigger
-            Event Notification messages are required.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-te.tess.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-te.tess-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-te-tess">
-            <caption>Schema for a "Trigger Event Session Setup" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-te-tesm">Schema for a "Trigger Event Subscription Management" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE
-            protocol. It is used to subscribe or unsubscribe from receiving notification messages for a
-            specified Trigger Event.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-te.tesm.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-te.tesm-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-te-tesm">
-            <caption>Schema for a "Trigger Event Subscription Management" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:css-json-te-ten">Schema for a "Trigger Event Notification" JSON message</h5>
-        <p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol.
-            It notifies of a Trigger Event occurring that the Companion Screen Application has subscribed to.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-te.ten.json">permalink</a><br/>
-            Schema version 1.1.1: <a href="/metadata/css/css-te.ten-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-te-ten">
-            <caption>Schema for a "Trigger Event Notification" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Corrected schema location URI.</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h5 id="sec:css-json-mrs-mi">Schema for a "Material Information" JSON message</h5>
-        <p>This message is sent by an Material Resolution Server to a Companion Screen Application as
-            part of the CSS-MRS protocol. The message describes how to use the content ID and
-            timeline position, that can be obtained from the TV Device, to determine what editorial
-            content is being presented and the timeline position within that editorial content. The
-            message can take the form of a fresh response to a supplied Content ID, or an update
-            describing changes to a previous response.</p>
-        <p>Schema latest version: <a href="/metadata/css/css-mrs.mi.json">permalink</a></p>
-        <p>Schema version 1.1.1: <a href="/metadata/css/css-mrs.mi-1.1.1.json">permalink</a></p>
-        <table id="tab:css-json-mrs-mi">
-            <caption>Schema for a "Material Information" JSON message</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td>
-                    <td>Initial version.<br/><em>DEPRECATED</em></td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json"
-                        >http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json</a></td>
-                    <td><a href="#sec:css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td>
-                    <td>Change to message format.</td>
-                </tr>
-            </tbody>
-        </table>
-        <p><em>The version of this schema published in specification v1.1.1 is deprecated and must
-            not be used. It is different from that published in v.1.2.1 even though the schema
-            version number has not changed.</em></p>  
-        <!-- ============================================================================== -->
-        <h2 id="sec:iptv-metadata">DVB IPTV Metadata Definitions</h2>
-        <h3 id="sec:iptv-by-spec">Metadata definitions by specification version</h3>
-        <p>This section lists the metadata definitions associated with each published specification
-            document. Links to the specification documents are provided, and a zip archive
-            containing all files for each specification document is also provided.</p>
-        <p>In case you are looking for details about a particular metadata definition, you will find
-            these in the <a href="#sec:iptv-detailed">next section</a>.</p>
-        <h4 id="sec:iptv-spec-1-1-1">ETSI TS 102 034 v1.1.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.01.01_60/ts_102034v010101p.pdf"
-                >TS 102 034 v1.1.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.01.01_60/ts_102034v010101p0.zip"
-                >ts_102034v010101p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v1.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010101p0/ipisdns-p1-v1-0-0.xsd"
-                            >urn:dvb:ipisdns:2003</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:iptv-spec-1-3-1">ETSI TS 102 034 v1.3.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf"
-                >TS 102 034 v1.3.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p0.zip"
-                >ts_102034v010301p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v1.3.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/sdns3r7.xsd"
-                            >urn:dvb:ipi:sdns:2006</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime  Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td>
-                    <td><a href="#sec:iptv-audio-cs">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td>
-                    <td><a href="#sec:iptv-video-cs">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-event-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB47.dtd">-//DVB//DTD Network Provisioning Configuration 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-config-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB48.dtd">-//DVB//DTD Network Provisioning Failure 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-failure-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB49.dtd">-//DVB//DTD Network Provisioning Success 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-success-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB410.dtd">-//DVB//DTD Network Provisioning Inventory 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-inventory-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB411.dtd">-//DVB//DTD Network Provisioning Status 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-status-dtd">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:iptv-spec-1-4-1">ETSI TS 102 034 v1.4.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.04.01_60/ts_102034v010401p.pdf"
-                >TS 102 034 v1.4.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.04.01_60/ts_102034v010401p0.zip"
-                >ts_102034v010401p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v1.4.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/sdns_v1.4r13.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2008-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/dvb_metadata_iptv_cds_2008-1r2.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-cds-schema">File Info</a></td>
-                </tr>
-                <tr>
-                    <td>DVB Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/BCGTypeCS.xml"
-                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
-                    <td><a href="#sec:generic-cs-bcgtype">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-event-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB47.dtd">-//DVB//DTD Network Provisioning Configuration 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-config-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB48.dtd">-//DVB//DTD Network Provisioning Failure 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-failure-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB49.dtd">-//DVB//DTD Network Provisioning Success 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-success-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB410.dtd">-//DVB//DTD Network Provisioning Inventory 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-inventory-dtd">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/DVB411.dtd">-//DVB//DTD Network Provisioning Status 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-status-dtd">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:iptv-spec-1-5-1">ETSI TS 102 034 v1.5.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.01_60/ts_102034v010501p.pdf"
-                >TS 102 034 v1.5.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.01_60/ts_102034v010501p0.zip"
-                >ts_102034v010501p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v1.5.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.4r13.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2008-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a
-                            href="/metadata/iptv/ts_102034v010501p0/dvb_metadata_iptv_cds_2008-1r2.xsd"
-                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-cds-schema">File Info</a></td>
-                </tr>
-                <tr>
-                    <td>DVB Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/BCGTypeCS.xml"
-                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
-                    <td><a href="#sec:generic-cs-bcgtype">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:iptv-spec-1-5-2">ETSI TS 102 034 v1.5.2</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.02_60/ts_102034v010502p.pdf"
-                >TS 102 034 v1.5.2</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.02_60/ts_102034v010502p0.zip"
-                >ts_102034v010502p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v1.5.2</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/sdns_v1.4r13.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2008-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/sdns_v1.5r25b.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2012-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/dvb_metadata_iptv_cds_2008-1r3.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-cds-schema">File Info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/SRM_v1.5r2.xsd">urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td>
-                    <td><a href="#sec:iptv-srm-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>DVB Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/BCGTypeCS.xml"
-                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
-                    <td><a href="#sec:generic-cs-bcgtype">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime  Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td>
-                    <td><a href="#sec:iptv-audio-cs">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v010502p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td>
-                    <td><a href="#sec:iptv-video-cs">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:iptv-spec-2-1-1">ETSI TS 102 034 v2.1.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/02.01.01_60/ts_102034v020101p.pdf"
-                >TS 102 034 v2.1.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/02.01.01_60/ts_102034v020101p0.zip"
-                >ts_102034v020101p0.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 034 v2.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.4r13.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2008-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.5r25b.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2012-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.6r03.xsd"
-                            >urn:dvb:metadata:iptv:sdns:2014-1</a></td>
-                    <td><a href="#sec:iptv-sdns-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a
-                            href="/metadata/iptv/ts_102034v020101p0/dvb_metadata_iptv_cds_2008-1r3.xsd"
-                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-cds-schema">File Info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/SRM_v1.5r2.xsd"
-                            >urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td>
-                    <td><a href="#sec:iptv-srm-schema">File info</a></td>
-                </tr>
-                <tr>
-                    <td>DVB Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/BCGTypeCS.xml"
-                            >urn:dvb:metadata:cs:BCGTypeCS:2007</a></td>
-                    <td><a href="#sec:generic-cs-bcgtype">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/AudioCS.xml"
-                            >urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td>
-                    <td><a href="#sec:iptv-audio-cs">File info</a></td>
-                </tr>
-                <tr>
-                    <td>TV-Anytime Classification Scheme</td>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/VideoCodecCS.xml"
-                            >urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td>
-                    <td><a href="#sec:iptv-video-cs">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:iptv-detailed">Detailed descriptions of metadata definitions</h3>
-        <p>This section briefly describes each metadata definition, lists all versions of each
-            definition that have been published, and indicates with which specification version(s)
-            each metadata definition is associated.</p>
-        <p>In case you are looking for details about a particular specification document, you will
-            find these in the <a href="#sec:iptv-by-spec">previous section</a>.</p>
-        <h4>XML Schemas</h4>
-        <h5 id="sec:iptv-sdns-schema">Service Discovery and Selection (SDnS)</h5>
-        <p>See clause 5 of TS 102 034. Service discovery is the mechanism enabling the discovery of
-            DVB-IPTV services available over bi-directional IP network. The service discovery
-            results in the presentation of a list of services with sufficient information for the
-            user to make a choice and access the chosen service. Selection takes place after the
-            user has made a choice about which service to view. Live Media Broadcast, Content on
-            Demand (CoD) and Content Download Services (CDS) are covered. Two types of Live Media
-            broadcast services have been identified: broadcast services with DVB SI embedded in the
-            stream (referenced as "TS Full SI") and broadcast services without in-band SI except for
-            MPEG PSI (referenced as "TS optional SI").</p>
-        <p>Latest version: <a href="/metadata/iptv/sdns.xsd">permalink</a></p>
-        <table>
-            <caption>Service Discovery and Selection (SDnS)</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010101p0/ipisdns-p1-v1-0-0.xsd"
-                            >urn:dvb:ipisdns:2003</a></td>
-                    <td><a href="#sec:iptv-spec-1-1-1">TS 102 034 v1.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/sdns3r7.xsd">urn:dvb:ipi:sdns:2006</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>
-                        <ul>
-                            <li>added support for BCGD</li>
-                            <li>deprecating CoD</li>
-                            <li>extended IPService by audio and video attributes, and service
-                                availability information</li>
-                            <li>added FEC information for multicast delivery</li>
-                            <li>added audio support for mosaic services</li>
-                            <li>PullURL no longer restricted to http scheme</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010401p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td>
-                    <td><a href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a></td>
-                    <td>
-                        <ul>
-                            <li>added support for more than one service provider</li>
-                            <li>added support for CDS</li>
-                            <li>added support for RMS FUS</li>
-                            <li>extended FEC information</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td>
-                    <td><a href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a></td>
-                    <td>
-                        <ul>
-                            <li>added support for SRM</li>
-                            <li>added support for emergency audio messages</li>
-                            <li>added support for services being available from more than one
-                                location</li>
-                            <li>added support for linking to other services</li>
-                            <li>added service usage hint</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.6r03.xsd">urn:dvb:metadata:iptv:sdns:2014-1</a></td>
-                    <td><a href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
-                    <td>
-                        <ul>
-                            <li>added support for DVB-CSS</li>
-                            <li>added support for IPv6</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-cds-schema">Content Download Service (CDS)</h5>
-        <p>See clause 10 of TS 102 034. Content Download Services (CDS) allow for non-realtime
-            download of content items to local storage of an IPTV client via a broadband IP
-            connection. A CDS can be used to provide IPTV services in areas where a broadband
-            connection suitable for streaming services is not available or prone to transmission
-            errors, for simultaneous delivery of multiple content items to IPTV clients, or for
-            reduced cost IPTV offers since - unlike streaming services - the data rate consumption
-            of a CDS can be throttled. </p>
-        <p>Latest version: <a href="/metadata/iptv/dvb_metadata_iptv_cds.xsd">permalink</a></p>
-        <table>
-            <caption>Content Download Service (CDS)</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a
-                            href="/metadata/iptv/ts_102034v010501p0/dvb_metadata_iptv_cds_2008-1r2.xsd"
-                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-                <tr>
-                    <td><a
-                            href="/metadata/iptv/ts_102034v020101p0/dvb_metadata_iptv_cds_2008-1r3.xsd"
-                            >urn:dvb:metadata:iptv:cds:2008-1</a></td>
-                    <td><a href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
-                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
-                    <td>Fixed @schemaLocation in SDnS schema reference</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-srm-schema">FLUTE Multicast System Renewability Message (SRM) Download</h5>
-        <p>See clause 12.5.2 of TS 102 034. An important function of Content Protection (CP) Systems
-            is the renewability in the field of important parts of the system implementation in
-            order to replace or revoke such parts which have been compromised and fail in further
-            preventing undesired use of content. This renewability information is conveyed to
-            consumer equipment in the form of System Renewability Messages (SRM). SRM services are
-            announced in Service Discovery and Selection (SDnS), and an IPTV client can obtain SRM
-            data via HTTP unicast, or FLUTE (see RFC 3926) multicast services. The FLUTE FDT is
-            extended by DVB to convey the CP System ID, CP System SRM ID, and SRM file version
-            number for each SRM file. This schema defines the DVB extensions to the FLUTE File
-            Delivery Table (FDT) structure for SRM delivery.</p>
-        <p>Latest version: <a href="/metadata/iptv/SRM.xsd">permalink</a></p>
-        <table>
-            <caption>DVB extensions to the FLUTE FDT</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/SRM_v1.5r2.xsd"
-                            >urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td>
-                    <td><a href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
-                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>Classification Schemes</h4>
-        <h5 id="sec:iptv-audio-cs">Audio codec classification scheme</h5>
-        <p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio
-            codecs not part of the MPEG-7CS:</p>
-        <ul>
-            <li>MPEG-4 DVB Audio</li>
-            <li>MPEG-4 High Efficiency Advanced Audio Profile</li>
-            <li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li>
-            <li>AMR DVB</li>
-            <li>AC-3</li>
-        </ul>
-        <p>Latest version: <a href="/metadata/iptv/AudioCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB-IPTV audio codec classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/AudioCS.xml"
-                            >urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a><br /><a
-                            href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
-                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-video-cs">Video codec classification scheme</h5>
-        <p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video
-            codecs not part of the MPEG-7CS:</p>
-        <ul>
-            <li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li>
-            <li>VC-1</li>
-        </ul>
-        <p>Latest version: <a href="/metadata/iptv/VideoCodecCS.xml">permalink</a></p>
-        <table>
-            <caption>DVB-IPTV video codec classification scheme versions</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v020101p0/VideoCodecCS.xml"
-                            >urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a><br /><a
-                            href="#sec:iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br /><a
-                            href="#sec:iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br /><a
-                            href="#sec:iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>Document Type Definitions</h4>
-        <p>The DTDs listed in this section are for network provisioning specified in clause 10 of
-            versions prior to release 1.4.1 of TS 102 034. This functionality is deprecated and has
-            been deleted from the document as of revision 1.4.1, and is now provided by the Remote
-            Management and Firmware Update Services (RMS-FUS) specification. <b>Hence, these files
-                are historic and provided here for completeness only.</b></p>
-        <h5 id="sec:iptv-event-dtd">Network provisioning event DTD</h5>
-        <p>See clause 10.2.5 of TS 102 034 v1.3.1. When an IPTV client retrieves a network
-            provisioning event via HTTP GET, it receives it in the format defined by this DTD.</p>
-        <p>Latest version: <a href="/metadata/iptv/DVB46.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning event DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event
-                            1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-config-dtd">Network provisioning configuration DTD</h5>
-        <p>See clause 10.2.6 of TS 102 034 v1.3.1. When an IPTV client receives or sends network
-            provisioning configuration, it uses the format defined by this DTD.</p>
-        <p>Latest version: <a href="/metadata/iptv/DVB47.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning configuration DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB47.dtd">-//DVB//DTD Network
-                            Provisioning Configuration 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-failure-dtd">Network provisioning failure DTD</h5>
-        <p>See clause 10.2.7 of TS 102 034 v1.3.1. When an IPTV client needs to report an error that
-            occurred during the processing of XML it received, it uses the format defined by this
-            DTD. </p>
-        <p>Latest version: <a href="/metadata/iptv/DVB48.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning failure DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB48.dtd">-//DVB//DTD Network
-                            Provisioning Failure 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-success-dtd">Network provisioning success DTD</h5>
-        <p>See clause 10.2.8 of TS 102 034 v1.3.1. When an IPTV client processes XML it received
-            correctly, it uses the format defined by this DTD to report success. </p>
-        <p>Latest version: <a href="/metadata/iptv/DVB49.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning success DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB49.dtd">-//DVB//DTD Network
-                            Provisioning Success 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-inventory-dtd">Network provisioning inventory DTD</h5>
-        <p>See clause 10.2.9 of TS 102 034 v1.3.1. An IPTV client delivers inventory information in
-            the format defined by this DTD, either in response to an "inventory" event, to report an
-            inventory change (SIM card inserted), or upon boot up ensure that any hardware changes
-            which occurred during the power down are reported. </p>
-        <p>Latest version: <a href="/metadata/iptv/DVB410.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning inventory DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB410.dtd">-//DVB//DTD Network
-                            Provisioning Inventory 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:iptv-status-dtd">Network provisioning status DTD</h5>
-        <p>See clause 10.2.10 of TS 102 034 v1.3.1. An IPTV client delivers status information in
-            the format defined by this DTD, either in response to a "status" event, or to report a
-            status change (such as a new IP address delivered via DHCP). </p>
-        <p>DVB411.dtd, s</p>
-        <p>Latest version: <a href="/metadata/iptv/DVB411.dtd">permalink</a></p>
-        <table>
-            <caption>Network provisioning status DTD</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/iptv/ts_102034v010301p0/DVB411.dtd">-//DVB//DTD Network
-                            Provisioning Status 1.0//EN</a></td>
-                    <td><a href="#sec:iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- ============================================================================== -->
-        <h2 id="sec:mhp-metadata">Metadata Definitions for Globally Executable MHP (GEM), Multimedia
-            Home Platform (DVB-MHP), and Other Technologies</h2>
-        <h3 id="sec:mhp-by-spec">Metadata definitions by specification version</h3>
-        <p>This section lists the metadata definitions associated with each published specification
-            document. Links to the specification documents are provided, and a zip archive
-            containing all files for each specification document is also provided.</p>
-        <p>In case you are looking for details about a particular metadata definition, you will find
-            these in the <a href="#sec:mhp-detailed">next section</a>.</p>
-        <h4 id="sec:mhp-spec-1-1-1">ETSI TS 102 809 v1.1.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p.pdf"
-                >TS 102 809 v1.1.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p0.zip"
-                >ts_102809v010101p0.zip</a></p>
-        <table id="tab:mhp-spec-1-1-1">
-            <caption>Metadata definitions shipped with ETSI TS 102 809 v1.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd"
-                            >urn:dvb:mhp:2009</a></td>
-                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
-                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:mhp-spec-1-2-1">ETSI TS 102 809 v1.2.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p.pdf"
-                >TS 102 809 v1.2.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p0.zip"
-                >ts_102809v010201p0.zip</a></p>
-        <table id="tab:mhp-spec-1-2-1">
-            <caption>Metadata definitions shipped with ETSI TS 102 809 v1.2.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd"
-                            >urn:dvb:mhp:2009</a></td>
-                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd"
-                            >urn:dvb:mhp:dsmcc:2009</a></td>
-                    <td><a href="#sec:mhp-xsd-strev">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
-                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:mhp-spec-1-3-1">ETSI TS 102 809 v1.3.1</h4>
-        <p>Specification document: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p.pdf"
-                >TS 102 809 v1.3.1</a></p>
-        <p>All files for this version: <a
-                href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p0.zip"
-                >ts_102809v010301p0.zip</a></p>
-        <table id="tab:mhp-spec-1-3-1">
-            <caption>Metadata definitions shipped with ETSI TS 102 809 v1.3.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/mhp/ts_102809v010301p0/mis_xmlait.xsd"
-                            >urn:dvb:mhp:2009</a></td>
-                    <td><a href="#sec:mhp-xsd-ait">File info</a></td>
-                </tr>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/mhp/ts_102809v010301p0/stream-event.xsd"
-                            >urn:dvb:mhp:dsmcc:2009</a></td>
-                    <td><a href="#sec:mhp-xsd-strev">File info</a></td>
-                </tr>
-                <tr>
-                    <td>XML DTD</td>
-                    <td>-//DVB//DTD Application Description File 1.0//EN</td>
-                    <td><a href="#sec:mhp-dtd-adf">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:mhp-detailed">Detailed descriptions of metadata definitions</h3>
-        <p>This section briefly describes each metadata definition, lists all versions of each
-            definition that have been published, and indicates with which specification version(s)
-            each metadata definition is associated.</p>
-        <p>In case you are looking for details about a particular specification document, you will
-            find these in the <a href="#sec:mhp-by-spec">previous section</a>.</p>
-        <h4 id="sec:mhp-xsd">XML Schemas</h4>
-        <h5 id="sec:mhp-xsd-strev">DSM-CC stream event messages without an object carousel</h5>
-        <p>See clause 8.2 of TS 102 809. XML documents according to this schema can be used with
-            streams not containing a DSM-CC object carousel to find DSM-CC stream events for
-            synchronisation.</p>
-        <p>Latest version: <a href="/metadata/mhp/stream-event.xsd">permalink</a></p>
-        <table id="tab:mhp-xsd-strev">
-            <caption>DSM-CC stream event messages without an object carousel</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd"
-                            >urn:dvb:mhp:dsmcc:2009</a></td>
-                    <td><a href="#sec:mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br /><a
-                            href="#sec:mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <h5 id="sec:mhp-xsd-ait">XML encoding of the AIT</h5>
-        <p>See clause 5.4 of TS 102 809. The XML AIT enables signalling of metadata about
-            interactive applications when an XML syntax would be more appropriate than an MPEG-2
-            table, section and descriptor syntax would be more appropriate. </p>
-        <p>Latest version: <a href="/metadata/mhp/mis_xmlait.xsd">permalink</a></p>
-        <table id="tab:mhp-xsd-ait">
-            <caption>XML encoding of the AIT</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd"
-                            >urn:dvb:mhp:2009</a></td>
-                    <td><a href="#sec:mhp-spec-1-1-1">TS 102 809 v1.1.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-                <tr>
-                    <td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd"
-                            >urn:dvb:mhp:2009</a></td>
-                    <td><a href="#sec:mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br /><a
-                            href="#sec:mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td>
-                    <td>Updated references to IPTV schemas</td>
-                </tr>
-            </tbody>
-        </table>
-        <h4 id="sec:mhp-dtd">Document Type Definitions</h4>
-        <h5 id="sec:mhp-dtd-adf">Application description file</h5>
-        <p>See clause 5.2.12 of TS 102 809. The Application Description File (ADF) provides the list
-            of files in an object carousel that need to be stored for an application as well as
-            other related necessary information.</p>
-        <p>Latest version: <a href="/metadata/mhp/mis-adf.dtd">permalink</a></p>
-        <table id="tab:mhp-dtd-adf">
-            <caption>Application Description File (ADF)</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>PublicID</th>
-                    <th>SystemID</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/mhp/mis-adf.dtd">-//DVB//DTD Application Description File
-                            1.0//EN</a></td>
-                    <td>http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd</td>
-                    <td><a href="#sec:mhp-spec-1-1-1">TS 102 809 v1.1.1</a><br /><a
-                            href="#sec:mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br />
-                        <a href="#sec:mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- ============================================================================== -->
-        <h2 id="sec:ff-metadata">DVB File Format Metadata Definitions</h2>
-        <h3 id="sec:ff-by-spec">Metadata definitions by specification version</h3>
-        <p>This section lists the metadata definitions associated with each published specification
-            document. Links to the specification documents are provided, and a zip archive
-            containing all files for each specification document is also provided.</p>
-        <p>In case you are looking for details about a particular metadata definition, you will find
-            these in the <a href="#sec:ff-detailed">next section</a>.</p>
-        <h4>ETSI TS 102 833 v1.1.1</h4>
-        <p>Specification document: 
-            <a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf"
-                >TS 102 833 v1.1.1</a></p>
-        <p>All files for this version: 
-            <a href="/metadata/ff/ts_102833v010101p.zip">ts_102833v010101p.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 833 v1.1.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd"
-                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br />
-                        (supporting type definitions: <a
-                            href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd"
-                            >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
-                    <td><a href="#sec:ff-basic-desc">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>ETSI TS 102 833 v1.2.1</h4>
-        <p>Specification document: <a
-            href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf"
-                >TS 102 833 v1.2.1</a></p>
-        <p>All files for this version: <a href="/metadata/ff/ts_102833v010201p.zip"
-                >ts_102833v010201p.zip</a></p>
-        <table>
-            <caption>Metadata definitions shipped with ETSI TS 102 833 v1.2.1</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>URI</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>W3C XML Schema</td>
-                    <td><a href="/metadata/ff/ts_102833v010201p/FileContentItemDescription.xsd"
-                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br />
-                        (supporting type definitions: <a
-                            href="/metadata/ff/ts_102833v010201p/ContentItemInformation.xsd"
-                            >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
-                    <td><a href="#sec:ff-basic-desc">File info</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <h3 id="sec:ff-detailed">Detailed descriptions of metadata definitions</h3>
-        <p>This section briefly describes each metadata definition, lists all versions of each
-            definition that have been published, and indicates with which specification version(s)
-            each metadata definition is associated.</p>
-        <p>In case you are looking for details about a particular specification document, you will
-            find these in the <a href="#sec:ff-by-spec">previous section</a>.</p>
-        <h4>XML Schemas</h4>
-        <h5 id="sec:ff-basic-desc">Mandatory Basic Description</h5>
-        <p>The mandatory metadata description is designed to be easily generated from either
-            TV-Anytime or IPDC ESG based metadata descriptions. This basic description provides an
-            interoperability point to assist in the interchange of content between devices. The
-            basic description can take one of two forms. The first form (FileContentInformation)
-            contains information about a program, at a minimum the title, but it may be populated
-            with additional information such as is typically provided by DVB SI, the IPDC ESG, the
-            IPTV BCG or TV-Anytime data carried over a transport stream. The second form
-            (SelfRecordingInfo) contains only a description of the recording and will typically be
-            used where the user initiates a recording and may include such details as the time of
-            the recording and a description of the channels recorded. See clause 5.1.4 of TS 102
-            833.</p>
-        <p>Latest version: <a href="/metadata/ff/FileContentItemDescription.xsd">permalink</a>
-            (<a href="/metadata/ff/FileContentItemDescription.xsd">supporting type definitions</a>)</p>
-        <table>
-            <caption>DVB File Format Mandatory Basic Description</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>URI</th>
-                    <th>DVB Standard(s)</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd"
-                            >urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br/>
-                        (supporting type definitions: <a
-                            href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd"
-                                    >urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td>
-                    <td><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf">TS 102 833 v1.1.1</a><br /><a
-                        href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf">TS 102 833 v1.2.1</a></td>
-                    <td>Initial version</td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
-</html>
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":66.66} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph -->
+<p>This page lists and briefly describes all generic, and application domain specific XML and JSON Schemas and Classification Schemes published by DVB. These files are available under the URL root&nbsp;<a href="/metadata/">/metadata/</a>. Presence of an XML or JSON document under that URL root implies its status as a formal DVB publication.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Where DVB uses URNs to identify DVB metadata definitions, these URNs conform to clauses 5 and 7 of <a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102851/01.03.01_60/ts_102851v010301p.pdf">ETSI TS 102 851</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Compared to the metadata definition files that can be obtained from the&nbsp;<a href="https://www.etsi.org/standards/">ETSI website</a>&nbsp;in ZIP files along with the specification documents, the file location attributes in some files available from the DVB website have been modified. This was done to accommodate the structure of the DVB website, and for instance document authors' convenience by enabling automatic handling of the files by authoring tools. These modifications do hence not affect instance documents in any way.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":33.33} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"level":4} -->
+<h4>Jump to section</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li><a href="#DVB-CI_Plus-Metadata-Definitions">DVB CI-Plus Metadata Definitions</a></li><li><a href="#DVB-CSS-Metadata-Definitions">DVB CSS Metadata Definitions</a></li><li><a href="#DVB-IPTV-Metadata-Definitions">DVB IPTV Metadata Definitions</a></li><li><a href="#Metadata-Definitions-for-Globally-Executable-MHP-GEM-Multimedia-Home-Platform-DVB_MHP-and-Other-Technologies">Metadata Definitions for Globally Executable MHP (GEM), Multimedia Home Platform (DVB-MHP), and Other Technologies</a></li><li><a href="#DVB-File-Format-Metadata-Definitions">DVB File Format Metadata Definitions</a></li></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":66.66} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":3} -->
+<h3>Third Party Files</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>DVB's metadata definitions build upon metadata definitions from other organizations and standards by reusing elements from them. For this to be supported by authoring tools, all files referenced by the DVB files must also be available to the authoring tool. Most often, these other organizations also make their files available online. Where this is not the case, we provide copies under the URL root&nbsp;<a href="/3rd-party/">/3rd-party/</a>. DVB provides these files for completeness, and they are not to be considered canonical. If, for any of them, you are aware of an official online location that could be referenced instead, please contact us at&nbsp;<a href="mailto:webmaster@dvb.org">webmaster@dvb.org</a>. For convenience, all necessary metadata definitions from other organisations (whether available from their originating organization or from the DVB website) are also listed in the XML catalog files and included in the&nbsp;<a href="/metadata/DVB.zip">complete DVB metadata ZIP archive</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Installation and Use</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To further help authoring automation,&nbsp;<a href="https://en.wikipedia.org/wiki/XML_Catalog">XML catalog</a>&nbsp;files are also provided. These will help authoring tools to make use of DVB metadata definitions for document validation, content completion, etc. To directly use the files provided from the DVB website, simply add the URL of the&nbsp;<a href="/metadata/catalog.xml">top-level XML catalog file</a>&nbsp;to the list of XML catalog files consulted by your authoring tool. For as long as you have an Internet connection, you will now be able to make use of all DVB metadata definitions to the extent provided by your authoring tool. If you want to be able to use the DVB metadata files also when offline, download the&nbsp;<a href="/metadata/DVB.zip">complete DVB metadata ZIP archive</a>, unpack it in a convenient location on your system, and add the file DVB/metadata/catalog.xml to the list of XML catalog files consulted by your authoring tool. Even when offline, you will now be able to make use of all DVB metadata definitions to the extent provided by your authoring tool.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Generic Metadata Definitions Generic metadata definitions are applicable to more than one application domain, and are thus generally referenced by application specific metadata definitions.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":33.33} -->
+<div class="wp-block-column" style="flex-basis:33.33%"></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:heading {"level":3} -->
+<h3>XML Schemas</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>DVB Classification Scheme schema</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This schema defines a schema for authoring classification schemes. It is derived from the TV-Anytime CS schema in that the form of the termIDType is restricted by a pattern, and the TextualType is extended by an optional language attribute. It however is backwards compatible with the TV-Anytime schema, and CS entries can therefore be referenced using the tva:controlledTermType.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All DVB classification schemes, whether generic or domain specific, are instance documents of this schema.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/schema/dvbCSschema.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/schema/2007/dvbCSschema.xsd">urn:dvb:metadata:schema:dvbCSschema:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Classification Schemes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists all XML Classification Schemes (CS) defined by DVB in alphabetical order. These CS are written against the urn:dvb:metadata:schema:dvbCSschema:2007 namespace.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Audio codec classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio codecs not part of the MPEG-7CS:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>MPEG-4 DVB Audio</li><li>MPEG-4 High Efficiency Advanced Audio Profile</li><li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li><li>AMR DVB</li><li>AC-3</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/AudioCodecCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2007/AudioCodecCS.xml">urn:dvb:metadata:cs:AudioCodecCS:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Audio conformance points classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS Lists audio conformance points for broadcast receivers and bitstreams, and DASH players and bitstreams. All conformance points are defined in ETSI TS 101 154 and ETSI TS 103 285 respectively.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/AudioConformancePointsCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2017/AudioConformancePointsCS.xml">urn:dvb:metadata:cs:AudioConformancePointsCS:2017</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="generic-cs-bcgtype">BCG type classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS lists the types of content described by Broadband Content Guides (BCG). Currently the following types are defined:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>BCG for live TV programs</li><li>BCG for Content on Demand (CoD) programs</li><li>BCG for downloadable content</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/BCGTypeCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2007/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Parental guidance classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS lists the parental guidance restriction recommendations for currently 21 regions. It will be extended to further regions and content as new services and applications emerge.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/ParentalGuidanceCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2005/ParentalGuidanceCS.xml">urn:dvb:metadata:cs:ParentalGuidanceCS:2005</a></td><td>none</td><td>Initial version</td></tr><tr><td><a href="/metadata/cs/2007/ParentalGuidanceCS.xml">urn:dvb:metadata:cs:ParentalGuidanceCS:2007</a></td><td>none</td><td>minor editorials on text content</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Video codec classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video codecs not part of the MPEG-7CS:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li><li>VC-1</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/VideoCodecCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2007/VideoCodecCS.xml">urn:dvb:metadata:cs:VideoCodecCS:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Video conformance points classification scheme</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS Lists video conformance points for broadcast receivers and bitstreams, and DASH players and bitstreams. All conformance points are defined in ETSI TS 101 154 and ETSI TS 103 285 respectively.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/cs/VideoConformancePointsCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2017/VideoConformancePointsCS.xml">urn:dvb:metadata:cs:VideoConformancePointsCS:2017</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:block {"ref":7534} /-->
+
+<!-- wp:heading -->
+<h2 id="DVB-CI_Plus-Metadata-Definitions">DVB CI-Plus Metadata Definitions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="ciplus-by-spec">Metadata definitions by specification version</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists the metadata definitions associated with each published specification document. Links to the specification documents are provided, and a zip archive containing all files for each specification document is also provided.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular metadata definition, you will find these in the&nbsp;<a href="#ciplus-detailed">next section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>ETSI TS 103 205 v1.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p.pdf">TS 103 205 v1.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p0.zip">ts_103205v010101p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/ciplus/2013/osdt_2013.xsd">urn:dvb:metadata:ciplus:osdt:2013</a></td><td><a href="#ciplus-osdt">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>ETSI TS 103 205 v1.2.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p.pdf">TS 103 205 v1.2.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p0.zip">ts_103205v010201p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/ciplus/2015/osdt_2015.xsd">urn:dvb:metadata:ciplus:osdt:2015</a></td><td><a href="#ciplus-osdt">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="ciplus-detailed">Detailed descriptions of metadata definitions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section briefly describes each metadata definition, lists all versions of each definition that have been published, and indicates with which specification version(s) each metadata definition is associated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular specification document, you will find these in the&nbsp;<a href="#ciplus-by-spec">previous section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="ciplus-osdt">Online SDT (OSDT)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The Online SDT (OSDT) is an XML structure that contains a list of IP-delivered services available from a DVB CI-Plus Common Interface Conditional Access Module (CICAM). See annex D of TS 103 205.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/ciplus/osdt.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/ciplus/2013/osdt_2013.xsd">urn:dvb:metadata:ciplus:osdt:2013</a></td><td><a href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.01.01_60/ts_103205v010101p.pdf">TS 103 205 v1.1.1</a></td><td>Initial version</td></tr><tr><td><a href="/metadata/ciplus/2015/osdt_2015.xsd">urn:dvb:metadata:ciplus:osdt:2015</a></td><td><a href="http://www.etsi.org/deliver/etsi_ts/103200_103299/103205/01.02.01_60/ts_103205v010201p.pdf">TS 103 205 v1.2.1</a></td><td>Added extension point in IPServiceListType</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:block {"ref":7534} /-->
+
+<!-- wp:heading -->
+<h2 id="DVB-CSS-Metadata-Definitions">DVB CSS Metadata Definitions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="css-by-spec">Metadata definitions by specification version</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists the metadata definitions associated with each published specification document. Links to the specification documents are provided, and a zip archive containing all files for each specification document is also provided.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular metadata definition, you will find these in the&nbsp;<a href="#css-detailed">next section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="css-spec-1-1-1">ETSI TS 103 286-2 v1.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.01.01_60/ts_10328602v010101p.pdf">TS 103 286-2 v1.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.01.01_60/ts_10328602v010101p0.zip">ts_10328602v010101p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd">urn:dvb:css:dash:2014</a></td><td><a href="#css-xsd-dash">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json</a></td><td><a href="#css-json-core">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json</a></td><td><a href="#css-json-cii-cii">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json</a></td><td><a href="#css-json-ts-setup-data">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json</a></td><td><a href="#css-json-ts-ct">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json</a></td><td><a href="#css-json-ts-apteptlpt">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json</a></td><td><a href="#css-json-te-tess">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json</a></td><td><a href="#css-json-te-tesm">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json</a></td><td><a href="#css-json-te-ten">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a></td><td><a href="#css-json-mrs-mi">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph -->
+<p>These schemas pre-date the creation of dvb.org/metadata. Their 'id' fields therefore do not correctly reference the URLs at which they are hosted. They are otherwise identical to the schemas published in v1.2.1</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="css-spec-1-2-1">ETSI TS 103 286-2 v1.2.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.02.01_60/ts_10328602v010201p.pdf">TS 103 286-2 v1.2.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/103200_103299/10328602/01.02.01_60/ts_10328602v010201p0.zip">ts_10328602v010201p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/dash-css-schema.xsd">urn:dvb:css:dash:2014</a></td><td><a href="#css-xsd-dash">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json</a></td><td><a href="#css-json-core">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json</a></td><td><a href="#css-json-cii-cii">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json</a></td><td><a href="#css-json-ts-setup-data">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json</a></td><td><a href="#css-json-ts-ct">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json</a></td><td><a href="#css-json-ts-apteptlpt">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json</a></td><td><a href="#css-json-te-tess">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json</a></td><td><a href="#css-json-te-tesm">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json</a></td><td><a href="#css-json-te-ten">File info</a></td></tr><tr><td>JSON Schema</td><td><a href="/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json</a></td><td><a href="#css-json-mrs-mi">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="css-detailed">Detailed descriptions of metadata definitions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section briefly describes each metadata definition, lists all versions of each definition that have been published, and indicates with which specification version(s) each metadata definition is associated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular specification document, you will find these in the&nbsp;<a href="#css-by-spec">previous section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="css-xsd-dash">XML Schemas</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>DASH MPD Schema extension for carriage of MRS URL and CI Ancillary Data</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>See annex E.2 of TS 103 286-2. This schema extends the MPEG DASH MPD schema to allow carriage of the URL for a Material Resolution Server (MRS) and CI ancillary data that are passed by the TV Device to a Companion Screen Application via the CSS-CII protocol</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/css/ts_10328602v010101p0/dash-css-schema.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/dash-css-schema.xsd">urn:dvb:dash:2014</a></td><td><a href="#sec:css-spec-1-1-1">TS 103 286-2 v1.1.1</a><br><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="css-json-core">JSON Schemas</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5>Schema for common data types used in schemas for other JSON messages</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This schema is referenced by JSON schemas for protocol messages for the CSS-CII, CSS-TS, CSS-TE and CSS-MRS protocols.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-core.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-core-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-core-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-core-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-cii-cii">Schema for a "Content Identification and other Information" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-CII protocol. It conveys a content identifier and other information relating to the state of media presentation of the TV Device.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-cii.cii.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-cii.cii-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-cii.cii-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-cii.cii-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-ts-setup-data">Schema for a "Setup Data" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol. It is used at the beginning of the protocol session to specify the timeline that the TV Device is to derive and convey to the Companion Screen Application via subsequent "Control Timestamp" messages.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-ts.setup-data.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-ts.setup-data-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.setup-data-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.setup-data-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-ts-ct">Schema for a "Control Timestamp" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol. It describes the state (position and speed) of the timeline for the media being presented by the TV.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-ts.ct.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-ts.ct-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.ct-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.ct-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-ts-apteptlpt">Schema for an "Actual, Earliest and Latest Presentation Timestamp" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TS protocol. It describes the state (position and speed) of the timeline for the media being presented by the TV.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-ts.apteptlpt.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-ts.apteptlpt-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-ts.apteptlpt-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-ts.apteptlpt-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-te-tess">Schema for a "Trigger Event Session Setup" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol. It is used at the beginning of the protocol session to specify the content IDs for which Trigger Event Notification messages are required.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-te.tess.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-te.tess-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tess-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tess-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-te-tesm">Schema for a "Trigger Event Subscription Management" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol. It is used to subscribe or unsubscribe from receiving notification messages for a specified Trigger Event.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-te.tesm.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-te.tesm-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.tesm-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.tesm-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-te-ten">Schema for a "Trigger Event Notification" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent from TV Device to Companion Screen Application as part of the CSS-TE protocol. It notifies of a Trigger Event occurring that the Companion Screen Application has subscribed to.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-te.ten.json">permalink</a><br>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-te.ten-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-te.ten-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-te.ten-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Corrected schema location URI.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="css-json-mrs-mi">Schema for a "Material Information" JSON message</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This message is sent by an Material Resolution Server to a Companion Screen Application as part of the CSS-MRS protocol. The message describes how to use the content ID and timeline position, that can be obtained from the TV Device, to determine what editorial content is being presented and the timeline position within that editorial content. The message can take the form of a fresh response to a supplied Content ID, or an update describing changes to a previous response.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema latest version:&nbsp;<a href="/metadata/css/css-mrs.mi.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Schema version 1.1.1:&nbsp;<a href="/metadata/css/css-mrs.mi-1.1.1.json">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010101p0/css-mrs.mi-1.1.1.json</a></td><td><a href="#css-spec-1-1-1">TS 103 286-2 v1.1.1</a></td><td>Initial version.<br>DEPRECATED</td></tr><tr><td><a href="/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json">http://www.dvb.org/metadata/css/ts_10328602v010201p0/css-mrs.mi-1.1.1.json</a></td><td><a href="#css-spec-1-2-1">TS 103 286-2 v1.2.1</a></td><td>Change to message format.</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph -->
+<p>The version of this schema published in specification v1.1.1 is deprecated and must not be used. It is different from that published in v.1.2.1 even though the schema version number has not changed.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:block {"ref":7534} /-->
+
+<!-- wp:heading -->
+<h2 id="DVB-IPTV-Metadata-Definitions">DVB IPTV Metadata Definitions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="iptv-by-spec">Metadata definitions by specification version</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists the metadata definitions associated with each published specification&nbsp;document. Links to the specification documents are provided, and a zip archive&nbsp;containing all files for each specification document is also provided.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular metadata definition, you will find these in the <a href="#iptv-detailed">next section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-1-1-1">ETSI TS 102 034 v1.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.01.01_60/ts_102034v010101p.pdf">TS 102 034 v1.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.01.01_60/ts_102034v010101p0.zip">ts_102034v010101p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010101p0/ipisdns-p1-v1-0-0.xsd">urn:dvb:ipisdns:2003</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-1-3-1">ETSI TS 102 034 v1.3.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p.pdf">TS 102 034 v1.3.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.03.01_60/ts_102034v010301p0.zip">ts_102034v010301p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010301p0/sdns3r7.xsd">urn:dvb:ipi:sdns:2006</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010301p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td><td><a href="#iptv-audio-cs">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010301p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td><td><a href="#iptv-video-cs">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event 1.0//EN</a></td><td><a href="#iptv-event-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB47.dtd">-//DVB//DTD Network Provisioning Configuration 1.0//EN</a></td><td><a href="#iptv-config-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB48.dtd">-//DVB//DTD Network Provisioning Failure 1.0//EN</a></td><td><a href="#iptv-failure-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB49.dtd">-//DVB//DTD Network Provisioning Success 1.0//EN</a></td><td><a href="#iptv-success-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB410.dtd">-//DVB//DTD Network Provisioning Inventory 1.0//EN</a></td><td><a href="#iptv-inventory-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB411.dtd">-//DVB//DTD Network Provisioning Status 1.0//EN</a></td><td><a href="#iptv-status-dtd">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-1-4-1">ETSI TS 102 034 v1.4.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.04.01_60/ts_102034v010401p.pdf">TS 102 034 v1.4.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="http://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.04.01_60/ts_102034v010401p0.zip">ts_102034v010401p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010401p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010401p0/dvb_metadata_iptv_cds_2008-1r2.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-cds-schema">File Info</a></td></tr><tr><td>DVB Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010401p0/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td><td><a href="#generic-cs-bcgtype">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event 1.0//EN</a></td><td><a href="#iptv-event-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB47.dtd">-//DVB//DTD Network Provisioning Configuration 1.0//EN</a></td><td><a href="#sec:iptv-config-dtd">Fi</a><a href="#iptv-config-dtd">l</a><a href="#sec:iptv-config-dtd">e info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB48.dtd">-//DVB//DTD Network Provisioning Failure 1.0//EN</a></td><td><a href="#iptv-failure-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB49.dtd">-//DVB//DTD Network Provisioning Success 1.0//EN</a></td><td><a href="#iptv-success-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB410.dtd">-//DVB//DTD Network Provisioning Inventory 1.0//EN</a></td><td><a href="#iptv-inventory-dtd">File info</a></td></tr><tr><td>XML DTD</td><td><a href="/metadata/iptv/ts_102034v010401p0/DVB411.dtd">-//DVB//DTD Network Provisioning Status 1.0//EN</a></td><td><a href="#iptv-status-dtd">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-1-5-1">ETSI TS 102 034 v1.5.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.01_60/ts_102034v010501p.pdf">TS 102 034 v1.5.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.01_60/ts_102034v010501p0.zip">ts_102034v010501p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010501p0/dvb_metadata_iptv_cds_2008-1r2.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-cds-schema">File Info</a></td></tr><tr><td>DVB Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010401p0/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td><td><a href="#generic-cs-bcgtype">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-1-5-2">ETSI TS 102 034 v1.5.2</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.02_60/ts_102034v010502p.pdf">TS 102 034 v1.5.2</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/01.05.02_60/ts_102034v010502p0.zip">ts_102034v010502p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010502p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010502p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010502p0/dvb_metadata_iptv_cds_2008-1r3.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-cds-schema">File Info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v010502p0/SRM_v1.5r2.xsd">urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td><td><a href="#iptv-srm-schema">File info</a></td></tr><tr><td>DVB Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010502p0/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td><td><a href="#generic-cs-bcgtype">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010502p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td><td><a href="#iptv-audio-cs">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v010502p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td><td><a href="#iptv-video-cs">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="iptv-spec-2-1-1">ETSI TS 102 034 v2.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/02.01.01_60/ts_102034v020101p.pdf">TS 102 034 v2.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102000_102099/102034/02.01.01_60/ts_102034v020101p0.zip">ts_102034v020101p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.6r03.xsd">urn:dvb:metadata:iptv:sdns:2014-1</a></td><td><a href="#iptv-sdns-schema">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v020101p0/dvb_metadata_iptv_cds_2008-1r3.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-cds-schema">File Info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/iptv/ts_102034v020101p0/SRM_v1.5r2.xsd">urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td><td><a href="#iptv-srm-schema">File info</a></td></tr><tr><td>DVB Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v020101p0/BCGTypeCS.xml">urn:dvb:metadata:cs:BCGTypeCS:2007</a></td><td><a href="#generic-cs-bcgtype">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v020101p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td><td><a href="#iptv-audio-cs">File info</a></td></tr><tr><td>TV-Anytime Classification Scheme</td><td><a href="/metadata/iptv/ts_102034v020101p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td><td><a href="#iptv-video-cs">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="iptv-detailed">Detailed descriptions of metadata definitions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section briefly describes each metadata definition, lists all versions of each definition that have been published, and indicates with which specification version(s) each metadata definition is associated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular specification document, you will find these in the <a href="#iptv-by-spec">previous section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>XML Schemas</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-sdns-schema">Service Discovery and Selection (SDnS)</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 5 of TS 102 034. Service discovery is the mechanism enabling the discovery of DVB-IPTV services available over bi-directional IP network. The service discovery results in the presentation of a list of services with sufficient information for the user to make a choice and access the chosen service. Selection takes place after the user has made a choice about which service to view. Live Media Broadcast, Content on Demand (CoD) and Content Download Services (CDS) are covered. Two types of Live Media broadcast services have been identified: broadcast services with DVB SI embedded in the stream (referenced as "TS Full SI") and broadcast services without in-band SI except for MPEG PSI (referenced as "TS optional SI").</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/sdns.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010101p0/ipisdns-p1-v1-0-0.xsd">urn:dvb:ipisdns:2003</a></td><td><a href="#iptv-spec-1-1-1">TS 102 034 v1.1.1</a></td><td>Initial version</td></tr><tr><td><a href="/metadata/iptv/ts_102034v010301p0/sdns3r7.xsd">urn:dvb:ipi:sdns:2006</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>added support for BCGDdeprecating CoDextended IPService by audio and video attributes, and service availability informationadded FEC information for multicast deliveryadded audio support for mosaic servicesPullURL no longer restricted to http scheme</td></tr><tr><td><a href="/metadata/iptv/ts_102034v010401p0/sdns_v1.4r13.xsd">urn:dvb:metadata:iptv:sdns:2008-1</a></td><td><a href="#iptv-spec-1-4-1">TS 102 034 v1.4.1</a></td><td>added support for more than one service provideradded support for CDSadded support for RMS FUSextended FEC information</td></tr><tr><td><a href="/metadata/iptv/ts_102034v010501p0/sdns_v1.5r25b.xsd">urn:dvb:metadata:iptv:sdns:2012-1</a></td><td><a href="#iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br><a href="#iptv-spec-1-5-2">TS 102 034 v1.5.2</a></td><td>added support for SRMadded support for emergency audio messagesadded support for services being available from more than one locationadded support for linking to other servicesadded service usage hint</td></tr><tr><td><a href="/metadata/iptv/ts_102034v020101p0/sdns_v1.6r03.xsd">urn:dvb:metadata:iptv:sdns:2014-1</a></td><td><a href="#iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td><td>added support for DVB-CSSadded support for IPv6</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-cds-schema">Content Download Service (CDS)</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10 of TS 102 034. Content Download Services (CDS) allow for non-realtime download of content items to local storage of an IPTV client via a broadband IP connection. A CDS can be used to provide IPTV services in areas where a broadband connection suitable for streaming services is not available or prone to transmission errors, for simultaneous delivery of multiple content items to IPTV clients, or for reduced cost IPTV offers since - unlike streaming services - the data rate consumption of a CDS can be throttled.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/dvb_metadata_iptv_cds.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010501p0/dvb_metadata_iptv_cds_2008-1r2.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br><a href="#iptv-spec-1-5-1">TS 102 034 v1.5.1</a></td><td>Initial version</td></tr><tr><td><a href="/metadata/iptv/ts_102034v020101p0/dvb_metadata_iptv_cds_2008-1r3.xsd">urn:dvb:metadata:iptv:cds:2008-1</a></td><td><a href="#iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br><a href="#iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td><td>Fixed @schemaLocation in SDnS schema reference</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-srm-schema">FLUTE Multicast System Renewability Message (SRM) Download</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 12.5.2 of TS 102 034. An important function of Content Protection (CP) Systems is the renewability in the field of important parts of the system implementation in order to replace or revoke such parts which have been compromised and fail in further preventing undesired use of content. This renewability information is conveyed to consumer equipment in the form of System Renewability Messages (SRM). SRM services are announced in Service Discovery and Selection (SDnS), and an IPTV client can obtain SRM data via HTTP unicast, or FLUTE (see RFC 3926) multicast services. The FLUTE FDT is extended by DVB to convey the CP System ID, CP System SRM ID, and SRM file version number for each SRM file. This schema defines the DVB extensions to the FLUTE File Delivery Table (FDT) structure for SRM delivery.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/SRM.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v020101p0/SRM_v1.5r2.xsd">urn:dvb:metadata:iptv:srm:fdt:2009-1</a></td><td><a href="#iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br><a href="#iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Classification Schemes</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-audio-cs">Audio codec classification scheme</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS complements the MPEG-7 Audio Coding Format CS by adding the DVB defined audio codecs not part of the MPEG-7CS:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>MPEG-4 DVB Audio</li><li>MPEG-4 High Efficiency Advanced Audio Profile</li><li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li><li>AMR DVB</li><li>AC-3</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/AudioCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v020101p0/AudioCS.xml">urn:dvb:ipdc:esg:cs:AudioCodecCS</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a><br><a href="#iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br><a href="#iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br><a href="#iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br><a href="#iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-video-cs">Video codec classification scheme</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This CS complements the MPEG-7 Visual Coding Format CS by adding the DVB defined video codecs not part of the MPEG-7CS:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li><li>VC-1</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/VideoCodecCS.xml">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v020101p0/VideoCodecCS.xml">urn:dvb:ipdc:esg:cs:VideoCodecCS</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a><br><a href="#iptv-spec-1-4-1">TS 102 034 v1.4.1</a><br><a href="#iptv-spec-1-5-1">TS 102 034 v1.5.1</a><br><a href="#iptv-spec-1-5-2">TS 102 034 v1.5.2</a><br><a href="#iptv-spec-2-1-1">TS 102 034 v2.1.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Document Type Definitions</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The DTDs listed in this section are for network provisioning specified in clause 10 of versions prior to release 1.4.1 of TS 102 034. This functionality is deprecated and has been deleted from the document as of revision 1.4.1, and is now provided by the Remote Management and Firmware Update Services (RMS-FUS) specification. Hence, these files are historic and provided here for completeness only.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-event-dtd">Network provisioning event DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.5 of TS 102 034 v1.3.1. When an IPTV client retrieves a network provisioning event via HTTP GET, it receives it in the format defined by this DTD.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB46.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB46.dtd">-//DVB//DTD Network Provisioning Event 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-config-dtd">Network provisioning configuration DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.6 of TS 102 034 v1.3.1. When an IPTV client receives or sends network provisioning configuration, it uses the format defined by this DTD.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB47.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB47.dtd">-//DVB//DTD Network Provisioning Configuration 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-failure-dtd">Network provisioning failure DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.7 of TS 102 034 v1.3.1. When an IPTV client needs to report an error that occurred during the processing of XML it received, it uses the format defined by this DTD.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB48.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB48.dtd">-//DVB//DTD Network Provisioning Failure 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-success-dtd">Network provisioning success DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.8 of TS 102 034 v1.3.1. When an IPTV client processes XML it received correctly, it uses the format defined by this DTD to report success.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB49.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB49.dtd">-//DVB//DTD Network Provisioning Success 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-inventory-dtd">Network provisioning inventory DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.9 of TS 102 034 v1.3.1. An IPTV client delivers inventory information in the format defined by this DTD, either in response to an "inventory" event, to report an inventory change (SIM card inserted), or upon boot up ensure that any hardware changes which occurred during the power down are reported.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB410.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB410.dtd">-//DVB//DTD Network Provisioning Inventory 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="iptv-status-dtd">Network provisioning status DTD</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 10.2.10 of TS 102 034 v1.3.1. An IPTV client delivers status information in the format defined by this DTD, either in response to a "status" event, or to report a status change (such as a new IP address delivered via DHCP).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>DVB411.dtd, s</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/iptv/DVB411.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/iptv/ts_102034v010301p0/DVB411.dtd">-//DVB//DTD Network Provisioning Status 1.0//EN</a></td><td><a href="#iptv-spec-1-3-1">TS 102 034 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:block {"ref":7534} /-->
+
+<!-- wp:heading -->
+<h2 id="Metadata-Definitions-for-Globally-Executable-MHP-GEM-Multimedia-Home-Platform-DVB_MHP-and-Other-Technologies">Metadata Definitions for Globally Executable MHP (GEM), Multimedia Home Platform (DVB-MHP), and Other Technologies</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="mhp-by-spec">Metadata definitions by specification version</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists the metadata definitions associated with each published specification document. Links to the specification documents are provided, and a zip archive containing all files for each specification document is also provided.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular metadata definition, you will find these in the <a href="#mhp-detailed">next section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="mhp-spec-1-1-1">ETSI TS 102 809 v1.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p.pdf">TS 102 809 v1.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.01.01_60/ts_102809v010101p0.zip">ts_102809v010101p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd">urn:dvb:mhp:2009</a></td><td><a href="#mhp-xsd-ait">File info</a></td></tr><tr><td>XML DTD</td><td>-//DVB//DTD Application Description File 1.0//EN</td><td><a href="#mhp-dtd-adf">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="mhp-spec-1-2-1">ETSI TS 102 809 v1.2.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p.pdf">TS 102 809 v1.2.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.02.01_60/ts_102809v010201p0.zip">ts_102809v010201p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd">urn:dvb:mhp:2009</a></td><td><a href="#mhp-xsd-ait">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd">urn:dvb:mhp:dsmcc:2009</a></td><td><a href="#mhp-xsd-strev">File info</a></td></tr><tr><td>XML DTD</td><td>-//DVB//DTD Application Description File 1.0//EN</td><td><a href="#mhp-dtd-adf">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4 id="mhp-spec-1-3-1">ETSI TS 102 809 v1.3.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p.pdf">TS 102 809 v1.3.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102809/01.03.01_60/ts_102809v010301p0.zip">ts_102809v010301p0.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/mhp/ts_102809v010301p0/mis_xmlait.xsd">urn:dvb:mhp:2009</a></td><td><a href="#mhp-xsd-ait">File info</a></td></tr><tr><td>W3C XML Schema</td><td><a href="/metadata/mhp/ts_102809v010301p0/stream-event.xsd">urn:dvb:mhp:dsmcc:2009</a></td><td><a href="#mhp-xsd-strev">File info</a></td></tr><tr><td>XML DTD</td><td>-//DVB//DTD Application Description File 1.0//EN</td><td><a href="#mhp-dtd-adf">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="mhp-detailed">Detailed descriptions of metadata definitions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section briefly describes each metadata definition, lists all versions of each definition that have been published, and indicates with which specification version(s) each metadata definition is associated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular specification document, you will find these in the <a href="#mhp-by-spec">previous section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>XML Schemas</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="mhp-xsd-strev">DSM-CC stream event messages without an object carousel</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 8.2 of TS 102 809. XML documents according to this schema can be used with streams not containing a DSM-CC object carousel to find DSM-CC stream events for synchronisation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/mhp/stream-event.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/mhp/ts_102809v010201p0/stream-event.xsd">urn:dvb:mhp:dsmcc:2009</a></td><td><a href="#mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br><a href="#mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="mhp-xsd-ait">XML encoding of the AIT</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 5.4 of TS 102 809. The XML AIT enables signalling of metadata about interactive applications when an XML syntax would be more appropriate than an MPEG-2 table, section and descriptor syntax would be more appropriate.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/mhp/mis_xmlait.xsd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/mhp/ts_102809v010101p0/mis_xmlait.xsd">urn:dvb:mhp:2009</a></td><td><a href="#mhp-spec-1-1-1">TS 102 809 v1.1.1</a></td><td>Initial version</td></tr><tr><td><a href="/metadata/mhp/ts_102809v010201p0/mis_xmlait.xsd">urn:dvb:mhp:2009</a></td><td><a href="#mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br><a href="#mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td><td>Updated references to IPTV schemas</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Document Type Definitions</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="mhp-dtd-adf">Application description file</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>See clause 5.2.12 of TS 102 809. The Application Description File (ADF) provides the list of files in an object carousel that need to be stored for an application as well as other related necessary information.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/mhp/mis-adf.dtd">permalink</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>PublicID</th><th>SystemID</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/mhp/mis-adf.dtd">-//DVB//DTD Application Description File 1.0//EN</a></td><td><a href="http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd">http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd</a></td><td><a href="#mhp-spec-1-1-1">TS 102 809 v1.1.1</a><br><a href="#mhp-spec-1-2-1">TS 102 809 v1.2.1</a><br><a href="#mhp-spec-1-3-1">TS 102 809 v1.3.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:block {"ref":7534} /-->
+
+<!-- wp:heading -->
+<h2 id="DVB-File-Format-Metadata-Definitions">DVB File Format Metadata Definitions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="ff-by-spec">Metadata definitions by specification version</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section lists the metadata definitions associated with each published specification document. Links to the specification documents are provided, and a zip archive containing all files for each specification document is also provided.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular metadata definition, you will find these in the&nbsp;<a href="#ff-detailed">next section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>ETSI TS 102 833 v1.1.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf">TS 102 833 v1.1.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="/metadata/ff/ts_102833v010101p.zip">ts_102833v010101p.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd">urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br>(supporting type definitions:&nbsp;<a href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd">urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td><td><a href="#ff-basic-desc">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>ETSI TS 102 833 v1.2.1</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Specification document:&nbsp;<a href="https://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf">TS 102 833 v1.2.1</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All files for this version:&nbsp;<a href="/metadata/ff/ts_102833v010201p.zip">ts_102833v010201p.zip</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>Type</th><th>URI</th><th>Description</th></tr></thead><tbody><tr><td>W3C XML Schema</td><td><a href="/metadata/ff/ts_102833v010201p/FileContentItemDescription.xsd">urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br>(supporting type definitions:&nbsp;<a href="/metadata/ff/ts_102833v010201p/ContentItemInformation.xsd">urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td><td><a href="#ff-basic-desc">File info</a></td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3} -->
+<h3 id="ff-detailed">Detailed descriptions of metadata definitions</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This section briefly describes each metadata definition, lists all versions of each definition that have been published, and indicates with which specification version(s) each metadata definition is associated.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In case you are looking for details about a particular specification document, you will find these in the&nbsp;<a href="#ff-by-spec">previous section</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>XML Schemas</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":5} -->
+<h5 id="ff-basic-desc">Mandatory Basic Description</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The mandatory metadata description is designed to be easily generated from either TV-Anytime or IPDC ESG based metadata descriptions. This basic description provides an interoperability point to assist in the interchange of content between devices. The basic description can take one of two forms. The first form (FileContentInformation) contains information about a program, at a minimum the title, but it may be populated with additional information such as is typically provided by DVB SI, the IPDC ESG, the IPTV BCG or TV-Anytime data carried over a transport stream. The second form (SelfRecordingInfo) contains only a description of the recording and will typically be used where the user initiates a recording and may include such details as the time of the recording and a description of the channels recorded. See clause 5.1.4 of TS 102 833.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Latest version:&nbsp;<a href="/metadata/ff/FileContentItemDescription.xsd">permalink</a>&nbsp;(<a href="/metadata/ff/FileContentItemDescription.xsd">supporting type definitions</a>)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"table table-sm"} -->
+<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/ff/ts_102833v010101p/FileContentItemDescription.xsd">urn:dvb:metadata:schema:fileContentItemDescription:2007</a><br>(supporting type definitions:&nbsp;<a href="/metadata/ff/ts_102833v010101p/ContentItemInformation.xsd">urn:dvb:metadata:schema:contentItemInformation:2007</a>)</td><td><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.01.01_60/ts_102833v010101p.pdf">TS 102 833 v1.1.1</a><br><a href="http://www.etsi.org/deliver/etsi_ts/102800_102899/102833/01.02.01_60/ts_102833v010201p.pdf">TS 102 833 v1.2.1</a></td><td>Initial version</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:block {"ref":7534} /-->
