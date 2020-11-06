@@ -13,6 +13,11 @@
       <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2017" uri="VideoConformancePointsCS.xml"/>
       <uri name="urn:dvb:metadata:cs:AudioConformancePointsCS:2017" uri="AudioConformancePointsCS.xml"/>
    </group>
+   <group xml:base="2020/">
+      <!-- Classification Schemes -->
+      <uri name="urn:dvb:metadata:cs:AudioCodecCS:2020" uri="AudioCodecCS.xml"/>
+      <uri name="urn:dvb:metadata:cs:VideoCodecCS:2020" uri="VideoCodecCS.xml"/>
+   </group>
    <group xml:base="2005/">
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2005" uri="ParentalGuidanceCS.xml"/>

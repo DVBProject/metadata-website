@@ -4,5 +4,6 @@
    <nextCatalog catalog="mpeg-7/catalog-iso-org.xml"/>
    <nextCatalog catalog="mpeg-7/catalog.xml"/>
    <nextCatalog catalog="mpeg-21/catalog-iso-org.xml"/>
+   <nextCatalog catalog="mpeg-21/catalog.xml"/>
    <nextCatalog catalog="tv-anytime/catalog.xml"/>
 </catalog>

@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <group xml:base="ts_102034v010301p0/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
+      <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
+      <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
+      <uri name="urn:dvb:ipi:sdns:2006" uri="sdns3r7.xsd"/>
+      <!-- Classification Schemes -->
+      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
+      <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
+      <uri name="urn:mpeg:mpeg7:cs:VisualCodingFormatCS:2001" uri="MPEG7 VisualCodingFormatCS.xml"/>
+      <uri name="urn:mpeg:mpeg7:cs:AudioCodingFormatCS:2001" uri="MPEG7 AudioCS.xml"/>
+      <!-- DTDs -->
+      <public publicId="-//DVB//DTD Network Provisioning Inventory 1.0//EN" uri="DVB410.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Status 1.0//EN" uri="DVB411.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Event 1.0//EN" uri="DVB46.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Configuration 1.0//EN" uri="DVB47.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Failure 1.0//EN" uri="DVB48.dtd"/>
+      <public publicId="-//DVB//DTD Network Provisioning Success 1.0//EN" uri="DVB49.dtd"/>
+   </group>
    <group xml:base="ts_102034v010101p0/">
       <!-- W3C XML Schemas -->
       <uri name="urn:dvb:ipisdns:2003" uri="ipisdns-p1-v1-0-0.xsd"/>
    </group>
-   <group xml:base="ts_102034v010301p0/">
+   <group xml:base="ts_102034v010501p0/">
       <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:ipi:sdns:2006" uri="sdns3r7.xsd"/>
+      <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7_2008.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2012-1" uri="sdns_v1.5r25b.xsd"/>
       <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r2.xsd"/>
       <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
       <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
+      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
       <!-- Classification Schemes -->
-      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
-      <uri name="urn:mpeg:mpeg7:cs:AudioCodingFormatCS:2001" uri="MPEG7 AudioCS.xml"/>
-      <uri name="urn:mpeg:mpeg7:cs:VisualCodingFormatCS:2001" uri="MPEG7 VisualCodingFormatCS.xml"/>
-      <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
-      <!-- DTDs -->
-      <public publicId="-//DVB//DTD Network Provisioning Inventory 1.0//EN" uri="DVB410.dtd"/>
-      <public publicId="-//DVB//DTD Network Provisioning Status 1.0//EN" uri="DVB411.dtd"/>
-      <public publicId="-//DVB//DTD Network Provisioning Event 1.0//EN" uri="DVB46.dtd"/>
-      <public publicId="-//DVB//DTD Network Provisioning Configuration 1.0//EN" uri="DVB47.dtd"/>
-      <public publicId="-//DVB//DTD Network Provisioning Failure 1.0//EN" uri="DVB48.dtd"/>
-      <public publicId="-//DVB//DTD Network Provisioning Success 1.0//EN" uri="DVB49.dtd"/>
+      <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
    </group>
    <group xml:base="ts_102034v010401p0/">
       <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r2.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
       <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r2.xsd"/>
       <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
       <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
       <!-- Classification Schemes -->
@@ -41,50 +54,37 @@
       <public publicId="-//DVB//DTD Network Provisioning Failure 1.0//EN" uri="DVB48.dtd"/>
       <public publicId="-//DVB//DTD Network Provisioning Success 1.0//EN" uri="DVB49.dtd"/>
    </group>
-   <group xml:base="ts_102034v010501p0/">
+   <group xml:base="ts_102034v020101p0/">
       <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r2.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
+      <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7_2008.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:srm:fdt:2009-1" uri="SRM_v1.5r2.xsd"/>
       <uri name="urn:dvb:metadata:iptv:sdns:2012-1" uri="sdns_v1.5r25b.xsd"/>
       <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
-      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2014-1" uri="sdns_v1.6r03.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r3.xsd"/>
       <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
-      <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7_2008.xsd"/>
       <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
+      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
+      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
+      <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
    </group>
    <group xml:base="ts_102034v010502p0/">
       <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r3.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2012-1" uri="sdns_v1.5r25b.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:srm:fdt:2009-1" uri="SRM_v1.5r2.xsd"/>
-      <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
-      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
-      <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
       <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7_2008.xsd"/>
-      <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
-      <!-- Classification Schemes -->
-      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
-      <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
-      <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
-   </group>
-   <group xml:base="ts_102034v020101p0/">
-      <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r3.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2012-1" uri="sdns_v1.5r25b.xsd"/>
-      <uri name="urn:dvb:metadata:iptv:sdns:2014-1" uri="sdns_v1.6r03.xsd"/>
       <uri name="urn:dvb:metadata:iptv:srm:fdt:2009-1" uri="SRM_v1.5r2.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2012-1" uri="sdns_v1.5r25b.xsd"/>
       <uri name="urn:tva:metadata:2005" uri="tva_metadata_3-1_v131.xsd"/>
-      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:sdns:2008-1" uri="sdns_v1.4r13.xsd"/>
+      <uri name="urn:dvb:metadata:iptv:cds:2008-1" uri="dvb_metadata_iptv_cds_2008-1r3.xsd"/>
       <uri name="urn:tva:mpeg7:2005" uri="tva_mpeg7.xsd"/>
-      <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7_2008.xsd"/>
       <uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd"/>
+      <uri name="urn:tva:metadata:2011" uri="tva_metadata_3-1_v171.xsd"/>
       <!-- Classification Schemes -->
-      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
       <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
+      <uri name="urn:dvb:ipdc:esg:cs:AudioCodecCS" uri="AudioCS.xml"/>
       <uri name="urn:dvb:ipdc:esg:cs:VideoCodecCS" uri="VideoCodecCS.xml"/>
    </group>
 </catalog>

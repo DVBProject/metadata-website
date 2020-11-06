@@ -93,7 +93,16 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><li>MPEG-4 DVB Audio</li><li>MPEG-4 High Efficiency Advanced Audio Profile</li><li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li><li>AMR DVB</li><li>AC-3</li></ul>
+<ul>
+  <li>MPEG-4 DVB Audio</li>
+  <li>MPEG-4 High Efficiency Advanced Audio Profile</li>
+  <li>MPEG-4 High Efficiency Advanced Audio v2 Profile</li>
+  <li>AMR DVB</li>
+  <li>AC-3</li>
+  <li>AC-4</li>
+  <li>DTS</li>
+  <li>MPEG-H 3D</li>
+</ul>
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
@@ -101,7 +110,31 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:table {"className":"table table-sm"} -->
-<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2007/AudioCodecCS.xml">urn:dvb:metadata:cs:AudioCodecCS:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<figure class="wp-block-table table table-sm">
+  <table>
+    <thead>
+      <tr>
+        <th>URI</th>
+        <th>DVB Standard(s)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/metadata/cs/2007/AudioCodecCS.xml">urn:dvb:metadata:cs:AudioCodecCS:2007</a></td>
+        <td>none</td>
+        <td>Initial version</td>
+      </tr>
+      <tr>
+        <td> <a href="/metadata/cs/2020/AudioCodecCS.xml">urn:dvb:metadata:cs:AudioCodecCS:2020</a></td>
+        <td>none</td>
+        <td>adds AC-4, DTS, and MPEG-H 3D according to
+          <a href="https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.06.01_60/ts_101154v020601p.pdf"
+             >ETSI TS 101 154 v2.6.1</a></td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 <!-- /wp:table -->
 
 <!-- wp:heading {"level":4} -->
@@ -165,7 +198,14 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li><li>VC-1</li></ul>
+<ul>
+  <li>ISO/IEC 14496-10 video codec (also known as H.264/AVC)</li>
+  <li>VC-1</li>
+  <li>H.262</li>
+  <li>H.264 Scalable High Profile</li>
+  <li>H.264 Stereo High Profile</li>
+  <li>H.265</li>
+</ul>
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
@@ -173,7 +213,32 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:table {"className":"table table-sm"} -->
-<figure class="wp-block-table table table-sm"><table><thead><tr><th>URI</th><th>DVB Standard(s)</th><th>Description</th></tr></thead><tbody><tr><td><a href="/metadata/cs/2007/VideoCodecCS.xml">urn:dvb:metadata:cs:VideoCodecCS:2007</a></td><td>none</td><td>Initial version</td></tr></tbody></table></figure>
+<figure class="wp-block-table table table-sm">
+  <table>
+    <thead>
+      <tr>
+        <th>URI</th>
+        <th>DVB Standard(s)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/metadata/cs/2007/VideoCodecCS.xml">urn:dvb:metadata:cs:VideoCodecCS:2007</a></td>
+        <td>none</td>
+        <td>Initial version</td>
+      </tr>
+      <tr>
+        <td><a href="/metadata/cs/2020/VideoCodecCS.xml">urn:dvb:metadata:cs:VideoCodecCS:2020</a></td>
+        <td>none</td>
+        <td>adds H.262, H.264 Scalable High Profile, H.264 Stereo High
+        Profile, and H.265 according to
+          <a href="https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.06.01_60/ts_101154v020601p.pdf"
+             >ETSI TS 101 154 v2.6.1</a></td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 <!-- /wp:table -->
 
 <!-- wp:heading {"level":4} -->

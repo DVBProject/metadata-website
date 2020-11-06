@@ -3,7 +3,7 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
    <group xml:base="Content/">
       <!-- Classification Schemes -->
-      <uri name="urn:mpeg:cs:AudioCodingFormatCS:2001" uri="MPEG7 AudioCS.xml"/>
       <uri name="urn:mpeg:cs:VisualCodingFormatCS:2001" uri="MPEG7 VisualCodingFormatCS.xml"/>
+      <uri name="urn:mpeg:cs:AudioCodingFormatCS:2001" uri="MPEG7 AudioCS.xml"/>
    </group>
 </catalog>
