@@ -1,4 +1,4 @@
-# New Metadata Section for the DVB Website
+# Metadata Section for the DVB Website
 
 Recommended reading: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
@@ -55,3 +55,7 @@ files. Hence, after re-generating the catalogues using
 [XML Catalog Builder](https://github.com/c-alpha/XMLCatalogBuilder), be sure
 to discard the hunks with the DTD entries from the `catalog.xml` files before
 committing them.
+
+To get this onto the website, make a new release here. This will
+trigger a web-hook, which will bring over the XML tree, and update the
+static page content from `metadata.xhtrml`.
