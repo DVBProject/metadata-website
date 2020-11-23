@@ -58,4 +58,4 @@ committing them.
 
 To get this onto the website, make a new release here. This will
 trigger a web-hook, which will bring over the XML tree, and update the
-static page content from `metadata.xhtrml`.
+static page content from `metadata.xhtml`.
