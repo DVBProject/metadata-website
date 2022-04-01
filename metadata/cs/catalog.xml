@@ -21,6 +21,7 @@
    <group xml:base="2020/">
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:AudioCodecCS:2020" uri="AudioCodecCS.xml"/>
+      <uri name="urn:dvb:metadata:cs:ColorimetryCS:2020" uri="ColorimetryCS.xml"/>
       <uri name="urn:dvb:metadata:cs:VideoCodecCS:2020" uri="VideoCodecCS.xml"/>
    </group>
    <group xml:base="2005/">
