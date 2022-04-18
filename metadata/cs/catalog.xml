@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <group xml:base="2005/">
+      <!-- Classification Schemes -->
+      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2005" uri="ParentalGuidanceCS.xml"/>
+   </group>
    <group xml:base="2007/">
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:BCGTypeCS:2007" uri="BCGTypeCS.xml"/>
@@ -13,19 +17,25 @@
       <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2017" uri="VideoConformancePointsCS.xml"/>
       <uri name="urn:dvb:metadata:cs:AudioConformancePointsCS:2017" uri="AudioConformancePointsCS.xml"/>
    </group>
-   <group xml:base="2021/">
+    <group xml:base="2019/">
       <!-- Classification Schemes -->
-      <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2021" uri="VideoConformancePointsCS.xml"/>
-      <uri name="urn:dvb:metadata:cs:VideoCodecCS:2021" uri="VideoCodecCS.xml"/>
-   </group>
+      <uri name="urn:dvb:metadata:cs:ContentSubject:2019" uri="DVBContentSubjectCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:HowRelatedCS:2019" uri="DVBHowRelatedCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:LinkedApplicationCS:2019" uri="DVBLinkedApplicationCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:RecordingInfoCS:2019" uri="DVBRecordingInfoCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:ServiceTypeCS:2019" uri="DVBServiceTypeCS-2019.xml"/>
+   </group>  
    <group xml:base="2020/">
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:AudioCodecCS:2020" uri="AudioCodecCS.xml"/>
       <uri name="urn:dvb:metadata:cs:ColorimetryCS:2020" uri="ColorimetryCS.xml"/>
       <uri name="urn:dvb:metadata:cs:VideoCodecCS:2020" uri="VideoCodecCS.xml"/>
+	  <uri name="urn:dvb:metadata:cs:HowRelatedCS:2020" uri="DVBHowRelatedCS-2020.xml"/>
    </group>
-   <group xml:base="2005/">
+   <group xml:base="2021/">
       <!-- Classification Schemes -->
-      <uri name="urn:dvb:metadata:cs:ParentalGuidanceCS:2005" uri="ParentalGuidanceCS.xml"/>
+      <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2021" uri="VideoConformancePointsCS.xml"/>
+      <uri name="urn:dvb:metadata:cs:VideoCodecCS:2021" uri="VideoCodecCS.xml"/>
+	  <uri name="urn:dvb:metadata:cs:HowRelatedCS:2021" uri="DVBHowRelatedCS-2021.xml"/>
    </group>
 </catalog>
