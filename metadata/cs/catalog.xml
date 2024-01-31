@@ -38,10 +38,16 @@
       <uri name="urn:dvb:metadata:cs:VideoCodecCS:2021" uri="VideoCodecCS.xml"/>
 	  <uri name="urn:dvb:metadata:cs:HowRelatedCS:2021" uri="DVBHowRelatedCS-2021.xml"/>
    </group>
-      <group xml:base="2022/">
+   <group xml:base="2022/">
       <!-- Classification Schemes -->
-	  <uri name="urn:dvb:metadata:cs:ServiceTypeCS:2019" uri="DVBServiceTypeCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:ServiceTypeCS:2019" uri="DVBServiceTypeCS-2019.xml"/>
       <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2022" uri="VideoConformancePointsCS.xml"/>
       <uri name="urn:dvb:metadata:cs:VideoCodecCS:2022" uri="VideoCodecCS.xml"/>
+   </group>
+   <group xml:base="2024/">
+      <!-- Classification Schemes -->
+      <uri name="urn:dvb:metadata:cs:ContentSubject:2019" uri="DVBContentSubjectCS-2019.xml"/>
+      <uri name="urn:dvb:metadata:cs:HowRelatedCS:2022" uri="DVBHowRelatedCS-2021.xml"/>
+      <uri name="urn:dvb:metadata:cs:LinkedApplicationCS:2022" uri="DVBLinkedApplicationCS-2019.xml"/>
    </group>
 </catalog>
