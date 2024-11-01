@@ -4,20 +4,18 @@
    <group xml:base="ts_102809v010101p0/">
       <!-- W3C XML Schemas -->
       <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
-   </group>
-   <group xml:base="ts_102809v010201p0/">
-      <!-- W3C XML Schemas -->
-      <uri name="urn:dvb:mis:dsmcc:2009" uri="stream-event.xsd"/>
-      <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
+      <!-- DTDs -->
+      <public publicId="//DVB//DTD Application Description File 1.0//EN" uri="mis-adf.dtd"/>
+      <system systemId="http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd" uri="mis-adf.dtd"/>
    </group>
    <group xml:base="ts_102809v010301p0/">
       <!-- W3C XML Schemas -->
       <uri name="urn:dvb:mis:dsmcc:2009" uri="stream-event.xsd"/>
       <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
    </group>
-   <group xml:base="dtd/">
-      <!-- DTDs -->
-      <public publicId="-//DVB//DTD Application Description File 1.0//EN" uri="mis-adf.dtd"/>
-      <system systemId="http://www.dvb.org/mhp/dtd/applicationdescriptionfile-1-0.dtd" uri="mis-adf.dtd"/>
+   <group xml:base="ts_102809v010201p0/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:dvb:mis:dsmcc:2009" uri="stream-event.xsd"/>
+      <uri name="urn:dvb:mhp:2009" uri="mis_xmlait.xsd"/>
    </group>
 </catalog>
