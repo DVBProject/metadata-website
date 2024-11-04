@@ -434,6 +434,69 @@
       <uri name="urn:tva:metadata:cs:ContentCommercialCS:2005-03" uri="ContentCommercialCS.xml"/>
       <uri name="urn:tva:metadata:cs:PurchaseTypeCS:2004" uri="PurchaseTypeCS.xml"/>
    </group>
+   <group xml:base="ts_1028220301v011301p0/">
+      <!-- W3C XML Schemas -->
+      <uri name="urn:tva:metadata:2024" uri="tva_metadata_3-1.xsd"/>
+      <uri name="urn:tva:ndr:2017" uri="tva_ndr_9.xsd"/>
+      <uri name="urn:tva:ContentReferencing:2017" uri="tva_content_referencing_4.xsd"/>
+      <uri name="urn:tva:CoreData:2017" uri="tva_Core_Data_8.xsd"/>
+      <uri name="urn:tva:rmpi:2017" uri="tva_rmpi_5-1.xsd"/>
+      <uri name="urn:tva:profile:2017" uri="tva_profile_exchange_6-3.xsd"/>
+      <uri name="urn:tva:ResolvingAuthority:2008" uri="tva_resolving_authority_4.xsd"/>
+      <uri name="urn:tva:metadata:interstitial:2017" uri="tva_interstitial_3-4.xsd"/>
+      <uri name="urn:tva:mpeg7:2008" uri="tva_mpeg7.xsd"/>
+      <uri name="urn:tva:metadata:extended:2017" uri="tva2_metadata_3-3.xsd"/>
+      <uri name="urn:tva:mpeg21:2017" uri="tva_mpeg21.xsd"/>
+      <uri name="urn:tva:transport:2015" uri="tva_transport_6-1.xsd"/>
+      <!-- Classification Schemes -->
+      <uri name="urn:tva:metadata:cs:CaptionCodingFormatCS:2015" uri="CaptionCodingFormatCS.xml"/>
+      <uri name="urn:tva:ndr:cs:DeliveryProtocolTypeCS:2005" uri="DeliveryProtocolTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:OtherSystemSoftwareCS:2005" uri="OtherSystemSoftwareCS.xml"/>
+      <uri name="urn:tva:metadata:cs:ContentCS:2011" uri="ContentCS.xml"/>
+      <uri name="urn:tva:metadata:cs:SocialMediaReferenceCS:2015" uri="SocialMediaReferenceCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:ContentTypeCS:2005" uri="ContentTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:TemporalRelationCS:2005" uri="TemporalrelationCS.xml"/>
+      <uri name="urn:tva:metadata:cs:IntendedAudienceCS:2011" uri="IntendedAudienceCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:SpatialRelationCS:2005" uri="SpatialRelationCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:PlaceTypeCS:2011" uri="PlaceTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:TerminalTypeCS:2011" uri="TerminalTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:OperatingSystemCS:2007" uri="OperatingSystemCS.xml"/>
+      <uri name="urn:tva:metadata:cs:PictureFormatCS:2015" uri="PictureFormatCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:FamilyMemberCS:2005" uri="FamilyMemberCS.xml"/>
+      <uri name="urn:tva:transport:contextNodeIDs:2012" uri="tva_transport_6-1_ContextNodeIDList.xml"/>
+      <uri name="urn:tva:metadata:cs:IntentionCS:2005" uri="IntentionCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:GamePerspectivesCS:2011" uri="GamePerspectivesCS.xml"/>
+      <uri name="urn:tva:metadata:cs:ContentAlertCS:2005" uri="ContentAlertCS.xml"/>
+      <uri name="urn:tva:ndr:cs:ControlProtocolTypeCS:2005" uri="ControlProtocolTypeCS.xml"/>
+      <uri name="urn:tva:metadata:cs:OriginationCS:2011" uri="OriginationCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:MiddlewareServiceCS:2011" uri="MiddlewareServiceCS.xml"/>
+      <uri name="urn:tva:metadata:cs:TVARoleCS:2011" uri="TVARoleCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:IntendedEducationalUserCS:2011" uri="IntendedEducationalUserCS.xml"/>
+      <uri name="urn:tva:rmpi:cs:CipherCS:2005" uri="CipherCS.xml"/>
+      <uri name="urn:tva:metadata:cs:DerivationReasonCS:2007" uri="DerivationReasonCS.xml"/>
+      <uri name="urn:tva:metadata:cs:ActionTypeCS:2010" uri="ActionTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:EducationalUseCS:2005" uri="EducationalUseCS.xml"/>
+      <uri name="urn:mpeg:mpeg7:cs:RoleCS:2011" uri="RoleCS.xml"/>
+      <uri name="urn:tva:metadata:cs:HowRelatedCS:2012" uri="HowRelatedCS.xml"/>
+      <uri name="urn:tva:metadata:cs:FormatCS:2011" uri="FormatCS.xml"/>
+      <uri name="urn:tva:metadata:cs:ChecksumAlgorithmCS:2008" uri="ChecksumAlgorithmCS.xml"/>
+      <uri name="urn:tva:metadata:cs:AtmosphereCS:2005" uri="AtmosphereCS.xml"/>
+      <uri name="urn:tva:metadata:cs:MediaTypeCS:2010" uri="MediaTypeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:VirtualMachineCS:2005" uri="VirtualMachineCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:AccessibilityCS:2005" uri="AccessibilityCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:WeatherTypeCS:2011" uri="WeatherTypeCS.xml"/>
+      <uri name="urn:tva:metadata:cs:UnitTypeCS:2007" uri="UnitTypeCS.xml"/>
+      <uri name="urn:tva:CoreData:cs:CoreDataActionTypeCS:2005" uri="CoreDataActionTypeCS.xml"/>
+      <uri name="urn:tva:metadata:cs:AudioPurposeCS:2007" uri="AudioPurposeCS.xml"/>
+      <uri name="urn:tva:metadata:extended:cs:CPUTypeCS:2005" uri="CPUTypeCS.xml"/>
+      <uri name="urn:tva:transport:fieldIDs:2012" uri="tva_transport_6-1_FieldIDList.xml"/>
+      <uri name="urn:tva:metadata:cs:ContentCommercialCS:2005-03" uri="ContentCommercialCS.xml"/>
+      <uri name="urn:tva:metadata:cs:PurchaseTypeCS:2004" uri="PurchaseTypeCS.xml"/>
+      <uri name="urn:tva:metadata:cs:AccessibilityPurposeCS:2023" uri="AccessibilityPurposeCS.xml"/>
+      <uri name="urn:tva:metadata:cs:SubtitleCarriageCS:2023" uri="SubtitleCarriageCS.xml"/>
+      <uri name="urn:tva:metadata:cs:SubtitleCodingFormatCS:2023" uri="SubtitleCodingFormatCS.xml"/>
+      <uri name="urn:tva:metadata:cs:SubtitlePurposeCS:2023" uri="SubtitlePurposeCS.xml"/>
+   </group>
    <group xml:base="ts_1028220603v010101p0/">
       <!-- W3C XML Schemas -->
       <uri name="urn:tva:profile:2005" uri="tva_profile_exchange_6-3_v111.xsd"/>
