@@ -211,8 +211,8 @@
 				The Council of Cinematographic Classification
 			</Name>
 			<Definition xml:lang="en">
-				Movie ratings as defined by the Consejo de Calificación
-				Cinematográfica (http://w3app.mineduc.cl/Consejo/index)
+				Movie ratings as defined by the Consejo de Calificaci&#243;n
+				Cinematogr&#225;fica (http://w3app.mineduc.cl/Consejo/index)
 			</Definition>
 			<Term termID="5.1.1">
 				<Name xml:lang="en">TE</Name>
@@ -635,8 +635,8 @@
 			<Term termID="15.1">
 				<Name xml:lang="en">Ministre of Culture</Name>
 				<Definition xml:lang="en">
-					Scheme as defined by the Comissão de Classificação
-					de Espectáculos (http://www.cce.org.pt)
+					Scheme as defined by the Comiss&#227;o de Classifica&#231;&#227;o
+					de Espect&#225;culos (http://www.cce.org.pt)
 				</Definition>
 				<Term termID="15.1.1">
 					<Name xml:lang="en">M/4</Name>
@@ -762,7 +762,7 @@
 					Swedish National Board of Film Censors
 				</Name>
 				<Definition xml:lang="en">
-					Scheme as defined by Statens biografbyrå
+					Scheme as defined by Statens biografbyr&#229;
 					(http://www.statensbiografbyra.se)
 				</Definition>
 				<Term termID="18.1.1">
