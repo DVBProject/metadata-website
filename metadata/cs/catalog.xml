@@ -27,6 +27,7 @@
    </group>
    <group xml:base="2024/">
       <!-- Classification Schemes -->
+      <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2024" uri="VideoConformancePointsCS.xml"/>
       <uri name="urn:dvb:metadata:cs:AudioCodecCS:2024" uri="AudioCodecCS.xml"/>
       <uri name="urn:dvb:metadata:cs:AudioConformancePointsCS:2024" uri="AudioConformancePointsCS.xml"/>
       <uri name="urn:dvb:metadata:cs:LinkedApplicationCS:2019" uri="DVBLinkedApplicationCS-2019.xml"/>
