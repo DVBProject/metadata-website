@@ -56,4 +56,8 @@
       <!-- Classification Schemes -->
       <uri name="urn:dvb:metadata:cs:LinkedApplicationCS:2019" uri="DVBLinkedApplicationCS-2019.xml"/>
    </group>
+   <group xml:base="2026/">
+      <!-- Classification Schemes -->
+      <uri name="urn:dvb:metadata:cs:VideoConformancePointsCS:2026" uri="VideoConformancePointsCS.xml"/>
+   </group>
 </catalog>
