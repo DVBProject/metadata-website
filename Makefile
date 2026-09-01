@@ -1,7 +1,7 @@
 ECHO = echo
 MKDIR = mkdir -p
 RM = rm
-TAR = tar
+TAR = tar --no-same-owner
 CD = cd
 ZIP = zip
 MV = mv
