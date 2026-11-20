@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassificationScheme uri="urn:tva:metadata:cs:AccessibilityPurposeCS:2023">
+	<!-- ##################################################################### -->
+	<!-- ACCESSIBILITYPURPOSE                                                  -->
+	<!-- Definition: Contains terms that describe the purpose of access        -->
+	<!--             services provided by a linked application or a video      -->
+	<!--             track.                                                    -->
+	<!-- ##################################################################### -->
+	<Term termID="1">
+		<Name xml:lang="en">Magnification UI Parameters</Name>
+		<Term termID="1.1">
+ 			<Name>textMagnification</Name>
+		</Term>
+		<Term termID="1.2">
+			<Name>magnifierGlass</Name>
+		</Term>
+		<Term termID="1.3">
+			<Name>screenZoom</Name>
+		</Term>
+		<Term termID="1.4">
+			<Name>largeLayout</Name>
+		</Term>
+	</Term>
+	<Term termID="2">
+		<Name xml:lang="en">High Contrast UI Parameters</Name>
+		<Term termID="2.1">
+			<Name>monochrome</Name>
+		</Term>
+	</Term>
+	<Term termID="3">
+		<Name xml:lang="en">Screen Reader Parameters</Name>
+		<Term termID="3.1">
+			<Name>voice male</Name>
+		</Term>
+		<Term termID="3.2">
+			<Name>voice female</Name>
+		</Term>
+		<Term termID="3.3">
+			<Name>Configurable verbosity</Name>
+			<Definition xml:lang="en">
+				Screen reader application supports configurable verbosity</Definition>
+		</Term>
+		<Term termID="3.4">
+			<Name>speed</Name>
+			<Definition xml:lang="en">
+				Screen reader application supports configurable speech speed/rate</Definition>
+      </Term>
+	</Term>
+	<Term termID="4">
+		<Name xml:lang="en">Response to a User Action Parameters</Name>
+		<Term termID="4.1">
+			<Name>audio</Name>
+		</Term>
+		<Term termID="4.2">
+			<Name>visual</Name>
+		</Term>
+		<Term termID="4.3">
+			<Name>haptic</Name>
+		</Term>
+	</Term>
+	<Term termID="5">
+		<Name xml:lang="en">Sign language track</Name>
+		<Term termID="5.1">
+			<Name>Auxiliary Sign-Language</Name>
+			<Definition xml:lang="en">
+				A track that contains a sign-language interpreter or signer and is intended to be rendered concurrently with a primary video component
+			</Definition>
+		</Term>
+		<Term termID="5.2">
+			<Name>In-Image Sign-Language</Name>
+			<Definition xml:lang="en">
+				A track that that contains the programme video and the sign-language interpretation in a single pre-composited video presentation
+			</Definition>
+		</Term>
+	</Term>
+</ClassificationScheme>
